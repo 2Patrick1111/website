@@ -277,95 +277,99 @@
     @apply py-16 px-8 max-w-6xl mx-auto;
   }
 
-  .footsteps-container {
+  .ladder-container {
     @apply relative max-w-5xl mx-auto;
   }
 
-  .footstep-path {
-    @apply relative flex justify-between items-center;
-    min-height: 300px;
+  .ladder-path {
+    @apply relative;
+    min-height: 400px;
   }
 
-  .footstep {
-    @apply relative flex flex-col items-center;
-    flex: 1;
-    max-width: 280px;
+  .ladder-step {
+    @apply absolute max-w-sm;
   }
 
-  .footstep.left {
-    @apply items-start text-left;
+  .step-1 {
+    @apply left-0 top-0;
   }
 
-  .footstep.right {
-    @apply items-end text-right;
-    margin-top: 60px;
+  .step-2 {
+    @apply left-1/2 top-32 -translate-x-1/2;
   }
 
-  .footstep::before {
+  .step-3 {
+    @apply right-0 top-64;
+  }
+
+  .ladder-step::before {
     content: attr(data-step);
-    @apply absolute -top-8 text-sm font-bold opacity-50 z-10;
+    @apply absolute -top-6 left-4 text-sm font-bold opacity-50 z-10;
     color: var(--text-secondary);
     font-family: 'Sora', sans-serif;
   }
 
-  .footstep.left::before {
-    @apply left-6;
+  .step-card {
+    @apply p-6 rounded-2xl;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glass);
   }
 
-  .footstep.right::before {
-    @apply right-6;
-  }
-
-  .footprint {
-    @apply relative w-12 h-16 mb-4 rounded-t-full;
-    background: var(--gradient-primary);
-    clip-path: ellipse(50% 60% at 50% 40%);
-    box-shadow: 0 0 25px rgba(0, 128, 255, 0.4);
-    transform: rotate(-15deg);
-  }
-
-  .footstep.right .footprint {
-    transform: rotate(15deg) scaleX(-1);
-  }
-
-  .step-info {
-    @apply max-w-xs;
-  }
-
-  .footstep-title {
-    @apply text-lg font-semibold mb-2 text-white;
+  .ladder-title {
+    @apply text-lg font-semibold mb-3 text-white;
     font-family: 'Sora', sans-serif;
   }
 
-  .footstep-desc {
+  .ladder-desc {
     @apply text-sm leading-relaxed;
     color: var(--text-secondary);
   }
 
+  .footprint-connector {
+    @apply absolute w-6 h-8;
+    background: var(--gradient-primary);
+    clip-path: ellipse(50% 65% at 50% 35%);
+    box-shadow: 0 0 15px rgba(0, 128, 255, 0.3);
+    opacity: 0.7;
+  }
+
+  .connector-1 {
+    @apply left-52 top-12;
+    transform: rotate(-20deg);
+  }
+
+  .connector-2 {
+    @apply left-64 top-20;
+    transform: rotate(-10deg) scaleX(-1);
+  }
+
+  .connector-3 {
+    @apply right-52 top-44;
+    transform: rotate(20deg);
+  }
+
+  .connector-4 {
+    @apply right-64 top-52;
+    transform: rotate(10deg) scaleX(-1);
+  }
+
   @media (max-width: 768px) {
-    .footstep-path {
-      @apply flex-col gap-12;
+    .ladder-path {
+      @apply flex flex-col gap-8;
       min-height: auto;
     }
     
-    .footstep {
-      @apply items-center text-center max-w-full;
+    .ladder-step {
+      @apply relative left-auto right-auto top-auto transform-none max-w-full;
     }
     
-    .footstep.right {
-      @apply mt-0;
+    .footprint-connector {
+      @apply hidden;
     }
     
-    .footstep::before {
+    .ladder-step::before {
       @apply left-1/2 -translate-x-1/2;
-    }
-    
-    .footprint {
-      transform: rotate(-10deg);
-    }
-    
-    .footstep.right .footprint {
-      transform: rotate(10deg);
     }
   }
 

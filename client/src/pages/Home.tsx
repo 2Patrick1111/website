@@ -69,29 +69,32 @@ export default function Home() {
           Dein 3-Stufen-Plan
         </h2>
         
-        <div className="footsteps-container">
-          <div className="footstep-path">
-            <div className="footstep left" data-step="01">
-              <div className="footprint"></div>
-              <div className="step-info">
-                <h3 className="footstep-title">Hands‑on KI‑Toolkit</h3>
-                <p className="footstep-desc">Jeder Teilnehmende richtet sein persönliches Automations‑Set‑up ein.</p>
+        <div className="ladder-container">
+          <div className="ladder-path">
+            <div className="ladder-step step-1" data-step="01">
+              <div className="step-card">
+                <h3 className="ladder-title">Hands‑on KI‑Toolkit</h3>
+                <p className="ladder-desc">Jeder Teilnehmende richtet sein persönliches Automations‑Set‑up ein.</p>
               </div>
             </div>
             
-            <div className="footstep right" data-step="02">
-              <div className="footprint"></div>
-              <div className="step-info">
-                <h3 className="footstep-title">Branchenspezifische Use‑Cases</h3>
-                <p className="footstep-desc">Sofort im Arbeitsalltag anwendbar.</p>
+            <div className="footprint-connector connector-1"></div>
+            <div className="footprint-connector connector-2"></div>
+            
+            <div className="ladder-step step-2" data-step="02">
+              <div className="step-card">
+                <h3 className="ladder-title">Branchenspezifische Use‑Cases</h3>
+                <p className="ladder-desc">Sofort im Arbeitsalltag anwendbar.</p>
               </div>
             </div>
             
-            <div className="footstep left" data-step="03">
-              <div className="footprint"></div>
-              <div className="step-info">
-                <h3 className="footstep-title">Messbarer ROI</h3>
-                <p className="footstep-desc">Durchschnittlich 6 h Zeitersparnis pro Woche & Mitarbeiter.</p>
+            <div className="footprint-connector connector-3"></div>
+            <div className="footprint-connector connector-4"></div>
+            
+            <div className="ladder-step step-3" data-step="03">
+              <div className="step-card">
+                <h3 className="ladder-title">Messbarer ROI</h3>
+                <p className="ladder-desc">Durchschnittlich 6 h Zeitersparnis pro Woche & Mitarbeiter.</p>
               </div>
             </div>
           </div>
