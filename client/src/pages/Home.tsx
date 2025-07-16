@@ -59,10 +59,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Content Section */}
       <section className="content-section">
-        <h2 className="section-title">Template Features</h2>
+        <h2 className="section-title text-[35px] text-[#ffffff]">Warum der AI Pass die beste KI-Weiterbildung ist</h2>
         
         <div className="card-grid">
           {features.map((feature, index) => (
@@ -76,7 +75,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="cta-section">
         <h2 className="section-title" style={{ marginBottom: '1rem' }}>
