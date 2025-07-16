@@ -94,8 +94,8 @@ export default function Home() {
             <Link href="/kontakt" className="cta-button primary">
               Kostenlose Förderprüfung
             </Link>
-            <Link href="/appointment" className="cta-button secondary">
-              Strategie Meeting
+            <Link href="/roi-rechner" className="cta-button secondary">
+              Kurs entdecken
             </Link>
           </div>
         </div>
