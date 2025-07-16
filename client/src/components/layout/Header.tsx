@@ -32,16 +32,16 @@ export function Header() {
       
       <nav className="header-nav">
         <Link 
-          href="/roi-calculator" 
-          className={`header-nav-link ${isActiveLink('/roi-calculator') ? 'active' : ''}`}
-        >
-          KI-Potenzialanalyse
-        </Link>
-        <Link 
           href="/team" 
           className={`header-nav-link ${isActiveLink('/team') ? 'active' : ''}`}
         >
-          Über uns
+          Team
+        </Link>
+        <Link 
+          href="/roi-calculator" 
+          className={`header-nav-link ${isActiveLink('/roi-calculator') ? 'active' : ''}`}
+        >
+          ROI-Rechner
         </Link>
         <Link 
           href="/kontakt" 
@@ -51,14 +51,9 @@ export function Header() {
         </Link>
       </nav>
       
-      <div className="header-actions">
-        <Link href="/appointment" className="header-cta secondary">
-          Strategie Meeting
-        </Link>
-        <Link href="/kontakt" className="header-cta primary">
-          Kostenlose Förderprüfung
-        </Link>
-      </div>
+      <Link href="/kontakt" className="header-cta">
+        AI Pass Beratung
+      </Link>
       
       {/* Mobile Star Menu Button */}
       <button 
@@ -77,18 +72,18 @@ export function Header() {
       {/* Mobile Dropdown Menu */}
       <nav className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
         <Link 
-          href="/roi-calculator" 
-          className={`mobile-nav-item ${isActiveLink('/roi-calculator') ? 'active' : ''}`}
-          onClick={closeMobileMenu}
-        >
-          KI-Potenzialanalyse
-        </Link>
-        <Link 
           href="/team" 
           className={`mobile-nav-item ${isActiveLink('/team') ? 'active' : ''}`}
           onClick={closeMobileMenu}
         >
-          Über uns
+          Team
+        </Link>
+        <Link 
+          href="/roi-calculator" 
+          className={`mobile-nav-item ${isActiveLink('/roi-calculator') ? 'active' : ''}`}
+          onClick={closeMobileMenu}
+        >
+          ROI-Rechner
         </Link>
         <Link 
           href="/kontakt" 
@@ -97,11 +92,8 @@ export function Header() {
         >
           Kontakt
         </Link>
-        <Link href="/appointment" className="mobile-cta secondary" onClick={closeMobileMenu}>
-          Strategie Meeting
-        </Link>
         <Link href="/kontakt" className="mobile-cta" onClick={closeMobileMenu}>
-          Kostenlose Förderprüfung
+          AI Pass Beratung
         </Link>
       </nav>
     </header>

@@ -6,7 +6,7 @@ export default function Team() {
     <Layout>
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Über uns</h1>
+          <h1 className="hero-title">Team</h1>
           <p className="hero-subtitle">Die AI Allstars hinter Ihrer KI-Transformation</p>
           <p className="hero-description">
             Lernen Sie das erfahrene Team kennen, das Ihr Unternehmen bei der erfolgreichen KI-Implementation und digitalen Transformation begleitet.

@@ -6,7 +6,7 @@ export default function ROICalculator() {
     <Layout>
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">KI-Potenzialanalyse</h1>
+          <h1 className="hero-title">ROI-Rechner</h1>
           <p className="hero-subtitle">Entdecken Sie das KI-Potenzial Ihres Unternehmens</p>
           <p className="hero-description">
             Ermitteln Sie mit unserer intelligenten Potenzialanalyse das Einsparpotenzial und die Effizienzsteigerung durch KI-Implementation in Ihrem Unternehmen.
