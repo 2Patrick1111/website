@@ -191,6 +191,27 @@
     background-clip: text;
   }
 
+  .hero-title-special {
+    @apply mb-4;
+    font-family: 'Sora', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .title-white {
+    color: white;
+    font-weight: 700;
+  }
+
+  .title-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
   .hero-subtitle {
     @apply mb-8;
     font-size: clamp(1rem, 2vw, 1.5rem);

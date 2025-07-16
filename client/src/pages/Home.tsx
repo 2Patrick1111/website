@@ -40,7 +40,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Hol dir den AI Pass von AI Allstars</h1>
+          <h1 className="hero-title-special">
+            <span className="title-white">Hol dir den AI Pass von </span>
+            <span className="title-gradient">AI Allstars</span>
+          </h1>
           <p className="hero-subtitle">Entfessle die KI‑Superkräfte deines Teams – 100% gefördert</p>
           <p className="hero-description">
             Unser 5‑Wochen-AI‑PASS macht Mitarbeitende in Rekordzeit zu souveränen KI‑Anwendern – 
