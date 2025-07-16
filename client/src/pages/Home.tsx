@@ -61,7 +61,9 @@ export default function Home() {
       </section>
       {/* Content Section */}
       <section className="content-section">
-        <h2 className="section-title text-[35px]">Warum der AI Pass die beste KI-Weiterbildung ist</h2>
+        <h2 className="section-title text-[35px] text-white">
+          Warum der <span className="title-gradient">AI Pass</span> die beste KI-Weiterbildung ist
+        </h2>
         
         <div className="card-grid">
           {features.map((feature, index) => (
