@@ -273,6 +273,49 @@
     color: var(--text-secondary);
   }
 
+  .plan-section {
+    @apply py-16 px-8 max-w-4xl mx-auto;
+  }
+
+  .plan-steps {
+    @apply flex flex-col items-center gap-8;
+  }
+
+  .plan-step {
+    @apply flex items-center gap-6 w-full max-w-2xl p-8 rounded-3xl;
+    background: var(--bg-glass);
+    backdrop-filter: blur(30px);
+    border: 1px solid var(--border-glass);
+  }
+
+  .step-number {
+    @apply w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0;
+    background: var(--gradient-primary);
+  }
+
+  .step-content {
+    @apply flex-1;
+  }
+
+  .step-title {
+    @apply text-xl font-semibold mb-2 text-white;
+    font-family: 'Sora', sans-serif;
+  }
+
+  .step-description {
+    @apply text-base leading-relaxed;
+    color: var(--text-secondary);
+  }
+
+  .plan-arrow {
+    @apply text-4xl font-bold;
+    color: var(--text-primary);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .cta-section {
     @apply p-16 text-center my-16 mx-8 max-w-4xl mx-auto rounded-3xl;
     background: var(--bg-glass);
