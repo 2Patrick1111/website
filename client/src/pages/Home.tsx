@@ -61,7 +61,7 @@ export default function Home() {
       </section>
       {/* Content Section */}
       <section className="content-section">
-        <h2 className="section-title text-[35px] text-white">
+        <h2 className="text-[35px] text-white font-bold text-center mb-8" style={{ fontFamily: 'Sora, sans-serif' }}>
           Warum der <span className="title-gradient">AI Pass</span> die beste KI-Weiterbildung ist
         </h2>
         
