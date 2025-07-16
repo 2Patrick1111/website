@@ -4,34 +4,19 @@ import { Layout } from '@/components/layout/Layout';
 export default function Home() {
   const features = [
     {
-      icon: "🔧",
-      title: "Glass Morphism Header",
-      description: "Einheitlicher Header mit Backdrop-Filter Effekten und responsiver Navigation für alle Unterseiten."
+      icon: "🎯",
+      title: "Praxis statt Theorie",
+      description: "Keine langweilige Theorie – sofort anwendbare KI-Tools und echte Use Cases aus der Praxis für maximalen Lernerfolg."
     },
     {
-      icon: "⭐",
-      title: "Mobile Star Menu",
-      description: "Charakteristisches Stern-Menü für mobile Geräte mit sanften Animationen und Dropdown-Navigation."
+      icon: "📈",
+      title: "Kontinuierliches KI-Wissen",
+      description: "Bleiben Sie am Puls der Zeit mit regelmäßigen Updates zu den neuesten KI-Trends und Technologien."
     },
     {
-      icon: "🎨",
-      title: "Gradient Design System",
-      description: "Konsistente Farbpalette mit Blau-Rot Gradienten und futuristischer Typografie für alle Seiten."
-    },
-    {
-      icon: "📱",
-      title: "Responsive Layout",
-      description: "Optimiert für Desktop, Tablet und Mobile mit flexiblen Grid-Systemen und angepassten Komponenten."
-    },
-    {
-      icon: "🔗",
-      title: "Footer Navigation",
-      description: "Strukturierter Footer mit allen relevanten Links, Kategorien und rechtlichen Hinweisen."
-    },
-    {
-      icon: "⚙️",
-      title: "Modulare Struktur",
-      description: "Template-System für einfache Erstellung neuer Unterseiten mit konsistentem Design und Funktionalität."
+      icon: "⚡",
+      title: "Alltag automatisieren",
+      description: "Verwandeln Sie repetitive Aufgaben in automatisierte Prozesse und gewinnen Sie wertvolle Zeit für strategische Arbeit."
     }
   ];
 
