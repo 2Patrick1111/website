@@ -241,7 +241,7 @@
   }
 
   .glass-card {
-    @apply p-8 mb-8 transition-all duration-300 rounded-3xl;
+    @apply p-8 mb-8 transition-all duration-300 rounded-3xl text-center;
     background: var(--bg-glass);
     backdrop-filter: blur(30px);
     border: 1px solid var(--border-glass);
@@ -258,7 +258,7 @@
   }
 
   .feature-icon {
-    @apply w-16 h-16 rounded-2xl flex items-center justify-center mb-4 text-white text-2xl;
+    @apply w-16 h-16 rounded-2xl flex items-center justify-center mb-4 text-white text-2xl mx-auto;
     background: var(--gradient-primary);
   }
 
