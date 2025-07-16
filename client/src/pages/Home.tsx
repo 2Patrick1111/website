@@ -40,12 +40,20 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <h1 className="hero-title">Unterseiten Template</h1>
-          <p className="hero-subtitle">Modulare Struktur für AI Allstars Subpages</p>
+          <h1 className="hero-title">Hol dir den AI Pass von AI Allstars</h1>
+          <p className="hero-subtitle">Entfessle die KI‑Superkräfte deines Teams – 100% gefördert</p>
           <p className="hero-description">
-            Dieses Template demonstriert das einheitliche Design-System für alle Unterseiten der AI Allstars Website. 
-            Mit Glass Morphism Effekten, responsivem Design und der charakteristischen Gradient-Ästhetik.
+            Unser 5‑Wochen-AI‑PASS macht Mitarbeitende in Rekordzeit zu souveränen KI‑Anwendern – 
+            komplett bezahlt durch den deutschen Staat und mit 75% Lohnkostenerstattung.
           </p>
+          <div className="hero-actions">
+            <Link href="/kontakt" className="cta-button primary">
+              Kostenlose Förderprüfung
+            </Link>
+            <Link href="/appointment" className="cta-button secondary">
+              Strategie Meeting
+            </Link>
+          </div>
         </div>
       </section>
 

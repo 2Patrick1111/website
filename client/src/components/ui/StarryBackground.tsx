@@ -16,7 +16,7 @@ export function StarryBackground() {
           animation: 'sparkle 20s linear infinite'
         }}
       />
-      <style jsx>{`
+      <style>{`
         @keyframes sparkle {
           from { transform: translateX(0); }
           to { transform: translateX(200px); }

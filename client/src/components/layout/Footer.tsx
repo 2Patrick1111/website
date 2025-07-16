@@ -19,28 +19,31 @@ export function Footer() {
         
         <div className="footer-links">
           <div className="footer-column">
-            <h4 className="footer-column-title">Services</h4>
+            <h4 className="footer-column-title">AI Pass</h4>
             <Link href="/roi-calculator" className="footer-link">
               KI-Potenzialanalyse
             </Link>
-            <Link href="/#features" className="footer-link">
-              AI Pass Details
+            <Link href="/assessment" className="footer-link">
+              Potenzialanalyse starten
             </Link>
             <Link href="/appointment" className="footer-link">
-              Strategiegespräch
+              Strategie Meeting
+            </Link>
+            <Link href="/broschure" className="footer-link">
+              Broschüre herunterladen
             </Link>
           </div>
           
           <div className="footer-column">
             <h4 className="footer-column-title">Unternehmen</h4>
-            <Link href="/team#team-slider" className="footer-link">
+            <Link href="/team" className="footer-link">
               Über uns
             </Link>
-            <Link href="/team" className="footer-link">
-              Team
-            </Link>
-            <Link href="/#signup" className="footer-link">
+            <Link href="/kontakt" className="footer-link">
               Kontakt
+            </Link>
+            <Link href="/faq" className="footer-link">
+              FAQ
             </Link>
           </div>
           
@@ -51,6 +54,9 @@ export function Footer() {
             </Link>
             <Link href="/impressum" className="footer-link">
               Impressum
+            </Link>
+            <Link href="/agb" className="footer-link">
+              AGB
             </Link>
           </div>
         </div>

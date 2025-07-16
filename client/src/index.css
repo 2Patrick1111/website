@@ -1,3 +1,7 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -70,10 +74,6 @@
   }
 }
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 /* AI Allstars Custom Styles */
 @layer components {
   .liquid-header {
@@ -117,15 +117,32 @@
     background-clip: text;
   }
 
+  .header-actions {
+    @apply hidden md:flex gap-4 items-center;
+  }
+
   .header-cta {
-    @apply hidden md:inline-block text-white no-underline font-semibold transition-all duration-300 rounded-full px-6 py-3;
-    background: var(--gradient-primary);
+    @apply text-white no-underline font-semibold transition-all duration-300 rounded-full px-6 py-3;
     box-shadow: 0 0 20px rgba(0, 128, 255, 0.3);
+  }
+
+  .header-cta.primary {
+    background: var(--gradient-primary);
+  }
+
+  .header-cta.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: none;
   }
 
   .header-cta:hover {
     @apply -translate-y-0.5;
     box-shadow: 0 8px 30px rgba(0, 128, 255, 0.4);
+  }
+
+  .header-cta.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
   }
 
   .star-menu-button {
@@ -171,9 +188,19 @@
     background: var(--gradient-primary);
   }
 
+  .mobile-cta.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
   .hero-section {
     @apply py-24 px-8 text-center max-w-6xl mx-auto;
     margin-top: 80px;
+  }
+
+  .hero-actions {
+    @apply flex gap-4 justify-center mt-8 flex-wrap;
   }
 
   .hero-title {
@@ -254,14 +281,27 @@
   }
 
   .cta-button {
-    @apply inline-block text-white no-underline font-semibold text-lg mt-4 px-8 py-4 rounded-full transition-all duration-300;
-    background: var(--gradient-primary);
+    @apply inline-block text-white no-underline font-semibold text-lg px-8 py-4 rounded-full transition-all duration-300;
     box-shadow: 0 0 30px rgba(0, 128, 255, 0.3);
+  }
+
+  .cta-button.primary {
+    background: var(--gradient-primary);
+  }
+
+  .cta-button.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: none;
   }
 
   .cta-button:hover {
     @apply -translate-y-1;
     box-shadow: 0 10px 40px rgba(0, 128, 255, 0.4);
+  }
+
+  .cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
   }
 
   .footer {
@@ -341,6 +381,14 @@
 
     .content-section {
       @apply px-4;
+    }
+
+    .header-actions {
+      @apply hidden;
+    }
+
+    .hero-actions {
+      @apply flex-col gap-4;
     }
   }
 }

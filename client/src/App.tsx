@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 import Team from "@/pages/Team";
 import ROICalculator from "@/pages/ROICalculator";
 import Contact from "@/pages/Contact";
+import Appointment from "@/pages/Appointment";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/team" component={Team} />
       <Route path="/roi-calculator" component={ROICalculator} />
       <Route path="/kontakt" component={Contact} />
+      <Route path="/appointment" component={Appointment} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
