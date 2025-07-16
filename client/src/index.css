@@ -336,67 +336,7 @@
     color: var(--text-secondary);
   }
 
-  .footprint-connector {
-    @apply absolute;
-    width: 20px;
-    height: 24px;
-    background: var(--gradient-primary);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    box-shadow: 0 0 15px rgba(0, 128, 255, 0.3);
-    opacity: 0.8;
-  }
 
-  .footprint-connector::before {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    top: -8px;
-    left: 7px;
-    box-shadow: 
-      4px 0 0 rgba(0, 128, 255, 0.6),
-      8px 0 0 rgba(0, 128, 255, 0.4),
-      12px 0 0 rgba(0, 128, 255, 0.3),
-      16px 0 0 rgba(0, 128, 255, 0.2);
-  }
-
-  .footprint-connector::after {
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    top: -4px;
-    left: 8px;
-    opacity: 0.6;
-  }
-
-  .connector-1 {
-    left: 240px;
-    top: 20px;
-    transform: rotate(-20deg);
-  }
-
-  .connector-2 {
-    left: 280px;
-    top: 30px;
-    transform: rotate(-10deg) scaleX(-1);
-  }
-
-  .connector-3 {
-    right: 240px;
-    top: 80px;
-    transform: rotate(20deg);
-  }
-
-  .connector-4 {
-    right: 280px;
-    top: 90px;
-    transform: rotate(10deg) scaleX(-1);
-  }
 
   @media (max-width: 1024px) {
     .ladder-path {
@@ -434,9 +374,7 @@
       max-width: 100%;
     }
     
-    .footprint-connector {
-      @apply hidden;
-    }
+
     
     .ladder-step::before {
       @apply left-1/2 -translate-x-1/2;

@@ -78,18 +78,12 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="footprint-connector connector-1"></div>
-            <div className="footprint-connector connector-2"></div>
-            
             <div className="ladder-step step-2" data-step="02">
               <div className="step-card">
                 <h3 className="ladder-title">Branchenspezifische Use‑Cases</h3>
                 <p className="ladder-desc">Sofort im Arbeitsalltag anwendbar.</p>
               </div>
             </div>
-            
-            <div className="footprint-connector connector-3"></div>
-            <div className="footprint-connector connector-4"></div>
             
             <div className="ladder-step step-3" data-step="03">
               <div className="step-card">
