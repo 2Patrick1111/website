@@ -283,7 +283,7 @@
 
   .ladder-path {
     @apply relative;
-    min-height: 320px;
+    min-height: 400px;
     padding: 0 20px;
   }
 
@@ -299,13 +299,13 @@
 
   .step-2 {
     left: 50%;
-    top: 60px;
+    top: 80px;
     transform: translateX(-50%);
   }
 
   .step-3 {
     right: 0;
-    top: 120px;
+    top: 160px;
   }
 
   .ladder-step::before {
