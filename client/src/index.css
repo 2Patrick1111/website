@@ -593,33 +593,33 @@
 
     .cta-grid {
       grid-template-columns: repeat(2, 1fr) !important;
-      gap: 12px !important;
+      gap: 8px !important;
     }
 
     .cta-card {
-      padding: 16px 12px;
+      padding: 12px 8px;
     }
 
     .cta-icon {
-      font-size: 1.8rem;
-      margin-bottom: 8px;
+      font-size: 1.5rem;
+      margin-bottom: 6px;
     }
 
     .cta-title {
-      font-size: 0.95rem;
-      margin-bottom: 6px;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
       line-height: 1.1;
     }
 
     .cta-description {
-      font-size: 0.7rem;
-      margin-bottom: 12px;
+      font-size: 0.6rem;
+      margin-bottom: 10px;
       line-height: 1.2;
     }
 
     .cta-button-card {
-      padding: 6px 12px;
-      font-size: 0.7rem;
+      padding: 5px 8px;
+      font-size: 0.6rem;
     }
   }
 
