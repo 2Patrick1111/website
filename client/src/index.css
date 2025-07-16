@@ -214,13 +214,14 @@
 
   .hero-subtitle {
     @apply mb-8;
-    font-size: clamp(20px, 4vw, 35px);
+    font-size: clamp(20px, 4vw, 25px);
     color: var(--text-secondary);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .hero-description {
-    @apply text-base leading-relaxed max-w-2xl mx-auto mb-12;
+    @apply leading-relaxed max-w-2xl mx-auto mb-12;
+    font-size: clamp(18px, 3vw, 25px);
     color: var(--text-secondary);
   }
 
