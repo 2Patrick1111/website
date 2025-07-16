@@ -338,7 +338,7 @@
 
 
 
-  @media (max-width: 1024px) and (min-width: 769px) {
+  @media (max-width: 1024px) {
     /* Hero adjustments for tablets */
     .hero-title-special {
       font-size: clamp(2.5rem, 6vw, 4rem);
@@ -368,7 +368,7 @@
       padding: 20px;
     }
 
-    /* CTA grid for tablets - 2x2 */
+    /* CTA grid for tablets */
     .cta-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
@@ -592,34 +592,32 @@
     }
 
     .cta-grid {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 8px !important;
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     .cta-card {
-      padding: 12px 8px;
+      padding: 24px 20px;
     }
 
     .cta-icon {
-      font-size: 1.5rem;
-      margin-bottom: 6px;
+      font-size: 2.2rem;
+      margin-bottom: 12px;
     }
 
     .cta-title {
-      font-size: 0.85rem;
-      margin-bottom: 4px;
-      line-height: 1.1;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
     }
 
     .cta-description {
-      font-size: 0.6rem;
-      margin-bottom: 10px;
-      line-height: 1.2;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
     }
 
     .cta-button-card {
-      padding: 5px 8px;
-      font-size: 0.6rem;
+      padding: 10px 20px;
+      font-size: 0.85rem;
     }
   }
 
