@@ -64,37 +64,35 @@ export default function Home() {
       </section>
 
       {/* 3-Stufen Plan Section */}
-      <section className="plan-section">
-        <h2 className="text-[35px] text-white font-bold text-center mb-12" style={{ fontFamily: 'Sora, sans-serif' }}>
+      <section className="plan-section-minimal">
+        <h2 className="text-[35px] text-white font-bold text-center mb-16" style={{ fontFamily: 'Sora, sans-serif' }}>
           Dein 3-Stufen-Plan
         </h2>
         
-        <div className="plan-steps">
-          <div className="plan-step">
-            <div className="step-number">1</div>
-            <div className="step-content">
-              <h3 className="step-title">Hands‑on KI‑Toolkit</h3>
-              <p className="step-description">Jeder Teilnehmende richtet sein persönliches Automations‑Set‑up ein.</p>
+        <div className="timeline-container">
+          <div className="timeline-line"></div>
+          
+          <div className="timeline-step" data-step="01">
+            <div className="step-dot"></div>
+            <div className="step-card">
+              <h3 className="step-heading">Hands‑on KI‑Toolkit</h3>
+              <p className="step-text">Jeder Teilnehmende richtet sein persönliches Automations‑Set‑up ein.</p>
             </div>
           </div>
           
-          <div className="plan-arrow">↓</div>
-          
-          <div className="plan-step">
-            <div className="step-number">2</div>
-            <div className="step-content">
-              <h3 className="step-title">Branchenspezifische Use‑Cases</h3>
-              <p className="step-description">Sofort im Arbeitsalltag anwendbar.</p>
+          <div className="timeline-step" data-step="02">
+            <div className="step-dot"></div>
+            <div className="step-card">
+              <h3 className="step-heading">Branchenspezifische Use‑Cases</h3>
+              <p className="step-text">Sofort im Arbeitsalltag anwendbar.</p>
             </div>
           </div>
           
-          <div className="plan-arrow">↓</div>
-          
-          <div className="plan-step">
-            <div className="step-number">3</div>
-            <div className="step-content">
-              <h3 className="step-title">Messbarer ROI</h3>
-              <p className="step-description">Durchschnittlich 6 h Zeitersparnis pro Woche & Mitarbeiter.</p>
+          <div className="timeline-step" data-step="03">
+            <div className="step-dot"></div>
+            <div className="step-card">
+              <h3 className="step-heading">Messbarer ROI</h3>
+              <p className="step-text">Durchschnittlich 6 h Zeitersparnis pro Woche & Mitarbeiter.</p>
             </div>
           </div>
         </div>

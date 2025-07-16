@@ -273,47 +273,48 @@
     color: var(--text-secondary);
   }
 
-  .plan-section {
-    @apply py-16 px-8 max-w-4xl mx-auto;
+  .plan-section-minimal {
+    @apply py-16 px-8 max-w-5xl mx-auto relative;
   }
 
-  .plan-steps {
-    @apply flex flex-col items-center gap-8;
+  .timeline-container {
+    @apply relative max-w-3xl mx-auto;
   }
 
-  .plan-step {
-    @apply flex items-center gap-6 w-full max-w-2xl p-8 rounded-3xl;
-    background: var(--bg-glass);
-    backdrop-filter: blur(30px);
-    border: 1px solid var(--border-glass);
+  .timeline-line {
+    @apply absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 128, 255, 0.5) 20%, rgba(255, 0, 100, 0.5) 80%, transparent 100%);
   }
 
-  .step-number {
-    @apply w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold flex-shrink-0;
-    background: var(--gradient-primary);
+  .timeline-step {
+    @apply relative mb-16 last:mb-0;
   }
 
-  .step-content {
-    @apply flex-1;
-  }
-
-  .step-title {
-    @apply text-xl font-semibold mb-2 text-white;
+  .timeline-step::before {
+    content: attr(data-step);
+    @apply absolute left-1/2 -translate-x-1/2 -top-2 text-sm font-bold opacity-40;
+    color: var(--text-secondary);
     font-family: 'Sora', sans-serif;
   }
 
-  .step-description {
-    @apply text-base leading-relaxed;
-    color: var(--text-secondary);
+  .step-dot {
+    @apply relative w-4 h-4 rounded-full mx-auto mb-6 z-10;
+    background: var(--gradient-primary);
+    box-shadow: 0 0 20px rgba(0, 128, 255, 0.6);
   }
 
-  .plan-arrow {
-    @apply text-4xl font-bold;
-    color: var(--text-primary);
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .step-card {
+    @apply text-center max-w-lg mx-auto px-6;
+  }
+
+  .step-heading {
+    @apply text-xl font-semibold mb-3 text-white;
+    font-family: 'Sora', sans-serif;
+  }
+
+  .step-text {
+    @apply text-base leading-relaxed;
+    color: var(--text-secondary);
   }
 
   .cta-section {
