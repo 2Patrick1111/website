@@ -468,7 +468,7 @@
     }
 
     .ladder-path {
-      @apply flex flex-col gap-8;
+      @apply flex flex-col gap-3;
       min-height: auto;
       padding: 0;
     }
@@ -485,21 +485,24 @@
     }
 
     .step-card {
-      padding: 20px;
+      padding: 30px 24px;
+      min-height: 180px;
     }
 
     .ladder-title {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
     }
 
     .ladder-desc {
-      font-size: 0.9rem;
+      font-size: 1rem;
+      line-height: 1.5;
     }
     
     .ladder-step::before {
       @apply left-1/2 -translate-x-1/2;
-      font-size: 1.2rem !important;
-      top: -2rem;
+      font-size: 1.4rem !important;
+      top: -1.5rem;
     }
 
     /* Timeline Mobile Responsive */
