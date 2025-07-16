@@ -283,7 +283,7 @@
 
   .ladder-path {
     @apply relative;
-    min-height: 500px;
+    min-height: 320px;
     padding: 0 20px;
   }
 
@@ -299,13 +299,13 @@
 
   .step-2 {
     left: 50%;
-    top: 120px;
+    top: 60px;
     transform: translateX(-50%);
   }
 
   .step-3 {
     right: 0;
-    top: 240px;
+    top: 120px;
   }
 
   .ladder-step::before {
@@ -342,31 +342,31 @@
 
   .connector-1 {
     left: 240px;
-    top: 30px;
+    top: 20px;
     transform: rotate(-20deg);
   }
 
   .connector-2 {
     left: 280px;
-    top: 50px;
+    top: 30px;
     transform: rotate(-10deg) scaleX(-1);
   }
 
   .connector-3 {
     right: 240px;
-    top: 150px;
+    top: 80px;
     transform: rotate(20deg);
   }
 
   .connector-4 {
     right: 280px;
-    top: 170px;
+    top: 90px;
     transform: rotate(10deg) scaleX(-1);
   }
 
   @media (max-width: 1024px) {
     .ladder-path {
-      min-height: 600px;
+      min-height: 280px;
     }
     
     .ladder-step {
@@ -374,11 +374,11 @@
     }
     
     .step-2 {
-      top: 140px;
+      top: 50px;
     }
     
     .step-3 {
-      top: 280px;
+      top: 100px;
     }
   }
 
