@@ -303,18 +303,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Main CTA Section */}
-      <section className="cta-section">
-        <h2 className="section-title" style={{ marginBottom: '1rem' }}>
-          Bereit für Ihre KI-Transformation?
-        </h2>
-        <p className="hero-description" style={{ marginBottom: '2rem' }}>
-          Nutzen Sie unsere AI Pass Beratung und entdecken Sie das volle Potenzial künstlicher Intelligenz für Ihr Unternehmen.
-        </p>
-        <Link href="/kontakt" className="cta-button">
-          Beratungstermin vereinbaren
-        </Link>
-      </section>
+
     </Layout>
   );
 }
