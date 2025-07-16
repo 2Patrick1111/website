@@ -673,6 +673,9 @@
     box-shadow: 
       0 6px 24px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .cta-card:hover {
@@ -705,6 +708,7 @@
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 24px;
+    flex-grow: 1;
   }
 
   .cta-button-card {
@@ -718,6 +722,7 @@
     font-size: 0.9rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 16px rgba(0, 128, 255, 0.3);
+    margin-top: auto;
   }
 
   .cta-button-card:hover {
