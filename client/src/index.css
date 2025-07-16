@@ -289,7 +289,7 @@
 
   .ladder-step {
     @apply absolute;
-    width: 320px;
+    width: 280px;
   }
 
   .step-1 {
@@ -320,11 +320,10 @@
   }
 
   .step-card {
-    @apply p-12 rounded-2xl;
+    @apply p-6 rounded-2xl;
     background: var(--bg-glass);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-glass);
-    min-height: 200px;
   }
 
   .ladder-title {
@@ -469,7 +468,7 @@
     }
 
     .ladder-path {
-      @apply flex flex-col gap-1;
+      @apply flex flex-col gap-3;
       min-height: auto;
       padding: 0;
     }
@@ -486,30 +485,24 @@
     }
 
     .step-card {
-      padding: 80px 60px !important;
-      min-height: 400px !important;
-      width: 100% !important;
-      border-radius: 20px;
-      transform: scale(1.2) !important;
-      margin: 20px 0 !important;
+      padding: 30px 24px;
+      min-height: 180px;
     }
 
     .ladder-title {
-      font-size: 1.6rem;
-      margin-bottom: 16px;
-      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
     }
 
     .ladder-desc {
-      font-size: 1.1rem;
-      line-height: 1.6;
+      font-size: 1rem;
+      line-height: 1.5;
     }
     
     .ladder-step::before {
       @apply left-1/2 -translate-x-1/2;
-      font-size: 1.8rem !important;
-      top: -1.8rem;
-      font-weight: 600;
+      font-size: 1.4rem !important;
+      top: -1.5rem;
     }
 
     /* Timeline Mobile Responsive */
