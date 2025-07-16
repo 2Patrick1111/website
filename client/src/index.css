@@ -289,7 +289,7 @@
 
   .ladder-step {
     @apply absolute;
-    width: 280px;
+    width: 380px;
   }
 
   .step-1 {
