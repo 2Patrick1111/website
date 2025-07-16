@@ -289,7 +289,7 @@
 
   .ladder-step {
     @apply absolute;
-    width: 280px;
+    width: 320px;
   }
 
   .step-1 {
@@ -320,10 +320,11 @@
   }
 
   .step-card {
-    @apply p-6 rounded-2xl;
+    @apply p-12 rounded-2xl;
     background: var(--bg-glass);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-glass);
+    min-height: 200px;
   }
 
   .ladder-title {
