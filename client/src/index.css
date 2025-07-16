@@ -339,6 +339,42 @@
 
 
   @media (max-width: 1024px) {
+    /* Hero adjustments for tablets */
+    .hero-title-special {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.3rem, 4vw, 2rem);
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+    }
+
+    /* Content grid for tablets */
+    .card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    /* Timeline adjustments for tablets */
+    .timeline-header .section-title {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+    }
+
+    .timeline-content {
+      width: 45%;
+      padding: 20px;
+    }
+
+    /* CTA grid for tablets */
+    .cta-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    /* Ladder adjustments for tablets */
     .ladder-path {
       min-height: 280px;
     }
@@ -357,6 +393,80 @@
   }
 
   @media (max-width: 768px) {
+    /* Hero Section Mobile */
+    .hero-section {
+      padding: 40px 20px;
+      min-height: 70vh;
+    }
+
+    .hero-title-special {
+      font-size: clamp(2rem, 8vw, 3rem) !important;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 5vw, 1.8rem) !important;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: 1rem !important;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cta-button {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+      padding: 16px 24px;
+      font-size: 1rem;
+    }
+
+    /* Content Section Mobile */
+    .content-section {
+      padding: 40px 20px;
+    }
+
+    .content-section h2 {
+      font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .card-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .glass-card {
+      padding: 24px 20px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+    }
+
+    .card-description {
+      font-size: 0.9rem;
+    }
+
+    /* Footsteps Section Mobile */
+    .footsteps-section {
+      padding: 40px 20px;
+    }
+
+    .footsteps-section h2 {
+      font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+      margin-bottom: 2rem !important;
+    }
+
     .ladder-path {
       @apply flex flex-col gap-8;
       min-height: auto;
@@ -373,20 +483,42 @@
       width: 100%;
       max-width: 100%;
     }
-    
 
+    .step-card {
+      padding: 20px;
+    }
+
+    .ladder-title {
+      font-size: 1.1rem;
+    }
+
+    .ladder-desc {
+      font-size: 0.9rem;
+    }
     
     .ladder-step::before {
       @apply left-1/2 -translate-x-1/2;
+      font-size: 1.2rem !important;
+      top: -2rem;
     }
 
     /* Timeline Mobile Responsive */
     .timeline-section {
       padding: 40px 15px;
+      margin: 20px 0;
     }
     
     .timeline-header {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+    }
+
+    .timeline-header .section-title {
+      font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+    }
+
+    .timeline-header .section-subtitle {
+      font-size: 16px !important;
+      padding: 0 10px;
     }
     
     .timeline-wrapper {
@@ -403,6 +535,7 @@
       width: calc(100% - 60px);
       margin-left: 60px !important;
       margin-right: 0 !important;
+      padding: 20px 16px;
     }
     
     .timeline-content.right {
@@ -416,29 +549,37 @@
     }
     
     .week-number {
-      font-size: 1.5rem;
-      top: -0.3rem;
-      right: -0.3rem;
+      font-size: 1.2rem;
+      top: -0.2rem;
+      right: -0.2rem;
     }
     
     .timeline-content.left .week-number {
-      right: -0.3rem;
+      right: -0.2rem;
       left: auto;
     }
     
     .timeline-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      margin-bottom: 8px;
     }
     
     .timeline-description {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
     }
     
     .timeline-list li {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
+      margin-bottom: 4px;
     }
 
     /* CTA Grid Mobile */
+    .cta-grid-section {
+      margin: 40px 0;
+      padding: 0 15px;
+    }
+
     .cta-grid {
       grid-template-columns: 1fr;
       gap: 16px;
@@ -449,18 +590,23 @@
     }
 
     .cta-icon {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 12px;
     }
 
     .cta-title {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
     }
 
     .cta-description {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-bottom: 20px;
+    }
+
+    .cta-button-card {
+      padding: 10px 20px;
+      font-size: 0.85rem;
     }
   }
 
