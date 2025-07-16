@@ -485,11 +485,12 @@
     }
 
     .step-card {
-      padding: 60px 50px;
-      min-height: 320px;
-      width: 100%;
+      padding: 80px 60px !important;
+      min-height: 400px !important;
+      width: 100% !important;
       border-radius: 20px;
-      transform: scale(1.05);
+      transform: scale(1.2) !important;
+      margin: 20px 0 !important;
     }
 
     .ladder-title {
