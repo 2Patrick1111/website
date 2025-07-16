@@ -1,5 +1,6 @@
 import { Link } from 'wouter';
 import { Layout } from '@/components/layout/Layout';
+import { useEffect } from 'react';
 
 export default function Home() {
   const features = [
@@ -19,6 +20,61 @@ export default function Home() {
       description: "Verwandeln Sie repetitive Aufgaben in automatisierte Prozesse und gewinnen Sie wertvolle Zeit für strategische Arbeit."
     }
   ];
+
+  useEffect(() => {
+    // Timeline Animation Controller
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineProgress = document.getElementById('timelineProgress');
+    const timelineDots = document.querySelectorAll('.timeline-dot');
+
+    if (timelineItems.length === 0) return;
+
+    // Setup Intersection Observer for timeline items
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -20% 0px',
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const item = entry.target;
+        const index = Array.from(timelineItems).indexOf(item);
+        
+        if (entry.isIntersecting) {
+          item.classList.add('active');
+          if (timelineDots[index]) {
+            timelineDots[index].classList.add('active');
+          }
+          
+          // Update progress line
+          const totalItems = timelineItems.length;
+          const progressPercent = ((index + 1) / totalItems) * 100;
+          if (timelineProgress) {
+            timelineProgress.style.height = `${Math.min(progressPercent, 100)}%`;
+          }
+        } else {
+          item.classList.remove('active');
+          if (timelineDots[index]) {
+            timelineDots[index].classList.remove('active');
+          }
+        }
+      });
+    }, observerOptions);
+
+    timelineItems.forEach(item => {
+      observer.observe(item);
+    });
+
+    // Show first item by default
+    if (timelineItems[0]) {
+      timelineItems[0].classList.add('visible');
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <Layout>
@@ -89,6 +145,113 @@ export default function Home() {
               <div className="step-card">
                 <h3 className="ladder-title">Messbarer ROI</h3>
                 <p className="ladder-desc">Durchschnittlich 6 h Zeitersparnis pro Woche & Mitarbeiter.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="timeline-section" id="timeline">
+        <div className="timeline-container-main">
+          <div className="timeline-header">
+            <h2 className="section-title">
+              <span className="gradient-text">5-Wochen</span> Transformation
+            </h2>
+            <p className="section-subtitle">Ihr strukturierter Weg zum KI-Champion – Woche für Woche messbare Fortschritte</p>
+          </div>
+          
+          <div className="timeline-wrapper">
+            <div className="timeline-line"></div>
+            <div className="timeline-progress" id="timelineProgress"></div>
+            
+            {/* Week 1 */}
+            <div className="timeline-item" data-week="1">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content left glass-card-small">
+                <div className="week-number">01</div>
+                <h3 className="timeline-title">KI-Grundlagen & Assessment</h3>
+                <p className="timeline-description">
+                  Verstehen Sie die KI-Landschaft und identifizieren Sie Potenziale in Ihrem Unternehmen.
+                </p>
+                <ul className="timeline-list">
+                  <li>• KI-Technologien Überblick</li>
+                  <li>• Individuelle Potenzialanalyse</li>
+                  <li>• Erste praktische Übungen</li>
+                  <li>• Team-Assessment</li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Week 2 */}
+            <div className="timeline-item" data-week="2">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content right glass-card-small">
+                <div className="week-number">02</div>
+                <h3 className="timeline-title">Prompt Engineering Mastery</h3>
+                <p className="timeline-description">
+                  Lernen Sie die Kunst der optimalen KI-Kommunikation für maximale Ergebnisse.
+                </p>
+                <ul className="timeline-list">
+                  <li>• Advanced Prompt Techniken</li>
+                  <li>• Tool-spezifische Strategien</li>
+                  <li>• Praxis-Workshops</li>
+                  <li>• Qualitätskontrolle</li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Week 3 */}
+            <div className="timeline-item" data-week="3">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content left glass-card-small">
+                <div className="week-number">03</div>
+                <h3 className="timeline-title">Tool-Integration & Workflows</h3>
+                <p className="timeline-description">
+                  Integrieren Sie KI nahtlos in Ihre bestehenden Arbeitsprozesse.
+                </p>
+                <ul className="timeline-list">
+                  <li>• Workflow-Optimierung</li>
+                  <li>• Tool-Kombinationen</li>
+                  <li>• Automatisierungsstrategien</li>
+                  <li>• Effizienz-Messungen</li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Week 4 */}
+            <div className="timeline-item" data-week="4">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content right glass-card-small">
+                <div className="week-number">04</div>
+                <h3 className="timeline-title">Advanced AI-Strategien</h3>
+                <p className="timeline-description">
+                  Entwickeln Sie fortgeschrittene KI-Strategien für komplexe Herausforderungen.
+                </p>
+                <ul className="timeline-list">
+                  <li>• Custom AI-Lösungen</li>
+                  <li>• Skalierungsstrategien</li>
+                  <li>• ROI-Optimierung</li>
+                  <li>• Zukunftsplanung</li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Week 5 */}
+            <div className="timeline-item" data-week="5">
+              <div className="timeline-dot"></div>
+              <div className="timeline-content left glass-card-small">
+                <div className="week-number">05</div>
+                <h3 className="timeline-title">Implementation & Zertifizierung</h3>
+                <p className="timeline-description">
+                  Setzen Sie das Gelernte um und erhalten Sie Ihre offizielle KI-Zertifizierung.
+                </p>
+                <ul className="timeline-list">
+                  <li>• Projekt-Implementation</li>
+                  <li>• Abschlussprüfung</li>
+                  <li>• Zertifizierung</li>
+                  <li>• Nachhaltigkeit-Plan</li>
+                </ul>
               </div>
             </div>
           </div>
