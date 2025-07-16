@@ -283,23 +283,29 @@
 
   .ladder-path {
     @apply relative;
-    min-height: 400px;
+    min-height: 500px;
+    padding: 0 20px;
   }
 
   .ladder-step {
-    @apply absolute max-w-sm;
+    @apply absolute;
+    width: 280px;
   }
 
   .step-1 {
-    @apply left-0 top-0;
+    left: 0;
+    top: 0;
   }
 
   .step-2 {
-    @apply left-1/2 top-32 -translate-x-1/2;
+    left: 50%;
+    top: 120px;
+    transform: translateX(-50%);
   }
 
   .step-3 {
-    @apply right-0 top-64;
+    right: 0;
+    top: 240px;
   }
 
   .ladder-step::before {
@@ -335,33 +341,63 @@
   }
 
   .connector-1 {
-    @apply left-52 top-12;
+    left: 240px;
+    top: 30px;
     transform: rotate(-20deg);
   }
 
   .connector-2 {
-    @apply left-64 top-20;
+    left: 280px;
+    top: 50px;
     transform: rotate(-10deg) scaleX(-1);
   }
 
   .connector-3 {
-    @apply right-52 top-44;
+    right: 240px;
+    top: 150px;
     transform: rotate(20deg);
   }
 
   .connector-4 {
-    @apply right-64 top-52;
+    right: 280px;
+    top: 170px;
     transform: rotate(10deg) scaleX(-1);
+  }
+
+  @media (max-width: 1024px) {
+    .ladder-path {
+      min-height: 600px;
+    }
+    
+    .ladder-step {
+      width: 250px;
+    }
+    
+    .step-2 {
+      top: 140px;
+    }
+    
+    .step-3 {
+      top: 280px;
+    }
   }
 
   @media (max-width: 768px) {
     .ladder-path {
       @apply flex flex-col gap-8;
       min-height: auto;
+      padding: 0;
     }
     
     .ladder-step {
-      @apply relative left-auto right-auto top-auto transform-none max-w-full;
+      @apply relative;
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      top: auto !important;
+      transform: none !important;
+      width: 100%;
+      max-width: 100%;
     }
     
     .footprint-connector {
