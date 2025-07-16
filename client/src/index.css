@@ -523,55 +523,66 @@
     
     .timeline-wrapper {
       padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
     
     .timeline-line,
     .timeline-progress {
-      left: 20px;
+      display: none;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 0;
+      opacity: 1;
       transform: none;
     }
     
     .timeline-content {
-      width: calc(100% - 60px);
-      margin-left: 60px !important;
-      margin-right: 0 !important;
-      padding: 20px 16px;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 20px;
+      position: relative;
     }
     
-    .timeline-content.right {
-      margin-left: 60px !important;
+    .timeline-content.right,
+    .timeline-content.left {
+      margin: 0 !important;
       text-align: left;
+      width: 100% !important;
     }
     
     .timeline-dot {
-      left: 20px;
-      transform: translateX(-50%);
+      display: none;
     }
     
     .week-number {
-      font-size: 1.2rem;
-      top: -0.2rem;
-      right: -0.2rem;
+      font-size: 1.5rem;
+      top: -0.5rem;
+      right: -0.5rem;
+      opacity: 0.2;
     }
     
     .timeline-content.left .week-number {
-      right: -0.2rem;
+      right: -0.5rem;
       left: auto;
     }
     
     .timeline-title {
-      font-size: 1rem;
-      margin-bottom: 8px;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
     }
     
     .timeline-description {
-      font-size: 0.8rem;
-      margin-bottom: 12px;
+      font-size: 0.85rem;
+      margin-bottom: 15px;
     }
     
     .timeline-list li {
-      font-size: 0.7rem;
-      margin-bottom: 4px;
+      font-size: 0.75rem;
+      margin-bottom: 6px;
     }
 
     /* CTA Grid Mobile */
