@@ -273,48 +273,100 @@
     color: var(--text-secondary);
   }
 
-  .plan-section-minimal {
-    @apply py-16 px-8 max-w-5xl mx-auto relative;
+  .footsteps-section {
+    @apply py-16 px-8 max-w-6xl mx-auto;
   }
 
-  .timeline-container {
-    @apply relative max-w-3xl mx-auto;
+  .footsteps-container {
+    @apply relative max-w-5xl mx-auto;
   }
 
-  .timeline-line {
-    @apply absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2;
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 128, 255, 0.5) 20%, rgba(255, 0, 100, 0.5) 80%, transparent 100%);
+  .footstep-path {
+    @apply relative flex justify-between items-center;
+    min-height: 300px;
   }
 
-  .timeline-step {
-    @apply relative mb-16 last:mb-0;
+  .footstep {
+    @apply relative flex flex-col items-center;
+    flex: 1;
+    max-width: 280px;
   }
 
-  .timeline-step::before {
+  .footstep.left {
+    @apply items-start text-left;
+  }
+
+  .footstep.right {
+    @apply items-end text-right;
+    margin-top: 60px;
+  }
+
+  .footstep::before {
     content: attr(data-step);
-    @apply absolute left-1/2 -translate-x-1/2 -top-2 text-sm font-bold opacity-40;
+    @apply absolute -top-8 text-sm font-bold opacity-50 z-10;
     color: var(--text-secondary);
     font-family: 'Sora', sans-serif;
   }
 
-  .step-dot {
-    @apply relative w-4 h-4 rounded-full mx-auto mb-6 z-10;
+  .footstep.left::before {
+    @apply left-6;
+  }
+
+  .footstep.right::before {
+    @apply right-6;
+  }
+
+  .footprint {
+    @apply relative w-12 h-16 mb-4 rounded-t-full;
     background: var(--gradient-primary);
-    box-shadow: 0 0 20px rgba(0, 128, 255, 0.6);
+    clip-path: ellipse(50% 60% at 50% 40%);
+    box-shadow: 0 0 25px rgba(0, 128, 255, 0.4);
+    transform: rotate(-15deg);
   }
 
-  .step-card {
-    @apply text-center max-w-lg mx-auto px-6;
+  .footstep.right .footprint {
+    transform: rotate(15deg) scaleX(-1);
   }
 
-  .step-heading {
-    @apply text-xl font-semibold mb-3 text-white;
+  .step-info {
+    @apply max-w-xs;
+  }
+
+  .footstep-title {
+    @apply text-lg font-semibold mb-2 text-white;
     font-family: 'Sora', sans-serif;
   }
 
-  .step-text {
-    @apply text-base leading-relaxed;
+  .footstep-desc {
+    @apply text-sm leading-relaxed;
     color: var(--text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .footstep-path {
+      @apply flex-col gap-12;
+      min-height: auto;
+    }
+    
+    .footstep {
+      @apply items-center text-center max-w-full;
+    }
+    
+    .footstep.right {
+      @apply mt-0;
+    }
+    
+    .footstep::before {
+      @apply left-1/2 -translate-x-1/2;
+    }
+    
+    .footprint {
+      transform: rotate(-10deg);
+    }
+    
+    .footstep.right .footprint {
+      transform: rotate(10deg);
+    }
   }
 
   .cta-section {
