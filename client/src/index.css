@@ -194,7 +194,7 @@
   .hero-title-special {
     @apply mb-4;
     font-family: 'Sora', sans-serif;
-    font-size: 40px;
+    font-size: clamp(40px, 8vw, 80px);
     font-weight: 700;
     line-height: 1.2;
   }
