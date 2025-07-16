@@ -294,7 +294,7 @@ export default function Home() {
           {/* CTA 4: Kontakt */}
           <div className="cta-card">
             <div className="cta-icon">💬</div>
-            <h3 className="cta-title">Kontaktmöglichkeiten</h3>
+            <h3 className="cta-title">Kontaktieren</h3>
             <p className="cta-description">Kontaktiere uns direkt</p>
             <Link href="/kontakt" className="cta-button-card">
               Kontakt
