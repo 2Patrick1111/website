@@ -485,8 +485,9 @@
     }
 
     .step-card {
-      padding: 40px 32px;
-      min-height: 240px;
+      padding: 50px 40px;
+      min-height: 280px;
+      margin: 0 -10px;
     }
 
     .ladder-title {
