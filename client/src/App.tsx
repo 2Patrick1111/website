@@ -8,6 +8,8 @@ import Team from "@/pages/Team";
 import ROICalculator from "@/pages/ROICalculator";
 import Contact from "@/pages/Contact";
 import Appointment from "@/pages/Appointment";
+import Impressum from "@/pages/Impressum";
+import Datenschutz from "@/pages/Datenschutz";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +20,8 @@ function Router() {
       <Route path="/roi-calculator" component={ROICalculator} />
       <Route path="/kontakt" component={Contact} />
       <Route path="/appointment" component={Appointment} />
+      <Route path="/impressum" component={Impressum} />
+      <Route path="/datenschutz" component={Datenschutz} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
