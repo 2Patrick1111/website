@@ -37,35 +37,35 @@ export function Header() {
         >
           Home
         </Link>
-        <Link 
-          href="/#features" 
+        <a 
+          href="https://www.preise.ai-allstars.com" 
           className="header-nav-link"
         >
           Preise
-        </Link>
-        <Link 
-          href="/team" 
-          className={`header-nav-link ${isActiveLink('/team') ? 'active' : ''}`}
+        </a>
+        <a 
+          href="https://www.team.ai-allstars.com" 
+          className="header-nav-link"
         >
           Team
-        </Link>
-        <Link 
-          href="/roi-calculator" 
-          className={`header-nav-link ${isActiveLink('/roi-calculator') ? 'active' : ''}`}
+        </a>
+        <a 
+          href="https://www.kurs.ai-allstars.com" 
+          className="header-nav-link"
         >
           Kurs
-        </Link>
-        <Link 
-          href="/kontakt" 
-          className={`header-nav-link ${isActiveLink('/kontakt') ? 'active' : ''}`}
+        </a>
+        <a 
+          href="https://www.kontakt.ai-allstars.com" 
+          className="header-nav-link"
         >
           Kontakt
-        </Link>
+        </a>
       </nav>
       
-      <Link href="/kontakt" className="header-cta">
+      <a href="https://www.kontakt.ai-allstars.com" className="header-cta">
         AI Pass Beratung
-      </Link>
+      </a>
       
       {/* Mobile Star Menu Button */}
       <button 
@@ -90,37 +90,37 @@ export function Header() {
         >
           Home
         </Link>
-        <Link 
-          href="/#features" 
+        <a 
+          href="https://www.preise.ai-allstars.com" 
           className="mobile-nav-item"
           onClick={closeMobileMenu}
         >
           Preise
-        </Link>
-        <Link 
-          href="/team" 
-          className={`mobile-nav-item ${isActiveLink('/team') ? 'active' : ''}`}
+        </a>
+        <a 
+          href="https://www.team.ai-allstars.com" 
+          className="mobile-nav-item"
           onClick={closeMobileMenu}
         >
           Team
-        </Link>
-        <Link 
-          href="/roi-calculator" 
-          className={`mobile-nav-item ${isActiveLink('/roi-calculator') ? 'active' : ''}`}
+        </a>
+        <a 
+          href="https://www.kurs.ai-allstars.com" 
+          className="mobile-nav-item"
           onClick={closeMobileMenu}
         >
           Kurs
-        </Link>
-        <Link 
-          href="/kontakt" 
-          className={`mobile-nav-item ${isActiveLink('/kontakt') ? 'active' : ''}`}
+        </a>
+        <a 
+          href="https://www.kontakt.ai-allstars.com" 
+          className="mobile-nav-item"
           onClick={closeMobileMenu}
         >
           Kontakt
-        </Link>
-        <Link href="/kontakt" className="mobile-cta" onClick={closeMobileMenu}>
+        </a>
+        <a href="https://www.kontakt.ai-allstars.com" className="mobile-cta" onClick={closeMobileMenu}>
           AI Pass Beratung
-        </Link>
+        </a>
       </nav>
     </header>
   );

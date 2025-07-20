@@ -20,22 +20,22 @@ export function Footer() {
         <div className="footer-links">
           <div className="footer-column">
             <h4 className="footer-column-title">Services</h4>
-            <Link href="/roi-calculator" className="footer-link">
+            <a href="https://www.kurs.ai-allstars.com" className="footer-link">
               Kurs-Einblick
-            </Link>
-            <Link href="/#features" className="footer-link">
+            </a>
+            <a href="https://www.preise.ai-allstars.com" className="footer-link">
               Preise
-            </Link>
+            </a>
           </div>
           
           <div className="footer-column">
             <h4 className="footer-column-title">Unternehmen</h4>
-            <Link href="/team" className="footer-link">
+            <a href="https://www.team.ai-allstars.com" className="footer-link">
               Team
-            </Link>
-            <Link href="/#signup" className="footer-link">
+            </a>
+            <a href="https://www.kontakt.ai-allstars.com" className="footer-link">
               Kontakt
-            </Link>
+            </a>
           </div>
           
           <div className="footer-column">
