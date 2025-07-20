@@ -30,9 +30,6 @@ export function Footer() {
           
           <div className="footer-column">
             <h4 className="footer-column-title">Unternehmen</h4>
-            <Link href="/team#team-slider" className="footer-link">
-              Über uns
-            </Link>
             <Link href="/team" className="footer-link">
               Team
             </Link>
