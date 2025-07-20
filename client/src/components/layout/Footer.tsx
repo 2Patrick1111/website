@@ -21,13 +21,10 @@ export function Footer() {
           <div className="footer-column">
             <h4 className="footer-column-title">Services</h4>
             <Link href="/roi-calculator" className="footer-link">
-              KI-Potenzialanalyse
+              Kurs-Einblick
             </Link>
             <Link href="/#features" className="footer-link">
-              AI Pass Details
-            </Link>
-            <Link href="/appointment" className="footer-link">
-              Strategiegespräch
+              Preise
             </Link>
           </div>
           
