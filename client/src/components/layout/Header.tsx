@@ -32,6 +32,18 @@ export function Header() {
       
       <nav className="header-nav">
         <Link 
+          href="/" 
+          className={`header-nav-link ${isActiveLink('/') ? 'active' : ''}`}
+        >
+          Home
+        </Link>
+        <Link 
+          href="/#features" 
+          className="header-nav-link"
+        >
+          Preise
+        </Link>
+        <Link 
           href="/team" 
           className={`header-nav-link ${isActiveLink('/team') ? 'active' : ''}`}
         >
@@ -41,7 +53,7 @@ export function Header() {
           href="/roi-calculator" 
           className={`header-nav-link ${isActiveLink('/roi-calculator') ? 'active' : ''}`}
         >
-          ROI-Rechner
+          Kurs
         </Link>
         <Link 
           href="/kontakt" 
@@ -72,6 +84,20 @@ export function Header() {
       {/* Mobile Dropdown Menu */}
       <nav className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
         <Link 
+          href="/" 
+          className={`mobile-nav-item ${isActiveLink('/') ? 'active' : ''}`}
+          onClick={closeMobileMenu}
+        >
+          Home
+        </Link>
+        <Link 
+          href="/#features" 
+          className="mobile-nav-item"
+          onClick={closeMobileMenu}
+        >
+          Preise
+        </Link>
+        <Link 
           href="/team" 
           className={`mobile-nav-item ${isActiveLink('/team') ? 'active' : ''}`}
           onClick={closeMobileMenu}
@@ -83,7 +109,7 @@ export function Header() {
           className={`mobile-nav-item ${isActiveLink('/roi-calculator') ? 'active' : ''}`}
           onClick={closeMobileMenu}
         >
-          ROI-Rechner
+          Kurs
         </Link>
         <Link 
           href="/kontakt" 
