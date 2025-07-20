@@ -91,12 +91,12 @@ export default function Home() {
             komplett bezahlt durch den deutschen Staat und mit 75% Lohnkostenerstattung.
           </p>
           <div className="hero-actions">
-            <Link href="/kontakt" className="cta-button primary">
+            <a href="https://www.kontakt.ai-allstars.com" className="cta-button primary">
               Kostenlose Förderprüfung
-            </Link>
-            <Link href="/roi-rechner" className="cta-button secondary">
+            </a>
+            <a href="https://www.kurs.ai-allstars.com" className="cta-button secondary">
               Kurs entdecken
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -276,9 +276,9 @@ export default function Home() {
             <div className="cta-icon">🎓</div>
             <h3 className="cta-title">Kurseinblick</h3>
             <p className="cta-description">Erfahre mehr über unseren Kurs</p>
-            <Link href="/roi-rechner" className="cta-button-card">
+            <a href="https://www.kurs.ai-allstars.com" className="cta-button-card">
               Kurs entdecken
-            </Link>
+            </a>
           </div>
 
           {/* CTA 3: Teameinblick */}
@@ -286,9 +286,9 @@ export default function Home() {
             <div className="cta-icon">👥</div>
             <h3 className="cta-title">Teameinblick</h3>
             <p className="cta-description">Lerne die Allstars kennen</p>
-            <Link href="/team" className="cta-button-card">
+            <a href="https://www.team.ai-allstars.com" className="cta-button-card">
               Team entdecken
-            </Link>
+            </a>
           </div>
 
           {/* CTA 4: Kontakt */}
@@ -296,9 +296,9 @@ export default function Home() {
             <div className="cta-icon">💬</div>
             <h3 className="cta-title">Kontaktieren</h3>
             <p className="cta-description">Kontaktiere uns direkt</p>
-            <Link href="/kontakt" className="cta-button-card">
+            <a href="https://www.kontakt.ai-allstars.com" className="cta-button-card">
               Kontakt
-            </Link>
+            </a>
           </div>
         </div>
       </section>
