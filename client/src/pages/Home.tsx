@@ -266,9 +266,9 @@ export default function Home() {
             <div className="cta-icon">📄</div>
             <h3 className="cta-title">Kostenlose Broschüre</h3>
             <p className="cta-description">Erhalten Sie alle Details zum 5-Wochen AI-PASS Programm als PDF</p>
-            <Link href="/brochure" className="cta-button-card">
+            <a href="/AI_Pass_Broschuere.pdf" download="AI_Pass_Broschuere.pdf" className="cta-button-card">
               Broschüre herunterladen
-            </Link>
+            </a>
           </div>
 
           {/* CTA 2: Kurseinblick */}
