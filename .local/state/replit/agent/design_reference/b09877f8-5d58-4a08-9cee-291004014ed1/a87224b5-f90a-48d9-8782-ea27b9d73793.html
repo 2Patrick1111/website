@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Allstars - Unterseiten Template</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS-Variablen */
+        :root {
+            --text-primary: #ffffff;
+            --text-secondary: #b8bcc8;
+            --bg-primary: #0a0a0a;
+            --bg-glass: rgba(255, 255, 255, 0.1);
+            --gradient-primary: linear-gradient(135deg, #0080FF 0%, #fe0000 100%);
+            --border-glass: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Basis Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Starry Background */
+        .starry-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            z-index: -1;
+        }
+
+        .starry-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: sparkle 20s linear infinite;
+        }
+
+        @keyframes sparkle {
+            from { transform: translateX(0); }
+            to { transform: translateX(200px); }
+        }
+
+        /* Header Styles */
+        .liquid-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 25, 0.4);
+            backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            height: 80px;
+        }
+
+        .liquid-header.shrunk {
+            padding: 0.5rem 2rem;
+            height: 60px;
+            background: rgba(15, 15, 25, 0.6);
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .header-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-image {
+            height: 32px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .header-nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .header-nav a:hover {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-nav a.active {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 128, 255, 0.3);
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 128, 255, 0.4);
+        }
+
+        /* Mobile Star Menu */
+        .star-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+            transition: transform 0.3s ease;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .star-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-primary);
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E") center/cover;
+            transition: transform 0.3s ease;
+        }
+
+        .star-menu-button.active .star-icon {
+            transform: rotate(180deg);
+        }
+
+        .mobile-nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(15, 15, 25, 0.95);
+            backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+            max-height: 300px;
+        }
+
+        .mobile-nav-item {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-item:hover,
+        .mobile-nav-item.active {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .mobile-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.6rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Main Content */
+        main {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 128, 255, 0.1);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--bg-glass);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--border-glass);
+            border-radius: 30px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 4rem 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(0, 128, 255, 0.3);
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 128, 255, 0.4);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #0a0a0a;
+            padding: 60px 20px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo-image {
+            height: 32px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .footer-column a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--text-primary);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .liquid-header {
+                padding: 1rem;
+            }
+            
+            .header-nav {
+                display: none;
+            }
+            
+            .header-cta {
+                display: none;
+            }
+            
+            .star-menu-button {
+                display: flex;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .footer {
+                padding: 40px 20px 20px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                margin: 2rem 1rem;
+                padding: 2rem 1rem;
+            }
+
+            .content-section {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Page-specific styles for subpages */
+        .page-team .header-nav a[href="/team"] { 
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-roi .header-nav a[href="/roi-calculator"] { 
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-kontakt .header-nav a[href="/kontakt"] { 
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body data-mock="true">
+    <!-- @COMPONENT: StarryBackground -->
+    <div class="starry-bg"></div>
+    <!-- @END_COMPONENT: StarryBackground -->
+
+    <!-- @COMPONENT: LiquidHeader [navigation, logo, mobile menu] -->
+    <header class="liquid-header" id="header">
+        <a href="/" class="header-logo" id="main-logo">
+            <!-- Custom AI Allstars logo would go here -->
+            <div class="logo-image" style="width: 120px; height: 32px; background: var(--gradient-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; color: white; font-size: 0.9rem;">AI ALLSTARS</div>
+        </a>
+        <nav class="header-nav" id="headerNav">
+            <a href="/team" data-mock="true">Team</a>
+            <a href="/roi-calculator" data-mock="true">ROI-Rechner</a>
+            <a href="/kontakt" data-mock="true">Kontakt</a>
+        </nav>
+        <a href="/kontakt" class="header-cta" data-mock="true">AI Pass Beratung</a>
+        
+        <!-- Mobile Star Menu Button -->
+        <button class="star-menu-button" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
+            <div class="star-icon"></div>
+        </button>
+        
+        <!-- Mobile Dropdown Menu -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="/team" class="mobile-nav-item" data-mock="true">Team</a>
+            <a href="/roi-calculator" class="mobile-nav-item" data-mock="true">ROI-Rechner</a>
+            <a href="/kontakt" class="mobile-nav-item" data-mock="true">Kontakt</a>
+            <a href="/kontakt" class="mobile-cta" data-mock="true">AI Pass Beratung</a>
+        </nav>
+    </header>
+    <!-- @END_COMPONENT: LiquidHeader -->
+
+    <!-- @COMPONENT: MainContent [hero, features, cta] -->
+    <main>
+        <!-- @COMPONENT: HeroSection -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 data-mock="true">Unterseiten Template</h1>
+                <p class="hero-subtitle" data-mock="true">Modulare Struktur für AI Allstars Subpages</p>
+                <p class="hero-description" data-mock="true">
+                    Dieses Template demonstriert das einheitliche Design-System für alle Unterseiten der AI Allstars Website. 
+                    Mit Glass Morphism Effekten, responsivem Design und der charakteristischen Gradient-Ästhetik.
+                </p>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: HeroSection -->
+
+        <!-- @COMPONENT: ContentSection [features grid] -->
+        <section class="content-section">
+            <h2 class="section-title" data-mock="true">Template Features</h2>
+            
+            <!-- @MAP: features.map(feature => ( -->
+            <div class="card-grid">
+                <div class="glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group" data-mock="true"></i>
+                    </div>
+                    <h3 class="card-title" data-mock="true">Glass Morphism Header</h3>
+                    <p class="card-description" data-mock="true">
+                        Einheitlicher Header mit Backdrop-Filter Effekten und responsiver Navigation für alle Unterseiten.
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star" data-mock="true"></i>
+                    </div>
+                    <h3 class="card-title" data-mock="true">Mobile Star Menu</h3>
+                    <p class="card-description" data-mock="true">
+                        Charakteristisches Stern-Menü für mobile Geräte mit sanften Animationen und Dropdown-Navigation.
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette" data-mock="true"></i>
+                    </div>
+                    <h3 class="card-title" data-mock="true">Gradient Design System</h3>
+                    <p class="card-description" data-mock="true">
+                        Konsistente Farbpalette mit Blau-Rot Gradienten und futuristischer Typografie für alle Seiten.
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt" data-mock="true"></i>
+                    </div>
+                    <h3 class="card-title" data-mock="true">Responsive Layout</h3>
+                    <p class="card-description" data-mock="true">
+                        Optimiert für Desktop, Tablet und Mobile mit flexiblen Grid-Systemen und angepassten Komponenten.
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-link" data-mock="true"></i>
+                    </div>
+                    <h3 class="card-title" data-mock="true">Footer Navigation</h3>
+                    <p class="card-description" data-mock="true">
+                        Strukturierter Footer mit allen relevanten Links, Kategorien und rechtlichen Hinweisen.
+                    </p>
+                </div>
+
+                <div class="glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code" data-mock="true"></i>
+                    </div>
+                    <h3 class="card-title" data-mock="true">Modulare Struktur</h3>
+                    <p class="card-description" data-mock="true">
+                        Template-System für einfache Erstellung neuer Unterseiten mit konsistentem Design und Funktionalität.
+                    </p>
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+        </section>
+        <!-- @END_COMPONENT: ContentSection -->
+
+        <!-- @COMPONENT: CTASection -->
+        <section class="cta-section">
+            <h2 class="section-title" style="margin-bottom: 1rem;" data-mock="true">Bereit für Ihre KI-Transformation?</h2>
+            <p class="hero-description" style="margin-bottom: 2rem;" data-mock="true">
+                Nutzen Sie unsere AI Pass Beratung und entdecken Sie das volle Potenzial künstlicher Intelligenz für Ihr Unternehmen.
+            </p>
+            <a href="/kontakt" class="cta-button" data-mock="true">Beratungstermin vereinbaren</a>
+        </section>
+        <!-- @END_COMPONENT: CTASection -->
+    </main>
+    <!-- @END_COMPONENT: MainContent -->
+
+    <!-- @COMPONENT: Footer [links, branding, legal] -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <!-- Custom AI Allstars logo would go here -->
+                    <div class="footer-logo-image" style="width: 120px; height: 32px; background: var(--gradient-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-weight: 700; color: white; font-size: 0.9rem;">AI ALLSTARS</div>
+                </div>
+                <p data-mock="true">Ihr Partner für erfolgreiche KI-Transformation</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4 data-mock="true">Services</h4>
+                    <a href="/roi-calculator" data-mock="true">KI-Potenzialanalyse</a>
+                    <a href="/#features" data-mock="true">AI Pass Details</a>
+                    <a href="/appointment" data-mock="true">Strategiegespräch</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 data-mock="true">Unternehmen</h4>
+                    <a href="/team#team-slider" data-mock="true">Über uns</a>
+                    <a href="/team" data-mock="true">Team</a>
+                    <a href="/#signup" data-mock="true">Kontakt</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 data-mock="true">Rechtliches</h4>
+                    <a href="/datenschutz" data-mock="true">Datenschutz</a>
+                    <a href="/impressum" data-mock="true">Impressum</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p data-mock="true">&copy; 2025 AI Allstars. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Header Functionality for AI Allstars Website
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Header functionality loaded');
+
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            let lastScrollTop = 0;
+
+            function handleScroll() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 50) {
+                    header.classList.add('shrunk');
+                } else {
+                    header.classList.remove('shrunk');
+                }
+                
+                lastScrollTop = scrollTop;
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            // Mobile Menu Toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileNav = document.getElementById('mobileNav');
+
+            if (menuToggle && mobileNav) {
+                menuToggle.addEventListener('click', function() {
+                    const isActive = mobileNav.classList.contains('active');
+                    
+                    if (isActive) {
+                        mobileNav.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    } else {
+                        mobileNav.classList.add('active');
+                        menuToggle.classList.add('active');
+                        menuToggle.setAttribute('aria-expanded', 'true');
+                    }
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!header.contains(event.target)) {
+                        mobileNav.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Close mobile menu when clicking on nav links
+                const mobileNavItems = document.querySelectorAll('.mobile-nav-item, .mobile-cta');
+                mobileNavItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        mobileNav.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // Logo click handler
+            const mainLogo = document.getElementById('main-logo');
+            if (mainLogo) {
+                mainLogo.addEventListener('click', function(event) {
+                    // TODO: Handle navigation to home page
+                    console.log('Navigating to home page');
+                });
+            }
+
+            // Smooth scroll for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add active class to current page navigation
+            // TODO: Implement dynamic active state based on current URL
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('.header-nav a, .mobile-nav-item');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
