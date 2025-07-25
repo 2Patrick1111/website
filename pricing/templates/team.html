@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero" style="margin-top: 120px;">
+    <div class="hero-content">
+        <h1>Unser Team</h1>
+        <p class="hero-subtitle">Lernen Sie die Experten hinter AI Allstars kennen</p>
+        <p class="hero-description">Unser Team besteht aus erfahrenen KI-Spezialisten, Datenanalysten und Strategieberatern, die Ihr Unternehmen erfolgreich in die Zukunft führen.</p>
+    </div>
+</section>
+
+<section id="team-slider" class="team-section">
+    <div class="container">
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h3>Dr. Alex Schmidt</h3>
+                <p class="member-role">CEO & KI-Strategieberater</p>
+                <p class="member-bio">15+ Jahre Erfahrung in der KI-Entwicklung und strategischen Unternehmensberatung. Spezialisiert auf die Transformation traditioneller Geschäftsmodelle.</p>
+                <div class="member-skills">
+                    <span class="skill-tag">KI-Strategie</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Business Transformation</span>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h3>Sarah Chen</h3>
+                <p class="member-role">CTO & Lead Data Scientist</p>
+                <p class="member-bio">Expertin für Deep Learning und neuronale Netzwerke mit Fokus auf praktische Anwendungen in verschiedenen Industriezweigen.</p>
+                <div class="member-skills">
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Data Science</span>
+                    <span class="skill-tag">Python/TensorFlow</span>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h3>Marcus Weber</h3>
+                <p class="member-role">Senior KI-Consultant</p>
+                <p class="member-bio">Spezialist für die Integration von KI-Lösungen in bestehende Unternehmensprozesse und Change Management.</p>
+                <div class="member-skills">
+                    <span class="skill-tag">Process Integration</span>
+                    <span class="skill-tag">Change Management</span>
+                    <span class="skill-tag">ROI-Optimierung</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="values-section">
+    <div class="container">
+        <h2 class="section-title">Unsere Werte</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Innovation</h3>
+                <p>Wir entwickeln cutting-edge KI-Lösungen, die Ihr Unternehmen an die Spitze der technologischen Entwicklung bringen.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Partnerschaft</h3>
+                <p>Wir verstehen uns als langfristiger Partner, der Sie durch alle Phasen der KI-Transformation begleitet.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Messbare Ergebnisse</h3>
+                <p>Jede Lösung wird anhand konkreter KPIs gemessen und optimiert, um maximalen ROI zu gewährleisten.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+.team-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 128, 255, 0.1);
+}
+
+.member-avatar {
+    font-size: 5rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.team-member h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.member-role {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.member-bio {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.skill-tag {
+    background: rgba(0, 128, 255, 0.2);
+    color: var(--text-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(0, 128, 255, 0.3);
+}
+
+.values-section {
+    padding: 6rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.value-card {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 3rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.value-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+</style>
+{% endblock %}

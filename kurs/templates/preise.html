@@ -1,0 +1,303 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/preise.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="pricing-hero">
+    <div class="pricing-container">
+        <div class="pricing-header">
+            <h1>Entfessle die <span class="gradient-text">KI‑Superkräfte</span>deines Teams</h1>
+            <p>Wähle das perfekte Paket für euren Erfolg</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Gefördert Package -->
+            <div class="pricing-card highlight">
+                <div class="card-header">
+                    <h3 class="package-name">AI‑PASS Gefördert</h3>
+                    <p class="package-subtitle">100% staatlich gefördert</p>
+                    <div class="price">0€</div>
+                    <p class="price-note">+ 75% Lohnkostenerstattung</p>
+                </div>
+                <ul class="features">
+                    <li>5‑Wochen AI‑Intensivprogramm</li>
+                    <li>Live‑Sessions mit KI‑Experten</li>
+                    <li>Persönliches Automations‑Set‑up</li>
+                    <li>Offizielle Zertifizierung</li>
+                    <li>Durchschnittlich 6h Zeitersparnis/Woche</li>
+                    <li>Förderung nach § 82 SGB III</li>
+                </ul>
+                <a href="{{ url_for('kontakt') }}" class="cta-button">Förderung beantragen</a>
+            </div>
+
+            <!-- 995€ Package -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3 class="package-name">AI‑PASS Videokurs</h3>
+                    <p class="package-subtitle">Selbstständig lernen im eigenen Tempo</p>
+                    <div class="price">995€</div>
+                    <p class="price-note">einmalig</p>
+                </div>
+                <ul class="features">
+                    <li>Vollständige Videokurs‑Bibliothek</li>
+                    <li>5‑Wochen strukturierte Inhalte</li>
+                    <li>Downloadbare Praxis‑Templates</li>
+                    <li>KI‑Tool Tutorials & Anleitungen</li>
+                    <li>Schritt‑für‑Schritt Automations‑Guides</li>
+                    <li>Lebenslange Updates zu neuen KI‑Tools</li>
+                    <li>Regelmäßige Tool‑Empfehlungen</li>
+                </ul>
+                <a href="{{ url_for('kontakt') }}" class="cta-button">Videokurs kaufen</a>
+            </div>
+
+            <!-- 2495€ Package -->
+            <div class="pricing-card discount">
+                <div class="card-header">
+                    <h3 class="package-name">AI‑PASS Premium</h3>
+                    <p class="package-subtitle">Das komplette Programm ohne Förderung</p>
+                    <div class="price">2.495€</div>
+                    <p class="price-note">pro Teilnehmer</p>
+                </div>
+                <ul class="features">
+                    <li>5‑Wochen AI‑Intensivprogramm</li>
+                    <li>Live‑Sessions mit KI‑Experten</li>
+                    <li>Persönliches Automations‑Set‑up</li>
+                    <li>Offizielle Zertifizierung</li>
+                    <li>Durchschnittlich 6h Zeitersparnis/Woche</li>
+                    <li>Sofort verfügbar ohne Förderantrag</li>
+                </ul>
+                <a href="{{ url_for('kontakt') }}" class="cta-button">Premium buchen</a>
+            </div>
+
+            <!-- Enterprise Package -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3 class="package-name">AI‑PASS Enterprise</h3>
+                    <p class="package-subtitle">Individuelle Unternehmenslösung</p>
+                    <div class="price">Auf Anfrage</div>
+                    <p class="price-note">maßgeschneidert</p>
+                </div>
+                <ul class="features">
+                    <li>Individuelle Beratung für Ihr Unternehmen</li>
+                    <li>Angepasste Lösungen nach Bedarf</li>
+                    <li>Flexible Teilnehmerzahl</li>
+                    <li>Spezielle Konditionen verfügbar</li>
+                    <li>Persönliches Beratungsgespräch</li>
+                    <li>Maßgeschneiderte Roadmap</li>
+                    <li>Langfristige Partnerschaft möglich</li>
+                </ul>
+                <a href="{{ url_for('kontakt') }}" class="cta-button secondary">Kostenlose Beratung</a>
+            </div>
+
+            <!-- Funding Info Card -->
+            <div class="pricing-card funding-card">
+                <div class="card-header">
+                    <h3 class="package-name">🚀 AI‑PASS zu 100% gefördert</h3>
+                    <p class="package-subtitle">Aber Achtung bei den Wartezeiten!</p>
+                </div>
+                <div class="funding-content">
+                    <p><strong>Die gute Nachricht:</strong> Unser AI‑PASS ist durch § 82 SGB III zu 100% förderfähig und dein Unternehmen erhält zusätzlich bis zu 75% Lohnkostenerstattung.</p>
+                    <p><strong>Die weniger gute Nachricht:</strong> Die Bearbeitung von Förderanträgen kann bis zu 12 Wochen dauern. Das Amt ist überlastet und die Bewilligungsprozesse ziehen sich oft in die Länge.</p>
+                    <p><strong>Unsere Empfehlung:</strong> Falls du sofort starten möchtest, ohne auf die Förderung zu warten, ist unser AI‑PASS Premium die perfekte Alternative. Identische Inhalte, sofortiger Start – und du sparst dir den bürokratischen Aufwand.</p>
+                    
+                    <div class="premium-benefits">
+                        <h4>Warum AI‑PASS Premium die smarte Alternative ist</h4>
+                        <ul class="benefits-list">
+                            <li>⏰ Sofortiger Start – keine 12 Wochen Wartezeit</li>
+                            <li>📋 Kein Papierkram – direkte Buchung ohne Anträge</li>
+                            <li>🎯 Identische Inhalte – das gleiche hochwertige Programm</li>
+                            <li>💡 Planungssicherheit – fester Starttermin garantiert</li>
+                        </ul>
+                        <p class="call-to-action">Entscheide selbst: Warten auf die Förderung oder sofort durchstarten mit AI‑PASS Premium!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fördermöglichkeiten Section -->
+        <div class="funding-overview">
+            <div class="funding-overview-header">
+                <h2>Fördermöglichkeiten im Überblick</h2>
+                <p class="subtitle"><strong>Beschäftigtenqualifizierung ab 1. April 2024</strong></p>
+                <p class="subtitle">im Überblick:</p>
+            </div>
+
+            <div class="funding-table-container">
+                <table class="funding-table">
+                    <!-- Section 1: Abschlussorientierte Weiterbildung -->
+                    <tr>
+                        <td class="section-header" colspan="6">
+                            <strong>Abschlussorientierte Weiterbildung bei fehlendem Berufsabschluss (nach § 81 (2) SGB III)</strong>
+                        </td>
+                    </tr>
+                    
+                    <!-- Company Size Row for Section 1 -->
+                    <tr class="company-size-row">
+                        <td class="row-header">Betriebsgröße</td>
+                        <td class="company-size-cell" colspan="5">
+                            <div class="people-icons">👥👥👥👥👥👥👥👥</div>
+                            <div class="company-label red-label">Alle<br>Betriebsgrößen</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="row-header">Übernahme<br>Lehrgangskosten</td>
+                        <td class="data-cell" colspan="5">
+                            <span class="percentage-badge badge-100">100%</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="row-header">Arbeitsentgelt-<br>zuschuss</td>
+                        <td class="data-cell" colspan="5">
+                            <span class="percentage-badge badge-100">bis zu 100%</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="row-header">Entgeltersatz-<br>leistung</td>
+                        <td class="data-cell" colspan="5">
+                            <span class="no-coverage">keine<br>Übernahme</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="row-header">Zulassungs-<br>erfordernis</td>
+                        <td class="data-cell" colspan="5">
+                            <span class="covered">Maßnahme<br>und Träger</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="row-header">Behinderungsbedingt<br>erforderliche<br>Mehraufwendungen</td>
+                        <td class="data-cell" colspan="5">
+                            <span class="no-coverage">keine<br>Übernahme</span>
+                        </td>
+                    </tr>
+
+                    <!-- Section 2: Sonstige berufliche Weiterbildung -->
+                    <tr>
+                        <td class="section-header" colspan="6" style="padding-top: 20px;">
+                            <strong>Sonstige berufliche Weiterbildung nach § 82 SGB III in Abhängigkeit<br>von der Betriebsgröße und Zugehörigkeit zu einer Personengruppe</strong>
+                        </td>
+                    </tr>
+
+                    <!-- Company Size Row for Section 2 -->
+                    <tr class="company-size-row">
+                        <td class="row-header">Betriebsgröße</td>
+                        <td class="company-size-cell">
+                            <div class="people-icons">👥👥👥</div>
+                            <div class="company-label">< 50<br>Beschäftigte</div>
+                        </td>
+                        <td class="company-size-cell">
+                            <div class="people-icons">👥👥👥👥👥</div>
+                            <div class="company-label">50–499<br>Beschäftigte</div>
+                        </td>
+                        <td class="company-size-cell">
+                            <div class="people-icons">👥👥👥👥👥👥👥</div>
+                            <div class="company-label">Ab 500<br>Beschäftigte</div>
+                        </td>
+                        <td class="company-size-cell" style="position: relative;">
+                            <div class="neu-badge">Neu!</div>
+                            <div class="people-icons">👥👥👥👥👥👥👥</div>
+                            <div class="company-label red-label">Alle<br>Betriebsgrößen</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="row-header">Übernahme<br>Lehrgangskosten</td>
+                        <td class="data-cell">
+                            <span class="percentage-badge badge-100">100% (soll)</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="percentage-badge badge-50">50%</span><br>
+                            <span class="percentage-badge badge-100">100% (soll)</span>
+                            <div class="special-note">bei Vollendung des<br>45. Lebensjahres oder<br>Schwerbehinderung</div>
+                        </td>
+                        <td class="data-cell">
+                            <span class="percentage-badge badge-25">25%</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="employer-note">durch den<br>Arbeitgeber zu<br>tragen</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="row-header">Arbeitsentgelt-<br>zuschuss</td>
+                        <td class="data-cell">
+                            <span class="percentage-badge badge-75">75%</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="percentage-badge badge-50">50%</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="percentage-badge badge-25">25%</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="no-coverage">keine<br>Übernahme</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="row-header">Entgeltersatz-<br>leistung</td>
+                        <td class="data-cell">
+                            <span class="no-coverage">keine<br>Übernahme</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="no-coverage">keine<br>Übernahme</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="no-coverage">keine<br>Übernahme</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="percentage-badge badge-60">60/67%</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="row-header">Zulassungs-<br>erfordernis</td>
+                        <td class="data-cell">
+                            <span class="covered">Maßnahme<br>und Träger</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="covered">Maßnahme<br>und Träger</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="covered">Maßnahme<br>und Träger</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="covered">nur<br>Träger</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="row-header">Behinderungsbedingt<br>erforderliche<br>Mehraufwendungen</td>
+                        <td class="data-cell">
+                            <span class="covered">werden<br>übernommen</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="covered">werden<br>übernommen</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="covered">werden<br>übernommen</span>
+                        </td>
+                        <td class="data-cell">
+                            <span class="covered">werden<br>übernommen</span>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="qualification-money-note">
+                    <p><strong>Qualifizierungsgeld nach § 82a SGB III</strong> - Die neue Förderungsmöglichkeit für alle Betriebsgrößen</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/preise.js') }}"></script>
+{% endblock %}

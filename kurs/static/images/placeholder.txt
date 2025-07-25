@@ -1,0 +1,10 @@
+This directory would contain image assets in a production environment.
+For this implementation, we're using SVG icons and CDN resources as specified in the requirements.
+
+Images that would typically be stored here:
+- allstars-logo-white.png (replaced with SVG in templates)
+- star-white.png (replaced with SVG in templates)
+- favicon.ico
+- social media images
+- team photos
+- etc.

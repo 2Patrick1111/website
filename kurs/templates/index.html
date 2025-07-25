@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero" style="margin-top: 120px;">
+    <div class="hero-content">
+        <h1>Willkommen bei AI Allstars</h1>
+        <p class="hero-subtitle">Ihr Partner für erfolgreiche KI-Transformation</p>
+        <p class="hero-description">Entdecken Sie die Möglichkeiten der Künstlichen Intelligenz für Ihr Unternehmen. Wir begleiten Sie auf dem Weg zur digitalen Transformation mit maßgeschneiderten KI-Lösungen.</p>
+        
+        <div class="hero-actions" style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="{{ url_for('roi_calculator') }}" class="cta-button primary">
+                <i class="fas fa-calculator"></i>
+                ROI berechnen
+            </a>
+            <a href="{{ url_for('kontakt') }}" class="cta-button secondary">
+                <i class="fas fa-comments"></i>
+                Beratung anfragen
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="features-section">
+    <div class="container">
+        <h2 class="section-title">Unsere AI Pass Lösungen</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>KI-Beratung</h3>
+                <p>Strategische Beratung für die optimale Integration von KI in Ihre Geschäftsprozesse.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>ROI-Analyse</h3>
+                <p>Detaillierte Analyse des Return on Investment Ihrer KI-Implementierung.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Implementierung</h3>
+                <p>Professionelle Umsetzung und Integration von KI-Lösungen in bestehende Systeme.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="signup" class="contact-preview">
+    <div class="container">
+        <h2>Bereit für den nächsten Schritt?</h2>
+        <p>Kontaktieren Sie uns für eine kostenlose Erstberatung zu Ihren KI-Möglichkeiten.</p>
+        <a href="{{ url_for('kontakt') }}" class="cta-button primary">
+            <i class="fas fa-rocket"></i>
+            Jetzt Beratung anfragen
+        </a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+.hero-actions .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-button.primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 128, 255, 0.3);
+}
+
+.cta-button.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+.cta-button.primary:hover {
+    box-shadow: 0 8px 30px rgba(0, 128, 255, 0.4);
+}
+
+.features-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 128, 255, 0.1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.contact-preview {
+    padding: 6rem 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-preview h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.contact-preview p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+</style>
+{% endblock %}

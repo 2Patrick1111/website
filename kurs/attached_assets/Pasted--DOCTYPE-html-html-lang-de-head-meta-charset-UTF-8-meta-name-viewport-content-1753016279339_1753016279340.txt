@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fördermöglichkeiten im Überblick</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .main-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.8rem;
+        }
+
+        /* Header Rows */
+        .section-header {
+            background: #2c3e50;
+            color: white;
+            padding: 12px 8px;
+            font-weight: bold;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        .company-size-row {
+            background: #ecf0f1;
+        }
+
+        .company-size-cell {
+            text-align: center;
+            padding: 10px 5px;
+            border: 1px solid #bdc3c7;
+            position: relative;
+        }
+
+        .people-icons {
+            color: #e74c3c;
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+            line-height: 1;
+        }
+
+        .company-label {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 0.75rem;
+            line-height: 1.1;
+        }
+
+        .red-label {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Row Headers */
+        .row-header {
+            background: #ecf0f1;
+            padding: 10px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: left;
+            border: 1px solid #bdc3c7;
+            width: 180px;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        /* Data Cells */
+        .data-cell {
+            border: 1px solid #bdc3c7;
+            padding: 8px 4px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* Percentage Badges */
+        .percentage-badge {
+            padding: 6px 8px;
+            border-radius: 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 1px;
+        }
+
+        .badge-100 { background: #e74c3c; }
+        .badge-75 { background: #e67e22; }
+        .badge-50 { background: #f39c12; }
+        .badge-25 { background: #95a5a6; }
+        .badge-60 { background: #8e44ad; }
+
+        .special-note {
+            font-size: 0.65rem;
+            color: #e74c3c;
+            margin-top: 2px;
+            line-height: 1.1;
+        }
+
+        .no-coverage {
+            color: #7f8c8d;
+            font-size: 0.75rem;
+            font-weight: normal;
+        }
+
+        .covered {
+            color: #2c3e50;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .employer-note {
+            color: #e74c3c;
+            font-size: 0.7rem;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        /* Neu Badge */
+        .neu-badge {
+            position: absolute;
+            top: -8px;
+            right: 5px;
+            background: #e74c3c;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 0.6rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .main-table {
+                font-size: 0.7rem;
+            }
+            
+            .row-header {
+                width: 120px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Fördermöglichkeiten im Überblick</h1>
+            <p class="subtitle"><strong>Beschäftigtenqualifizierung ab 1. April 2024</strong></p>
+            <p class="subtitle">im Überblick:</p>
+        </div>
+
+        <table class="main-table">
+            <!-- Section 1: Abschlussorientierte Weiterbildung -->
+            <tr>
+                <td class="section-header" colspan="6">
+                    <strong>Abschlussorientierte Weiterbildung bei fehlendem Berufsabschluss (nach § 81 (2) SGB III)</strong>
+                </td>
+            </tr>
+            
+            <!-- Company Size Row for Section 1 -->
+            <tr class="company-size-row">
+                <td class="row-header">Betriebsgröße</td>
+                <td class="company-size-cell" colspan="5">
+                    <div class="people-icons">👥👥👥👥👥👥👥👥</div>
+                    <div class="company-label red-label">Alle<br>Betriebsgrößen</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="row-header">Übernahme<br>Lehrgangskosten</td>
+                <td class="data-cell" colspan="5">
+                    <span class="percentage-badge badge-100">100%</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="row-header">Arbeitsentgelt-<br>zuschuss</td>
+                <td class="data-cell" colspan="5">
+                    <span class="percentage-badge badge-100">bis zu 100%</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="row-header">Entgeltersatz-<br>leistung</td>
+                <td class="data-cell" colspan="5">
+                    <span class="no-coverage">keine<br>Übernahme</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="row-header">Zulassungs-<br>erfordernis</td>
+                <td class="data-cell" colspan="5">
+                    <span class="covered">Maßnahme<br>und Träger</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="row-header">Behinderungsbedingt<br>erforderliche<br>Mehraufwendungen</td>
+                <td class="data-cell" colspan="5">
+                    <span class="no-coverage">keine<br>Übernahme</span>
+                </td>
+            </tr>
+
+            <!-- Section 2: Sonstige berufliche Weiterbildung -->
+            <tr>
+                <td class="section-header" colspan="6" style="padding-top: 20px;">
+                    <strong>Sonstige berufliche Weiterbildung nach § 82 SGB III in Abhängigkeit<br>von der Betriebsgröße und Zugehörigkeit zu einer Personengruppe</strong>
+                </td>
+            </tr>
+
+            <!-- Company Size Row for Section 2 -->
+            <tr class="company-size-row">
+                <td class="row-header">Betriebsgröße</td>
+                <td class="company-size-cell">
+                    <div class="people-icons">👥👥👥</div>
+                    <div class="company-label">< 50<br>Beschäftigte</div>
+                </td>
+                <td class="company-size-cell">
+                    <div class="people-icons">👥👥👥👥👥</div>
+                    <div class="company-label">50–499<br>Beschäftigte</div>
+                </td>
+                <td class="company-size-cell">
+                    <div class="people-icons">👥👥👥👥👥👥👥</div>
+                    <div class="company-label">Ab 500<br>Beschäftigte</div>
+                </td>
+                <td class="company-size-cell" style="position: relative;">
+                    <div class="neu-badge">Neu!</div>
+                    <div class="people-icons">👥👥👥👥👥👥👥</div>
+                    <div class="company-label red-label">Alle<br>Betriebsgrößen</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="row-header">Übernahme<br>Lehrgangskosten</td>
+                <td class="data-cell">
+                    <span class="percentage-badge badge-100">100% (soll)</span>
+                </td>
+                <td class="data-cell">
+                    <span class="percentage-badge badge-50">50%</span><br>
+                    <span class="percentage-badge badge-100">100% (soll)</span>
+                    <div class="special-note">bei Vollendung des<br>45. Lebensjahres oder<br>Schwerbehinderung</div>
+                </td>
+                <td class="data-cell">
+                    <span class="percentage-badge badge-25">25%</span>
+                </td>
+                <td class="data-cell">
+                    <span class="employer-note">durch den<br>Arbeitgeber zu<br>tragen</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="row-header">Arbeitsentgelt-<br>zuschuss</td>
+                <td class="data-cell">
+                    <span class="percentage-badge badge-75">75%</span>
+                </td>
+                <td class="data-cell">
+                    <span class="percentage-badge badge-50">50%</span>
+                </td>
+                <td class="data-cell">
+                    <span class="percentage-badge badge-25">25%</span>
+                </td>
+                <td class="data-cell">
+                    <span class="no-coverage">keine<br>Übernahme</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="row-header">Entgeltersatz-<br>leistung</td>
+                <td class="data-cell">
+                    <span class="no-coverage">keine<br>Übernahme</span>
+                </td>
+                <td class="data-cell">
+                    <span class="no-coverage">keine<br>Übernahme</span>
+                </td>
+                <td class="data-cell">
+                    <span class="no-coverage">keine<br>Übernahme</span>
+                </td>
+                <td class="data-cell">
+                    <span class="percentage-badge badge-60">60/67%</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="row-header">Zulassungs-<br>erfordernis</td>
+                <td class="data-cell">
+                    <span class="covered">Maßnahme<br>und Träger</span>
+                </td>
+                <td class="data-cell">
+                    <span class="covered">Maßnahme<br>und Träger</span>
+                </td>
+                <td class="data-cell">
+                    <span class="covered">Maßnahme<br>und Träger</span>
+                </td>
+                <td class="data-cell">
+                    <span class="covered">nur<br>Träger</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="row-header">Behinderungsbedingt<br>erforderliche<br>Mehraufwendungen</td>
+                <td class="data-cell">
+                    <span class="covered">werden<br>übernommen</span>
+                </td>
+                <td class="data-cell">
+                    <span class="covered">werden<br>übernommen</span>
+                </td>
+                <td class="data-cell">
+                    <span class="covered">werden<br>übernommen</span>
+                </td>
+                <td class="data-cell">
+                    <span class="covered">werden<br>übernommen</span>
+                </td>
+            </tr>
+        </table>
+
+        <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+            <p style="font-size: 0.85rem; color: #666; text-align: center;">
+                <strong>Qualifizierungsgeld nach § 82a SGB III</strong> - Die neue Förderungsmöglichkeit für alle Betriebsgrößen
+            </p>
+        </div>
+    </div>
+</body>
+</html>

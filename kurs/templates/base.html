@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page_title }} - AI Allstars{% endblock %}</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/website-styles.css') }}">
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Starry Background -->
+    <div class="starry-bg"></div>
+
+    <!-- Header -->
+    <header class="liquid-header" id="header">
+        <a href="/" class="header-logo" id="main-logo" onclick="handleLogoClick(event)">
+            <img src="{{ url_for('static', filename='allstars-logo-white.png') }}" alt="AI Allstars" class="logo-image" title="Zur Startseite">
+        </a>
+        <nav class="header-nav" id="headerNav">
+            <a href="https://www.ai-allstars.com">Home</a>
+            <a href="https://www.preise.ai-allstars.com">Preise</a>
+            <a href="https://www.team.ai-allstars.com">Team</a>
+            <a href="https://www.kurs.ai-allstars.com">Kurs</a>
+            <a href="https://www.kontakt.ai-allstars.com">Kontakt</a>
+        </nav>
+        <a href="https://www.kontakt.ai-allstars.com" class="header-cta">AI Pass Beratung</a>
+        
+        <!-- Mobile Star Menu Button -->
+        <button class="star-menu-button" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
+            <img src="static/images/star-white.png" alt="Menu" class="star-icon">
+        </button>
+        
+        <!-- Mobile Dropdown Menu -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="https://www.ai-allstars.com" class="mobile-nav-item">Home</a>
+            <a href="https://www.preise.ai-allstars.com" class="mobile-nav-item">Preise</a>
+            <a href="https://www.team.ai-allstars.com" class="mobile-nav-item">Team</a>
+            <a href="https://www.kurs.ai-allstars.com" class="mobile-nav-item">Kurs</a>
+            <a href="https://www.kontakt.ai-allstars.com" class="mobile-nav-item">Kontakt</a>
+            <a href="https://www.kontakt.ai-allstars.com" class="mobile-cta">AI Pass Beratung</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="{{ url_for('static', filename='allstars-logo-white.png') }}" alt="AI Allstars" class="footer-logo-image">
+                </div>
+                <p>Ihr Partner für erfolgreiche KI-Transformation</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="https://www.kurs.ai-allstars.com">Kurs-Einblick</a>
+                    <a href="https://www.preise.ai-allstars.com">Preise</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Unternehmen</h4>
+                    <a href="https://www.team.ai-allstars.com">Team</a>
+                    <a href="https://www.kontakt.ai-allstars.com">Kontakt</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <a href="https://ai-allstars.com/datenschutz">Datenschutz</a>
+                    <a href="https://ai-allstars.com/impressum">Impressum</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 AI Allstars. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/header-functionality.js') }}"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

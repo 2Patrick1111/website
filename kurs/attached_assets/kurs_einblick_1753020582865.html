@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Allstars - Kurseinblick</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .browser-window {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.3),
+                0 8px 20px rgba(0,0,0,0.15);
+            max-width: 1200px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .browser-header {
+            background: #f6f6f6;
+            padding: 12px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .traffic-lights {
+            display: flex;
+            gap: 8px;
+        }
+
+        .traffic-light {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .traffic-light.close { background: #ff5f57; }
+        .traffic-light.minimize { background: #ffbd2e; }
+        .traffic-light.maximize { background: #28ca42; }
+
+        .traffic-light:hover {
+            filter: brightness(0.9);
+        }
+
+        .address-bar {
+            background: #fff;
+            border: 1px solid #d0d0d0;
+            border-radius: 6px;
+            padding: 6px 12px;
+            flex: 1;
+            margin-left: 12px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .browser-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 700px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .main-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .main-btn {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 30px 50px;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-color: rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .content-area {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            padding: 30px;
+            min-height: 500px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-area.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .content-item {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .content-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .content-item h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-item p {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .video-player {
+            background: #000;
+            border-radius: 8px;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .play-btn {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .play-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .document-preview {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .document-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .document-body {
+            padding: 20px;
+            background: white;
+        }
+
+        .document-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .document-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            padding: 4px 0;
+        }
+
+        .document-checkmark {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .document-footer {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            font-style: italic;
+            color: #666;
+            border-top: 1px solid #e9ecef;
+            font-size: 0.8rem;
+        }
+
+        .quiz-container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .quiz-question {
+            color: white;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .quiz-option {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .quiz-option:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .bonus-videos {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .bonus-video {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bonus-video:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .tip-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.9);
+            border-left: 3px solid rgba(255,255,255,0.5);
+        }
+
+        .logo-placeholder {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .logo-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 2px dashed rgba(255,255,255,0.3);
+            border-radius: 12px;
+            padding: 20px;
+            display: inline-block;
+            min-width: 200px;
+        }
+
+        .logo-box span {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .logo-box small {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .hero-image-placeholder {
+            background: rgba(0,0,0,0.3);
+            border: 2px dashed rgba(255,255,255,0.3);
+            border-radius: 15px;
+            margin: 20px 0 30px 0;
+            width: 100%;
+            aspect-ratio: 21/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .hero-content span {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .hero-content small {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Department Grid Styles */
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .department-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .department-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .department-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .department-card h3 {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .department-card p {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .thumbnail-placeholder {
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            padding: 30px 20px;
+            border: 2px dashed rgba(255,255,255,0.3);
+            margin-bottom: 15px;
+            width: 100%;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thumbnail-placeholder span {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .thumbnail-placeholder small {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+        }
+
+        .department-btn {
+            background: rgba(102, 126, 234, 0.8);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.9);
+        }
+
+        .department-card:hover .department-btn {
+            background: rgba(102, 126, 234, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Department Detail Styles */
+        .detail-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .detail-video {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tool-info {
+            margin-top: 20px;
+        }
+
+        .tool-info h3 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .tool-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tool-tag {
+            background: rgba(102, 126, 234, 0.6);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .tool-info p {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .assignment-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .assignment-section h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .assignment-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .assignment-header {
+            background: rgba(102, 126, 234, 0.6);
+            padding: 15px 20px;
+            color: white;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .assignment-icon {
+            font-size: 1.2rem;
+        }
+
+        .assignment-body {
+            padding: 20px;
+        }
+
+        .assignment-body p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .assignment-steps {
+            margin: 20px 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 8px 0;
+        }
+
+        .step-number {
+            background: rgba(102, 126, 234, 0.8);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step span:last-child {
+            color: rgba(255,255,255,0.9);
+            flex: 1;
+        }
+
+        .assignment-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .assignment-footer span {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+        }
+
+        .goal-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero-image-placeholder {
+                aspect-ratio: 16/9;
+            }
+            
+            .hero-content span {
+                font-size: 2rem;
+            }
+            
+            .logo-box {
+                min-width: 150px;
+                padding: 15px;
+            }
+            
+            .logo-box span {
+                font-size: 2rem;
+            }
+        }
+            .browser-window {
+                margin: 10px;
+                border-radius: 8px;
+            }
+            
+            .browser-content {
+                padding: 20px;
+            }
+            
+            .main-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .main-btn {
+                min-width: 250px;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .department-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .bonus-videos {
+                flex-direction: column;
+            }
+            
+            .assignment-footer {
+                flex-direction: column;
+            }
+            
+            .tool-list {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="browser-window">
+        <!-- macOS Browser Header -->
+        <div class="browser-header">
+            <div class="traffic-lights">
+                <div class="traffic-light close"></div>
+                <div class="traffic-light minimize"></div>
+                <div class="traffic-light maximize"></div>
+            </div>
+            <div class="address-bar">🔒 ai-allstars.com/kurs-einblick</div>
+        </div>
+
+        <!-- Browser Content -->
+        <div class="browser-content">
+            <div class="logo-placeholder">
+                <div class="logo-box">
+                    <span>🤖</span>
+                    <small>AI Allstars Logo</small>
+                </div>
+            </div>
+
+            <div class="hero-image-placeholder">
+                <div class="hero-content">
+                    <span>🎬</span>
+                    <small>Hero-Image / Video</small>
+                </div>
+            </div>
+
+            <div class="header">
+                <h1>🚀 AI‑PASS Kurseinblick</h1>
+                <p>Entdecke, wie unser Programm dich zum KI‑Champion macht</p>
+            </div>
+
+            <div id="mainMenu">
+                <div class="main-buttons">
+                    <div class="main-btn" onclick="showContent('theorie')">
+                        <span class="icon">📚</span>
+                        <div>Theorie</div>
+                    </div>
+                    <div class="main-btn" onclick="showContent('praxis')">
+                        <span class="icon">⚡</span>
+                        <div>Praxis</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theorie Content -->
+            <div id="theorieContent" class="content-area">
+                <div class="back-btn" onclick="showMainMenu()">← Zurück zur Übersicht</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">📚 Theorie-Bereich</h2>
+                
+                <div class="content-grid">
+                    <div class="content-item">
+                        <h3>🎥 Lernvideo</h3>
+                        <div class="video-player">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <p>Grundlagen der KI und praktische Anwendungen in deinem Arbeitsbereich</p>
+                    </div>
+
+                    <div class="content-item">
+                        <h3>📋 Aufgabenbeschreibung</h3>
+                        <p><strong>Deine Mission:</strong><br>
+                        Analysiere deine täglichen Arbeitsabläufe und identifiziere 3 Bereiche, in denen KI-Tools dir helfen können. Dokumentiere deine Erkenntnisse und erstelle einen Umsetzungsplan.</p>
+                        <div class="tip-box">
+                            ⏱️ Geschätzte Bearbeitungszeit: 45 Minuten
+                        </div>
+                    </div>
+
+                    <div class="content-item">
+                        <h3>📄 Handout</h3>
+                        <div class="document-preview">
+                            <div class="document-header">
+                                <span>📋</span>
+                                <span>AI‑PASS Handout</span>
+                            </div>
+                            <div class="document-body">
+                                <div class="document-title">KI-Tools Übersicht 2025</div>
+                                
+                                <div class="document-item">
+                                    <span class="document-checkmark">✓</span>
+                                    <span><strong>ChatGPT & Claude</strong> für Textarbeit</span>
+                                </div>
+                                <div class="document-item">
+                                    <span class="document-checkmark">✓</span>
+                                    <span><strong>Midjourney</strong> für Bildgenerierung</span>
+                                </div>
+                                <div class="document-item">
+                                    <span class="document-checkmark">✓</span>
+                                    <span><strong>Notion AI</strong> für Projektmanagement</span>
+                                </div>
+                                <div class="document-item">
+                                    <span class="document-checkmark">✓</span>
+                                    <span><strong>Grammarly</strong> für Korrekturlesen</span>
+                                </div>
+                            </div>
+                            <div class="document-footer">
+                                + 15 weitere Tools mit detaillierten Anwendungsbeispielen
+                            </div>
+                        </div>
+                        <p>Kompakte Übersicht aller wichtigen KI-Tools für deinen Arbeitsbereich</p>
+                    </div>
+
+                    <div class="content-item">
+                        <h3>🎁 Bonusmaterial</h3>
+                        <div class="bonus-videos">
+                            <div class="bonus-video">🎥 Video 1: Prompt Engineering</div>
+                            <div class="bonus-video">🎥 Video 2: KI-Ethik</div>
+                        </div>
+                        <div class="quiz-container">
+                            <div class="quiz-question">Quick-Quiz: Was ist Machine Learning?</div>
+                            <div class="quiz-options">
+                                <div class="quiz-option">A) Ein Kochrezept für Maschinen</div>
+                                <div class="quiz-option">B) Algorithmen, die aus Daten lernen</div>
+                                <div class="quiz-option">C) Wartung von Computern</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Praxis Content with Departments -->
+            <div id="praxisContent" class="content-area">
+                <div class="back-btn" onclick="showMainMenu()">← Zurück zur Übersicht</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">⚡ Praxis-Bereich</h2>
+                
+                <div class="department-grid">
+                    <div class="department-card" onclick="showDepartment('marketing')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <div class="department-icon">📈</div>
+                        <h3>Marketing</h3>
+                        <p>KI für Content-Erstellung, Social Media und Kampagnen-Optimierung</p>
+                        <div class="department-btn">Marketing</div>
+                    </div>
+
+                    <div class="department-card" onclick="showDepartment('hr')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <div class="department-icon">👥</div>
+                        <h3>HR</h3>
+                        <p>Automatisierung von Bewerbungsprozessen und Mitarbeiter-Kommunikation</p>
+                        <div class="department-btn">HR</div>
+                    </div>
+
+                    <div class="department-card" onclick="showDepartment('support')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <div class="department-icon">🎧</div>
+                        <h3>Support</h3>
+                        <p>Chatbots, Ticket-Automatisierung und Kundenkommunikation</p>
+                        <div class="department-btn">Support</div>
+                    </div>
+
+                    <div class="department-card" onclick="showDepartment('finance')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <div class="department-icon">💰</div>
+                        <h3>Finance</h3>
+                        <p>Automatisierte Rechnungsverarbeitung und Datenanalyse</p>
+                        <div class="department-btn">Finance</div>
+                    </div>
+
+                    <div class="department-card" onclick="showDepartment('it')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <div class="department-icon">💻</div>
+                        <h3>IT</h3>
+                        <p>Code-Generierung, Dokumentation und System-Automatisierung</p>
+                        <div class="department-btn">IT</div>
+                    </div>
+
+                    <div class="department-card" onclick="showDepartment('recht')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <div class="department-icon">⚖️</div>
+                        <h3>Recht</h3>
+                        <p>Vertragsprüfung, Compliance-Checks und Rechtsrecherche</p>
+                        <div class="department-btn">Recht</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing Detail -->
+            <div id="marketingDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">📈 Marketing mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Jasper.ai</span>
+                                <span class="tool-tag">Canva AI</span>
+                                <span class="tool-tag">Copy.ai</span>
+                            </div>
+                            <p>Erstelle überzeugende Werbetexte, Social Media Posts und Kampagnen-Konzepte in Rekordzeit.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">🎯</span>
+                                <strong>Marketing-Challenge: Social Media Kampagne</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Entwickle eine vollständige Social Media Kampagne für ein fiktives Produkt mit Hilfe von KI-Tools.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>Produktbeschreibung mit ChatGPT erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>5 Social Media Posts formulieren</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Hashtag-Strategie entwickeln</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Kampagnen-Timeline erstellen</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 60 Minuten</span>
+                                    <span>🎁 Bonus: Erstelle auch passende Bildkonzepte</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR Detail -->
+            <div id="hrDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">👥 HR mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">Notion AI</span>
+                                <span class="tool-tag">Grammarly</span>
+                            </div>
+                            <p>Automatisiere Stellenausschreibungen, Bewerbungsantworten und Mitarbeiterkommunikation.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">👔</span>
+                                <strong>HR-Challenge: Bewerbungsprozess optimieren</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Erstelle ein vollständiges Set an HR-Templates für den Bewerbungsprozess.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>Stellenausschreibung für "Marketing Manager" erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>E-Mail-Templates für Bewerbungseingang</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Absage-E-Mails formulieren (höflich & konstruktiv)</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Onboarding-Checkliste entwickeln</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 45 Minuten</span>
+                                    <span>🎁 Bonus: Interviewfragen-Katalog erstellen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Detail -->
+            <div id="supportDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">🎧 Support mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Zendesk AI</span>
+                                <span class="tool-tag">Intercom</span>
+                                <span class="tool-tag">DeepL</span>
+                            </div>
+                            <p>Automatisiere Kundenanfragen, erstelle FAQ-Antworten und optimiere die Kundenkommunikation.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">💬</span>
+                                <strong>Support-Challenge: Kundenservice automatisieren</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Entwickle ein KI-gestütztes Support-System für typische Kundenanfragen.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>Top 10 FAQ-Antworten erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>E-Mail-Templates für Support-Tickets</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Chatbot-Dialogfluss entwerfen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Eskalations-Protokoll definieren</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 50 Minuten</span>
+                                    <span>🎁 Bonus: Mehrsprachige Antworten erstellen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Finance Detail -->
+            <div id="financeDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">💰 Finance mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Excel + AI</span>
+                                <span class="tool-tag">QuickBooks AI</span>
+                                <span class="tool-tag">Zapier</span>
+                            </div>
+                            <p>Automatisiere Rechnungserstellung, Budgetplanung und Finanzanalysen.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">📊</span>
+                                <strong>Finance-Challenge: Automatisierte Berichterstattung</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Erstelle automatisierte Finanz-Workflows und Reporting-Templates.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>Rechnungsvorlagen mit KI optimieren</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>Budgetplanungs-Template erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Ausgaben-Kategorisierung automatisieren</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Monatsbericht-Template entwickeln</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 55 Minuten</span>
+                                    <span>🎁 Bonus: KPI-Dashboard-Konzept erstellen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT Detail -->
+            <div id="itDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">💻 IT mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">GitHub Copilot</span>
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">Cursor AI</span>
+                            </div>
+                            <p>Code-Generierung, Debugging, Dokumentation und System-Automatisierung.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">⚙️</span>
+                                <strong>IT-Challenge: Code-Automatisierung</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Nutze KI für typische IT-Aufgaben und Code-Optimierung.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>Python-Script für Datenverarbeitung erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>Code-Dokumentation automatisch generieren</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Bug-Fixes mit KI-Unterstützung</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Deployment-Skript optimieren</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 70 Minuten</span>
+                                    <span>🎁 Bonus: API-Integration automatisieren</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recht Detail -->
+            <div id="rechtDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">⚖️ Recht mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">LegalAI</span>
+                                <span class="tool-tag">Notion AI</span>
+                            </div>
+                            <p>Vertragsprüfung, Compliance-Checks, Rechtsrecherche und Dokumentenerstellung.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">📜</span>
+                                <strong>Recht-Challenge: Compliance-Automation</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Entwickle KI-gestützte Workflows für rechtliche Routineaufgaben.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>AGB-Template für Online-Shop erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>DSGVO-konforme Datenschutzerklärung</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Vertragsklauseln analysieren und optimieren</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Compliance-Checkliste entwickeln</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 65 Minuten</span>
+                                    <span>🎁 Bonus: Rechtliche Risikoanalyse erstellen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(type) {
+            // Hide main menu
+            document.getElementById('mainMenu').style.display = 'none';
+            
+            // Hide all content areas
+            document.querySelectorAll('.content-area').forEach(area => {
+                area.classList.remove('active');
+            });
+            
+            // Show selected content
+            document.getElementById(type + 'Content').classList.add('active');
+        }
+
+        function showMainMenu() {
+            // Show main menu
+            document.getElementById('mainMenu').style.display = 'block';
+            
+            // Hide all content areas
+            document.querySelectorAll('.content-area').forEach(area => {
+                area.classList.remove('active');
+            });
+        }
+
+        function showDepartment(department) {
+            // Hide praxis overview
+            document.getElementById('praxisContent').classList.remove('active');
+            
+            // Hide all department details
+            document.querySelectorAll('[id$="Detail"]').forEach(detail => {
+                detail.classList.remove('active');
+            });
+            
+            // Show selected department
+            document.getElementById(department + 'Detail').classList.add('active');
+        }
+
+        // Add click events for quiz options
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove previous selections
+                this.parentNode.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.style.background = 'rgba(255,255,255,0.1)';
+                    opt.style.borderColor = 'rgba(255,255,255,0.2)';
+                });
+                
+                // Highlight selected option
+                this.style.background = 'rgba(102, 126, 234, 0.5)';
+                this.style.borderColor = 'rgba(102, 126, 234, 0.8)';
+                
+                // Show feedback
+                setTimeout(() => {
+                    if (this.textContent.includes('Algorithmen, die aus Daten lernen')) {
+                        alert('🎉 Richtig! Du verstehst bereits die Grundlagen von Machine Learning.');
+                    } else {
+                        alert('🤔 Nicht ganz richtig. Machine Learning bezieht sich auf Algorithmen, die aus Daten lernen können.');
+                    }
+                }, 300);
+            });
+        });
+
+        // Add click events for video players
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.innerHTML = '⏸';
+                this.style.background = 'rgba(102, 126, 234, 0.8)';
+                setTimeout(() => {
+                    alert('🎬 Video würde hier abgespielt werden. In der echten Plattform siehst du hier unsere Lernvideos!');
+                    this.innerHTML = '▶';
+                    this.style.background = 'rgba(255,255,255,0.2)';
+                }, 500);
+            });
+        });
+
+        // Add click events for bonus videos
+        document.querySelectorAll('.bonus-video').forEach(video => {
+            video.addEventListener('click', function() {
+                this.style.background = 'rgba(102, 126, 234, 0.5)';
+                setTimeout(() => {
+                    alert('🎬 Bonus-Video: ' + this.textContent.replace('🎥 ', '') + ' würde hier abgespielt werden!');
+                    this.style.background = 'rgba(255,255,255,0.1)';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

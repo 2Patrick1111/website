@@ -1,0 +1,2316 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<style>
+        /* Hero Section Styles */
+        .hero-section {
+            padding: 230px 20px 80px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-main-title {
+            font-size: 80px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            text-align: center;
+            font-family: 'Sora', sans-serif;
+        }
+
+
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #5a67d8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .arrow-container {
+            position: relative;
+            text-align: center;
+            margin-bottom: -120px;
+            margin-top: 5px;
+            z-index: 1;
+        }
+
+        .curved-arrow {
+            width: 400px;
+            height: 360px;
+            opacity: 0.9;
+        }
+
+        /* CTA Grid Styles */
+        .cta-grid-section {
+            margin: 60px 0;
+            padding: 0 20px;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cta-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 6px 24px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .cta-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-4px);
+            box-shadow: 
+                0 12px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .cta-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .cta-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #0080FF 0%, #fe0000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .cta-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .cta-button-card {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #0080FF 0%, #fe0000 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(0, 128, 255, 0.3);
+            margin-top: auto;
+        }
+
+        .cta-button-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 128, 255, 0.4);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #00d4ff;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .kurs-einblick-container {
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+
+        /* MacBook Keyboard Styles - 3D Perspective */
+        .macbook-keyboard {
+            width: 100%;
+            max-width: 1100px;
+            margin-top: -10px;
+            position: relative;
+            perspective: 1000px;
+            transform: scale(1.0);
+        }
+
+        .keyboard-base {
+            background: linear-gradient(135deg, #4a4a4a 0%, #2d2d2d 100%);
+            border-radius: 0 0 25px 25px;
+            padding: 25px 30px 40px 30px;
+            transform: rotateX(25deg);
+            transform-origin: center top;
+            width: 100%;
+            margin-left: 0;
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.3),
+                0 5px 15px rgba(0,0,0,0.2),
+                inset 0 2px 0 rgba(255,255,255,0.1),
+                inset 0 -2px 0 rgba(0,0,0,0.2);
+        }
+
+        .keyboard-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .keyboard-row {
+            display: flex;
+            justify-content: center;
+            gap: 3px;
+        }
+
+        .key {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 1px solid #333;
+            border-radius: 3px;
+            width: 38px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 500;
+            color: #ffffff;
+            text-shadow: 0 0 3px rgba(255,255,255,0.3);
+            box-shadow: 
+                0 1px 3px rgba(0,0,0,0.4),
+                inset 0 1px 0 rgba(255,255,255,0.1);
+            transition: all 0.1s ease;
+        }
+
+        .key:hover {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            transform: translateY(-0.5px);
+            box-shadow: 
+                0 2px 4px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.15);
+        }
+
+        .key.space {
+            width: 220px;
+        }
+
+        .key.shift {
+            width: 65px;
+        }
+
+        .key.tab {
+            width: 55px;
+        }
+
+        .key.enter {
+            width: 68px;
+        }
+
+        .key.backspace {
+            width: 60px;
+        }
+
+        .trackpad {
+            background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+            border: 1px solid #555;
+            border-radius: 12px;
+            width: 160px;
+            height: 100px;
+            margin: 0 auto;
+            box-shadow: 
+                inset 0 2px 5px rgba(0,0,0,0.3),
+                0 1px 0 rgba(255,255,255,0.1);
+            position: relative;
+        }
+
+        /* Laptop body shadow for depth */
+        .macbook-keyboard::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 20px;
+            background: radial-gradient(ellipse, rgba(0,0,0,0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 120px 20px 40px 20px;
+            }
+            
+            .hero-main-title {
+                font-size: 40px;
+                line-height: 1.2;
+                margin-top: 40px;
+            }
+
+            .curved-arrow {
+                width: 280px;
+                height: 250px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .hero-section {
+                padding: 60px 20px 40px 20px;
+            }
+            
+            .key {
+                width: 30px;
+                height: 28px;
+                font-size: 9px;
+            }
+            
+            .key.space {
+                width: 160px;
+            }
+            
+            .key.shift {
+                width: 50px;
+            }
+            
+            .key.tab {
+                width: 42px;
+            }
+            
+            .key.enter {
+                width: 52px;
+            }
+            
+            .key.backspace {
+                width: 48px;
+            }
+            
+            .trackpad {
+                width: 130px;
+                height: 85px;
+            }
+            
+            .keyboard-base {
+                padding: 20px 20px 30px 20px;
+                transform: rotateX(20deg);
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .browser-window {
+                transform: scale(0.8);
+                max-width: 100%;
+            }
+
+            .browser-content {
+                height: 600px;
+                max-height: 600px;
+                padding: 30px;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+
+            .macbook-keyboard {
+                display: none;
+            }
+        }
+
+        .browser-window {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 6px solid #4a4a4a;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.3),
+                0 8px 20px rgba(0,0,0,0.15);
+            max-width: 1100px;
+            width: 100%;
+            overflow: hidden;
+            transform: scale(1.0);
+            margin: 0 auto;
+        }
+
+        .browser-header {
+            background: #f6f6f6;
+            padding: 12px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .traffic-lights {
+            display: flex;
+            gap: 8px;
+        }
+
+        .traffic-light {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .traffic-light.close { background: #ff5f57; }
+        .traffic-light.minimize { background: #ffbd2e; }
+        .traffic-light.maximize { background: #28ca42; }
+
+        .traffic-light:hover {
+            filter: brightness(0.9);
+        }
+
+        .address-bar {
+            background: #fff;
+            border: 1px solid #d0d0d0;
+            border-radius: 6px;
+            padding: 6px 12px;
+            flex: 1;
+            margin-left: 12px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .browser-content {
+            background: 
+                linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                linear-gradient(135deg, #0080FF 0%, #fe0000 100%);
+            height: 700px;
+            max-height: 700px;
+            padding: 40px;
+            position: relative;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+            position: relative;
+            z-index: 2;
+            margin-top: -60px;
+        }
+
+        .header h1 {
+            font-size: 5rem;
+            margin-bottom: 10px;
+            text-shadow: 4px 4px 12px rgba(0,0,0,0.8), 2px 2px 6px rgba(0,0,0,0.6);
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .main-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .main-btn {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 30px 50px;
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .content-area {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(30px);
+            border-radius: 15px;
+            padding: 30px;
+            height: calc(100% - 60px);
+            max-height: calc(100% - 60px);
+            border: 1px solid rgba(255,255,255,0.2);
+            display: none;
+            animation: fadeIn 0.5s ease;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .content-area.active {
+            display: block;
+        }
+
+        /* Custom scrollbar for content areas */
+        .content-area::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .content-area::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        .content-area::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
+        }
+
+        .content-area::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .content-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(30px);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .content-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .content-item h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-item p {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .video-player {
+            background: #000 url('/static/images/ki-grundlagen-video.png') center/cover;
+            border-radius: 8px;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .video-player::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+
+        .play-btn {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(30px);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ffffff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .play-btn:hover {
+            background: rgba(255,255,255,0.15);
+            transform: scale(1.1);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .document-preview {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .document-header {
+            background: linear-gradient(135deg, #0080FF, #fe0000);
+            color: #ffffff;
+            padding: 12px 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .document-body {
+            padding: 20px;
+            background: white;
+        }
+
+        .document-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .document-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            padding: 4px 0;
+        }
+
+        .document-checkmark {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .document-footer {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            font-style: italic;
+            color: #666;
+            border-top: 1px solid #e9ecef;
+            font-size: 0.8rem;
+        }
+
+        .quiz-container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .quiz-question {
+            color: white;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .quiz-option {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .quiz-option:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 10px 20px;
+            color: #ffffff;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .bonus-videos {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .bonus-video {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bonus-video:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .tip-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.9);
+            border-left: 3px solid rgba(255,255,255,0.5);
+        }
+
+        .logo-placeholder {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .logo-box {
+            display: inline-block;
+        }
+
+        .hero-image-placeholder {
+            margin: 20px 0 30px 0;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .hero-content span {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .hero-content small {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Department Grid Styles */
+        .department-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .department-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .department-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .department-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .department-card h3 {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .department-card p {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .thumbnail-placeholder {
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            padding: 30px 20px;
+            border: 2px dashed rgba(255,255,255,0.3);
+            margin-bottom: 15px;
+            width: 100%;
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .department-card[onclick*="marketing"] .thumbnail-placeholder {
+            background: url('/static/images/marketing-video.png') no-repeat center center;
+            background-size: cover;
+            border: none;
+            padding: 0;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            will-change: transform;
+        }
+
+        .department-card[onclick*="marketing"] .thumbnail-placeholder span,
+        .department-card[onclick*="marketing"] .thumbnail-placeholder small {
+            display: none;
+        }
+
+        .department-card[onclick*="hr"] .thumbnail-placeholder {
+            background: url('/static/images/hr-video.png') no-repeat center center;
+            background-size: cover;
+            border: none;
+            padding: 0;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            will-change: transform;
+        }
+
+        .department-card[onclick*="hr"] .thumbnail-placeholder span,
+        .department-card[onclick*="hr"] .thumbnail-placeholder small {
+            display: none;
+        }
+
+        .department-card[onclick*="support"] .thumbnail-placeholder {
+            background: url('/static/images/support-video.png') no-repeat center center;
+            background-size: cover;
+            border: none;
+            padding: 0;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            will-change: transform;
+        }
+
+        .department-card[onclick*="support"] .thumbnail-placeholder span,
+        .department-card[onclick*="support"] .thumbnail-placeholder small {
+            display: none;
+        }
+
+        .department-card[onclick*="finance"] .thumbnail-placeholder {
+            background: url('/static/images/finance-video.png') no-repeat center center;
+            background-size: cover;
+            border: none;
+            padding: 0;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            will-change: transform;
+        }
+
+        .department-card[onclick*="finance"] .thumbnail-placeholder span,
+        .department-card[onclick*="finance"] .thumbnail-placeholder small {
+            display: none;
+        }
+
+        .department-card[onclick*="it"] .thumbnail-placeholder {
+            background: url('/static/images/it-video.png') no-repeat center center;
+            background-size: cover;
+            border: none;
+            padding: 0;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            will-change: transform;
+        }
+
+        .department-card[onclick*="it"] .thumbnail-placeholder span,
+        .department-card[onclick*="it"] .thumbnail-placeholder small {
+            display: none;
+        }
+
+        .department-card[onclick*="recht"] .thumbnail-placeholder {
+            background: url('/static/images/recht-video.png') no-repeat center center;
+            background-size: cover;
+            border: none;
+            padding: 0;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            will-change: transform;
+        }
+
+        .department-card[onclick*="recht"] .thumbnail-placeholder span,
+        .department-card[onclick*="recht"] .thumbnail-placeholder small {
+            display: none;
+        }
+
+        .thumbnail-placeholder span {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .thumbnail-placeholder small {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+        }
+
+        .department-btn {
+            background: rgba(102, 126, 234, 0.8);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.9);
+        }
+
+        .department-card:hover .department-btn {
+            background: rgba(102, 126, 234, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Department Detail Styles */
+        .detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .detail-video {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tool-info {
+            margin-top: 20px;
+        }
+
+        .tool-info h3 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .tool-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tool-tag {
+            background: rgba(102, 126, 234, 0.6);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .tool-info p {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .assignment-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .assignment-section h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .assignment-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .assignment-header {
+            background: rgba(102, 126, 234, 0.6);
+            padding: 15px 20px;
+            color: white;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .assignment-icon {
+            font-size: 1.2rem;
+        }
+
+        .assignment-body {
+            padding: 20px;
+        }
+
+        .assignment-body p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .assignment-steps {
+            margin: 20px 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 8px 0;
+        }
+
+        .step-number {
+            background: rgba(102, 126, 234, 0.8);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step span:last-child {
+            color: rgba(255,255,255,0.9);
+            flex: 1;
+        }
+
+        .assignment-footer {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .assignment-footer span {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+        }
+
+        .goal-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero-image-placeholder {
+                aspect-ratio: 16/9;
+            }
+            
+            .hero-content span {
+                font-size: 2rem;
+            }
+            
+            .logo-box {
+                min-width: 150px;
+                padding: 15px;
+            }
+            
+            .logo-box span {
+                font-size: 2rem;
+            }
+            
+            .detail-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            /* Mobile Phone Frame */
+            .browser-container {
+                transform: none;
+                padding: 20px 0;
+            }
+
+            .browser-window {
+                width: 320px;
+                height: 568px;
+                background: #1a1a1a;
+                border-radius: 35px;
+                padding: 20px 10px;
+                margin: 0 auto;
+                position: relative;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                border: 3px solid #333;
+            }
+
+            .browser-window::before {
+                content: '';
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 4px;
+                background: #666;
+                border-radius: 2px;
+            }
+
+            .browser-window::after {
+                content: '';
+                position: absolute;
+                bottom: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 50px;
+                border: 2px solid #666;
+                border-radius: 50%;
+                background: transparent;
+            }
+
+            .browser-header {
+                display: none;
+            }
+
+            .browser-content {
+                height: 500px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 20px;
+                padding: 10px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                margin-top: 15px;
+                font-size: 14px;
+            }
+
+            .main-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .main-btn {
+                min-width: auto;
+                width: 100%;
+                padding: 10px 16px;
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .department-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+            
+            .bonus-videos {
+                flex-direction: column;
+            }
+
+            .department-card {
+                padding: 12px;
+            }
+
+            .department-card img {
+                width: 100%;
+                height: auto;
+                max-height: 120px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-bottom: 8px;
+            }
+
+            .department-card p {
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+
+            .department-btn {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+                margin-top: 10px;
+            }
+
+            .content-item {
+                padding: 12px;
+            }
+
+            .content-item h3 {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+
+            .content-item p {
+                font-size: 0.75rem;
+                line-height: 1.4;
+            }
+
+            .assignment-section h3 {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            .assignment-card {
+                padding: 12px;
+            }
+
+            .assignment-header strong {
+                font-size: 0.85rem;
+            }
+
+            .assignment-body p {
+                font-size: 0.8rem;
+                margin-bottom: 12px;
+            }
+
+            .assignment-steps {
+                gap: 8px;
+            }
+
+            .step {
+                padding: 8px 10px;
+                font-size: 0.75rem;
+            }
+
+            .step-number {
+                width: 20px;
+                height: 20px;
+                font-size: 0.7rem;
+            }
+
+            .tool-info h3 {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+
+            .tool-info p {
+                font-size: 0.75rem;
+            }
+
+            .tool-list {
+                gap: 4px;
+                margin-bottom: 10px;
+            }
+
+            .tool-tag {
+                font-size: 0.7rem;
+                padding: 3px 6px;
+            }
+
+            .assignment-footer span {
+                font-size: 0.7rem;
+            }
+
+            .back-btn {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+                margin-bottom: 15px;
+            }
+
+            .detail-content h2 {
+                font-size: 1.3rem !important;
+                margin-bottom: 15px !important;
+            }
+
+            .video-player {
+                margin-bottom: 10px;
+                aspect-ratio: 16/9;
+                height: auto;
+                max-height: 120px;
+            }
+
+            .play-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .thumbnail-placeholder {
+                height: 60px;
+                margin-bottom: 8px;
+            }
+
+            .thumbnail-placeholder span {
+                font-size: 1.2rem;
+            }
+
+            .thumbnail-placeholder small {
+                font-size: 0.6rem;
+            }
+
+            /* Mobile Detail Content Optimizations */
+            .detail-video {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .assignment-section {
+                padding: 0;
+            }
+
+            .assignment-icon {
+                font-size: 1rem;
+            }
+
+            .goal-box {
+                padding: 8px;
+                font-size: 0.75rem;
+                margin-top: 8px;
+            }
+
+            .quiz-question {
+                font-size: 0.8rem;
+                margin-bottom: 8px;
+            }
+
+            .quiz-option {
+                padding: 6px;
+                font-size: 0.75rem;
+            }
+
+            .bonus-video {
+                padding: 6px 8px;
+                font-size: 0.7rem;
+            }
+
+            .tip-box {
+                padding: 8px;
+                font-size: 0.7rem;
+                margin-top: 8px;
+            }
+
+            .document-preview {
+                margin-bottom: 8px;
+                font-size: 0.7rem;
+                padding: 8px;
+                min-height: 60px;
+            }
+
+            .content-area {
+                padding: 15px;
+            }
+
+            /* Hide keyboard on mobile */
+            .keyboard {
+                display: none;
+            }
+        }
+            
+            .assignment-footer {
+                flex-direction: column;
+            }
+            
+            .tool-list {
+                justify-content: center;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="hero-text">
+            <p class="hero-main-title">Die erste <span style="color: #fe0000; font-size: 110px;">6 in 1</span> KI Weiterbildung</p>
+            <p class="hero-subtitle">Interaktiver Kurseinblick: So funktioniert unser 5‑Wochen AI‑PASS</p>
+            
+            <!-- Curved Arrow -->
+            <div class="arrow-container">
+                <svg class="curved-arrow" viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+                                refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#ff0000" />
+                        </marker>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                            <feMerge> 
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                            <animate attributeName="stdDeviation" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+                        </filter>
+                        <filter id="pulse" x="-50%" y="-50%" width="200%" height="200%">
+                            <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#ff0000" flood-opacity="0.8"/>
+                            <animate attributeName="stdDeviation" values="3;8;3" dur="1.5s" repeatCount="indefinite"/>
+                        </filter>
+                    </defs>
+                    <path d="M 200 10 Q 250 100 300 420" stroke="#ff0000" stroke-width="4" 
+                          fill="none" marker-end="url(#arrowhead)" filter="url(#glow) url(#pulse)">
+                        <animate attributeName="stroke-width" values="4;6;4" dur="1.8s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.9;1;0.9" dur="2.2s" repeatCount="indefinite"/>
+                    </path>
+                </svg>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="kurs-einblick-container">
+    <div class="browser-window">
+        <!-- macOS Browser Header -->
+        <div class="browser-header">
+            <div class="traffic-lights">
+                <div class="traffic-light close"></div>
+                <div class="traffic-light minimize"></div>
+                <div class="traffic-light maximize"></div>
+            </div>
+            <div class="address-bar">🔒 ai-allstars.com/kurs-einblick</div>
+        </div>
+
+        <!-- Browser Content -->
+        <div class="browser-content">
+            <div class="logo-placeholder">
+                <div class="logo-box">
+                    <img src="{{ url_for('static', filename='allstars-logo-white.png') }}" alt="AI Allstars" style="max-width: 200px; height: auto; filter: brightness(0) invert(1);">
+                </div>
+            </div>
+
+            <div class="hero-image-placeholder">
+                <img src="{{ url_for('static', filename='images/hero-team-image.png') }}" alt="AI Allstars Team" style="width: 100%; max-width: 600px; height: auto; margin: 0 auto; display: block;">
+            </div>
+
+            <div class="header">
+                <h1>🚀 AI‑PASS Kurseinblick</h1>
+                <p>Entdecke, wie unser Programm dich zum KI‑Champion macht</p>
+            </div>
+
+            <div id="mainMenu">
+                <div class="main-buttons">
+                    <div class="main-btn" onclick="showContent('theorie')">
+                        <span class="icon">📚</span>
+                        <div>Theorie</div>
+                    </div>
+                    <div class="main-btn" onclick="showContent('praxis')">
+                        <span class="icon">⚡</span>
+                        <div>Praxis</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theorie Content -->
+            <div id="theorieContent" class="content-area">
+                <div class="back-btn" onclick="showMainMenu()">← Zurück zur Übersicht</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">📚 Theorie-Bereich</h2>
+                
+                <div class="content-grid">
+                    <div class="content-item">
+                        <h3>🎥 Lernvideo</h3>
+                        <div class="video-player">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <p>Grundlagen der KI und praktische Anwendungen in deinem Arbeitsbereich</p>
+                    </div>
+
+                    <div class="content-item">
+                        <h3>📋 Aufgabenbeschreibung</h3>
+                        <p><strong>Deine Mission:</strong><br>
+                        Analysiere deine täglichen Arbeitsabläufe und identifiziere 3 Bereiche, in denen KI-Tools dir helfen können. Dokumentiere deine Erkenntnisse und erstelle einen Umsetzungsplan.</p>
+                        <div class="tip-box">
+                            ⏱️ Geschätzte Bearbeitungszeit: 45 Minuten
+                        </div>
+                    </div>
+
+                    <div class="content-item">
+                        <h3>📄 Handout</h3>
+                        <div class="document-preview">
+                            <div class="document-header">
+                                <span>📋</span>
+                                <span>AI‑PASS Handout</span>
+                            </div>
+                            <div class="document-body">
+                                <div class="document-title">KI-Tools Übersicht 2025</div>
+                                
+                                <div class="document-item">
+                                    <span class="document-checkmark">✓</span>
+                                    <span><strong>ChatGPT & Claude</strong> für Textarbeit</span>
+                                </div>
+                                <div class="document-item">
+                                    <span class="document-checkmark">✓</span>
+                                    <span><strong>Midjourney</strong> für Bildgenerierung</span>
+                                </div>
+                                <div class="document-item">
+                                    <span class="document-checkmark">✓</span>
+                                    <span><strong>Notion AI</strong> für Projektmanagement</span>
+                                </div>
+                                <div class="document-item">
+                                    <span class="document-checkmark">✓</span>
+                                    <span><strong>Grammarly</strong> für Korrekturlesen</span>
+                                </div>
+                            </div>
+                            <div class="document-footer">
+                                + 15 weitere Tools mit detaillierten Anwendungsbeispielen
+                            </div>
+                        </div>
+                        <p>Kompakte Übersicht aller wichtigen KI-Tools für deinen Arbeitsbereich</p>
+                    </div>
+
+                    <div class="content-item">
+                        <h3>🎁 Bonusmaterial</h3>
+                        <div class="bonus-videos">
+                            <div class="bonus-video">🎥 Video 1: Prompt Engineering</div>
+                            <div class="bonus-video">🎥 Video 2: KI-Ethik</div>
+                        </div>
+                        <div class="quiz-container">
+                            <div class="quiz-question">Quick-Quiz: Was ist Machine Learning?</div>
+                            <div class="quiz-options">
+                                <div class="quiz-option">A) Ein Kochrezept für Maschinen</div>
+                                <div class="quiz-option">B) Algorithmen, die aus Daten lernen</div>
+                                <div class="quiz-option">C) Wartung von Computern</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Praxis Content with Departments -->
+            <div id="praxisContent" class="content-area">
+                <div class="back-btn" onclick="showMainMenu()">← Zurück zur Übersicht</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">⚡ Praxis-Bereich</h2>
+                
+                <div class="department-grid">
+                    <div class="department-card" onclick="showDepartment('marketing')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <p>KI für Content-Erstellung, Social Media und Kampagnen-Optimierung</p>
+                        <div class="department-btn">Marketing</div>
+                    </div>
+
+                    <div class="department-card" onclick="showDepartment('hr')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <p>Automatisierung von Bewerbungsprozessen und Mitarbeiter-Kommunikation</p>
+                        <div class="department-btn">HR</div>
+                    </div>
+
+                    <div class="department-card" onclick="showDepartment('support')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <p>Chatbots, Ticket-Automatisierung und Kundenkommunikation</p>
+                        <div class="department-btn">Support</div>
+                    </div>
+
+                    <div class="department-card" onclick="showDepartment('finance')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <p>Automatisierte Rechnungsverarbeitung und Datenanalyse</p>
+                        <div class="department-btn">Finance</div>
+                    </div>
+
+                    <div class="department-card" onclick="showDepartment('it')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <p>Code-Generierung, Dokumentation und System-Automatisierung</p>
+                        <div class="department-btn">IT</div>
+                    </div>
+
+                    <div class="department-card" onclick="showDepartment('recht')">
+                        <div class="thumbnail-placeholder">
+                            <span>🎬</span>
+                            <small>Video-Vorschau</small>
+                        </div>
+                        <p>Vertragsprüfung, Compliance-Checks und Rechtsrecherche</p>
+                        <div class="department-btn">Recht</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing Detail -->
+            <div id="marketingDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">📈 Marketing mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player" style="background: #000 url('/static/images/marketing-video.png') center/cover;">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Jasper.ai</span>
+                                <span class="tool-tag">Canva AI</span>
+                                <span class="tool-tag">Copy.ai</span>
+                            </div>
+                            <p>Erstelle überzeugende Werbetexte, Social Media Posts und Kampagnen-Konzepte in Rekordzeit.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">🎯</span>
+                                <strong>Marketing-Challenge: Social Media Kampagne</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Entwickle eine vollständige Social Media Kampagne für ein fiktives Produkt mit Hilfe von KI-Tools.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>Produktbeschreibung mit ChatGPT erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>5 Social Media Posts formulieren</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Hashtag-Strategie entwickeln</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Kampagnen-Timeline erstellen</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 60 Minuten</span>
+                                    <span>🎁 Bonus: Erstelle auch passende Bildkonzepte</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR Detail -->
+            <div id="hrDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">👥 HR mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player" style="background: #000 url('/static/images/hr-video.png') center/cover;">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">Notion AI</span>
+                                <span class="tool-tag">Grammarly</span>
+                            </div>
+                            <p>Automatisiere Stellenausschreibungen, Bewerbungsantworten und Mitarbeiterkommunikation.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">👔</span>
+                                <strong>HR-Challenge: Bewerbungsprozess optimieren</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Erstelle ein vollständiges Set an HR-Templates für den Bewerbungsprozess.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>Stellenausschreibung für "Marketing Manager" erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>E-Mail-Templates für Bewerbungseingang</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Absage-E-Mails formulieren (höflich & konstruktiv)</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Onboarding-Checkliste entwickeln</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 45 Minuten</span>
+                                    <span>🎁 Bonus: Interviewfragen-Katalog erstellen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Detail -->
+            <div id="supportDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">🎧 Support mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player" style="background: #000 url('/static/images/support-video.png') center/cover;">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Zendesk AI</span>
+                                <span class="tool-tag">Intercom</span>
+                                <span class="tool-tag">DeepL</span>
+                            </div>
+                            <p>Automatisiere Kundenanfragen, erstelle FAQ-Antworten und optimiere die Kundenkommunikation.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">💬</span>
+                                <strong>Support-Challenge: Kundenservice automatisieren</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Entwickle ein KI-gestütztes Support-System für typische Kundenanfragen.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>Top 10 FAQ-Antworten erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>E-Mail-Templates für Support-Tickets</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Chatbot-Dialogfluss entwerfen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Eskalations-Protokoll definieren</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 50 Minuten</span>
+                                    <span>🎁 Bonus: Mehrsprachige Antworten erstellen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Finance Detail -->
+            <div id="financeDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">💰 Finance mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player" style="background: #000 url('/static/images/finance-video.png') center/cover;">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Excel + AI</span>
+                                <span class="tool-tag">QuickBooks AI</span>
+                                <span class="tool-tag">Zapier</span>
+                            </div>
+                            <p>Automatisiere Rechnungserstellung, Budgetplanung und Finanzanalysen.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">📊</span>
+                                <strong>Finance-Challenge: Automatisierte Berichterstattung</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Erstelle automatisierte Finanz-Workflows und Reporting-Templates.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>Rechnungsvorlagen mit KI optimieren</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>Budgetplanungs-Template erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Ausgaben-Kategorisierung automatisieren</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Monatsbericht-Template entwickeln</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 55 Minuten</span>
+                                    <span>🎁 Bonus: KPI-Dashboard-Konzept erstellen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT Detail -->
+            <div id="itDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">💻 IT mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player" style="background: #000 url('/static/images/it-video.png') center/cover;">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">GitHub Copilot</span>
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">Cursor AI</span>
+                            </div>
+                            <p>Code-Generierung, Debugging, Dokumentation und System-Automatisierung.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">⚙️</span>
+                                <strong>IT-Challenge: Code-Automatisierung</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Nutze KI für typische IT-Aufgaben und Code-Optimierung.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>Python-Script für Datenverarbeitung erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>Code-Dokumentation automatisch generieren</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Bug-Fixes mit KI-Unterstützung</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Deployment-Skript optimieren</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 70 Minuten</span>
+                                    <span>🎁 Bonus: API-Integration automatisieren</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recht Detail -->
+            <div id="rechtDetail" class="content-area">
+                <div class="back-btn" onclick="showContent('praxis')">← Zurück zu Praxis-Bereichen</div>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 1.8rem; font-weight: 600;">⚖️ Recht mit KI</h2>
+                
+                <div class="detail-content">
+                    <div class="detail-video">
+                        <div class="video-player" style="background: #000 url('/static/images/recht-video.png') center/cover;">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="tool-info">
+                            <h3>🛠️ Empfohlene Tools:</h3>
+                            <div class="tool-list">
+                                <span class="tool-tag">ChatGPT</span>
+                                <span class="tool-tag">Claude</span>
+                                <span class="tool-tag">LegalAI</span>
+                                <span class="tool-tag">Notion AI</span>
+                            </div>
+                            <p>Vertragsprüfung, Compliance-Checks, Rechtsrecherche und Dokumentenerstellung.</p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-section">
+                        <h3>📋 Deine Praxis-Aufgabe</h3>
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <span class="assignment-icon">📜</span>
+                                <strong>Recht-Challenge: Compliance-Automation</strong>
+                            </div>
+                            <div class="assignment-body">
+                                <p><strong>Ziel:</strong> Entwickle KI-gestützte Workflows für rechtliche Routineaufgaben.</p>
+                                
+                                <div class="assignment-steps">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <span>AGB-Template für Online-Shop erstellen</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <span>DSGVO-konforme Datenschutzerklärung</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <span>Vertragsklauseln analysieren und optimieren</span>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <span>Compliance-Checkliste entwickeln</span>
+                                    </div>
+                                </div>
+
+                                <div class="assignment-footer">
+                                    <span>⏱️ Geschätzte Dauer: 65 Minuten</span>
+                                    <span>🎁 Bonus: Rechtliche Risikoanalyse erstellen</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(type) {
+            // Hide main menu
+            document.getElementById('mainMenu').style.display = 'none';
+            
+            // Hide all content areas
+            document.querySelectorAll('.content-area').forEach(area => {
+                area.classList.remove('active');
+            });
+            
+            // Show selected content
+            document.getElementById(type + 'Content').classList.add('active');
+        }
+
+        function showMainMenu() {
+            // Show main menu
+            document.getElementById('mainMenu').style.display = 'block';
+            
+            // Hide all content areas
+            document.querySelectorAll('.content-area').forEach(area => {
+                area.classList.remove('active');
+            });
+        }
+
+        function showDepartment(department) {
+            // Hide praxis overview
+            document.getElementById('praxisContent').classList.remove('active');
+            
+            // Hide all department details
+            document.querySelectorAll('[id$="Detail"]').forEach(detail => {
+                detail.classList.remove('active');
+            });
+            
+            // Show selected department
+            document.getElementById(department + 'Detail').classList.add('active');
+        }
+
+        // Add click events for quiz options
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove previous selections
+                this.parentNode.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.style.background = 'rgba(255,255,255,0.1)';
+                    opt.style.borderColor = 'rgba(255,255,255,0.2)';
+                });
+                
+                // Highlight selected option
+                this.style.background = 'rgba(102, 126, 234, 0.5)';
+                this.style.borderColor = 'rgba(102, 126, 234, 0.8)';
+                
+                // Show feedback
+                setTimeout(() => {
+                    if (this.textContent.includes('Algorithmen, die aus Daten lernen')) {
+                        alert('🎉 Richtig! Du verstehst bereits die Grundlagen von Machine Learning.');
+                    } else {
+                        alert('🤔 Nicht ganz richtig. Machine Learning bezieht sich auf Algorithmen, die aus Daten lernen können.');
+                    }
+                }, 300);
+            });
+        });
+
+        // Add click events for video players
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.innerHTML = '⏸';
+                this.style.background = 'rgba(102, 126, 234, 0.8)';
+                setTimeout(() => {
+                    alert('🎬 Video würde hier abgespielt werden. In der echten Plattform siehst du hier unsere Lernvideos!');
+                    this.innerHTML = '▶';
+                    this.style.background = 'rgba(255,255,255,0.2)';
+                }, 500);
+            });
+        });
+
+        // Add click events for bonus videos
+        document.querySelectorAll('.bonus-video').forEach(video => {
+            video.addEventListener('click', function() {
+                this.style.background = 'rgba(102, 126, 234, 0.5)';
+                setTimeout(() => {
+                    alert('🎬 Bonus-Video: ' + this.textContent.replace('🎥 ', '') + ' würde hier abgespielt werden!');
+                    this.style.background = 'rgba(255,255,255,0.1)';
+                }, 300);
+            });
+        });
+    </script>
+    
+    <!-- MacBook Keyboard - 3D Perspective View -->
+    <div class="macbook-keyboard">
+        <div class="keyboard-base">
+            <div class="keyboard-rows">
+                <!-- Row 1: Function keys (smaller) -->
+                <div class="keyboard-row">
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">esc</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F1</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F2</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F3</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F4</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F5</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F6</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F7</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F8</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F9</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F10</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F11</div>
+                    <div class="key" style="width: 30px; height: 22px; font-size: 8px;">F12</div>
+                </div>
+                
+                <!-- Row 2: Numbers -->
+                <div class="keyboard-row">
+                    <div class="key">`</div>
+                    <div class="key">1</div>
+                    <div class="key">2</div>
+                    <div class="key">3</div>
+                    <div class="key">4</div>
+                    <div class="key">5</div>
+                    <div class="key">6</div>
+                    <div class="key">7</div>
+                    <div class="key">8</div>
+                    <div class="key">9</div>
+                    <div class="key">0</div>
+                    <div class="key">-</div>
+                    <div class="key">=</div>
+                    <div class="key backspace">⌫</div>
+                </div>
+                
+                <!-- Row 3: QWERTY -->
+                <div class="keyboard-row">
+                    <div class="key tab">tab</div>
+                    <div class="key">Q</div>
+                    <div class="key">W</div>
+                    <div class="key">E</div>
+                    <div class="key">R</div>
+                    <div class="key">T</div>
+                    <div class="key">Y</div>
+                    <div class="key">U</div>
+                    <div class="key">I</div>
+                    <div class="key">O</div>
+                    <div class="key">P</div>
+                    <div class="key">[</div>
+                    <div class="key">]</div>
+                    <div class="key">\</div>
+                </div>
+                
+                <!-- Row 4: ASDF -->
+                <div class="keyboard-row">
+                    <div class="key" style="width: 52px;">caps</div>
+                    <div class="key">A</div>
+                    <div class="key">S</div>
+                    <div class="key">D</div>
+                    <div class="key">F</div>
+                    <div class="key">G</div>
+                    <div class="key">H</div>
+                    <div class="key">J</div>
+                    <div class="key">K</div>
+                    <div class="key">L</div>
+                    <div class="key">;</div>
+                    <div class="key">'</div>
+                    <div class="key enter">⏎</div>
+                </div>
+                
+                <!-- Row 5: ZXCV -->
+                <div class="keyboard-row">
+                    <div class="key shift">shift</div>
+                    <div class="key">Z</div>
+                    <div class="key">X</div>
+                    <div class="key">C</div>
+                    <div class="key">V</div>
+                    <div class="key">B</div>
+                    <div class="key">N</div>
+                    <div class="key">M</div>
+                    <div class="key">,</div>
+                    <div class="key">.</div>
+                    <div class="key">/</div>
+                    <div class="key shift">shift</div>
+                </div>
+                
+                <!-- Row 6: Bottom row -->
+                <div class="keyboard-row">
+                    <div class="key" style="width: 35px;">fn</div>
+                    <div class="key" style="width: 42px;">ctrl</div>
+                    <div class="key" style="width: 42px;">alt</div>
+                    <div class="key" style="width: 48px;">⌘</div>
+                    <div class="key space"></div>
+                    <div class="key" style="width: 48px;">⌘</div>
+                    <div class="key" style="width: 42px;">alt</div>
+                    <div class="key">←</div>
+                    <div class="key">↑</div>
+                    <div class="key">↓</div>
+                    <div class="key">→</div>
+                </div>
+            </div>
+            
+            <!-- Trackpad -->
+            <div class="trackpad"></div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Grid Section -->
+<section class="cta-grid-section">
+  <div class="cta-grid">
+    <!-- CTA 1: Broschüre -->
+    <div class="cta-card">
+      <div class="cta-icon">📄</div>
+      <h3 class="cta-title">Kostenlose Broschüre</h3>
+      <p class="cta-description">Erhalten Sie alle Details zum 5-Wochen AI-PASS Programm als PDF</p>
+      <a href="{{ url_for('static', filename='AI_Pass_Broschuere.pdf') }}" class="cta-button-card" download="AI_Pass_Broschuere.pdf">
+        Broschüre herunterladen
+      </a>
+    </div>
+
+    <!-- CTA 2: Preise -->
+    <div class="cta-card">
+      <div class="cta-icon">💰</div>
+      <h3 class="cta-title">Preise</h3>
+      <p class="cta-description">Entdecke unsere AI-PASS Pakete und finde das passende für dein Team</p>
+      <a href="https://www.preise.ai-allstars.com" class="cta-button-card">
+        Preise ansehen
+      </a>
+    </div>
+
+    <!-- CTA 3: Teameinblick -->
+    <div class="cta-card">
+      <div class="cta-icon">👥</div>
+      <h3 class="cta-title">Teameinblick</h3>
+      <p class="cta-description">Lerne die Allstars kennen</p>
+      <a href="https://www.team.ai-allstars.com" class="cta-button-card">
+        Team entdecken
+      </a>
+    </div>
+
+    <!-- CTA 4: Kontakt -->
+    <div class="cta-card">
+      <div class="cta-icon">💬</div>
+      <h3 class="cta-title">Kontaktieren</h3>
+      <p class="cta-description">Kontaktiere uns direkt</p>
+      <a href="https://www.kontakt.ai-allstars.com" class="cta-button-card">
+        Kontakt
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

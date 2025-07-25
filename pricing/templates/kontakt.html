@@ -1,0 +1,356 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Contact Hero Section -->
+<section class="contact-hero hero" style="margin-top: 120px;">
+    <div class="contact-hero-content">
+        <h1 class="hero-title-animate">Sprechen Sie mit unseren <span class="hero-gradient-text">KI-Experten</span></h1>
+        <p class="hero-subtitle subtitle-animate">Lassen Sie uns gemeinsam Ihr KI-Potenzial entdecken</p>
+        <p class="hero-description description-animate">
+            Erhalten Sie eine individuelle Beratung von unseren KI-Experten und entdecken Sie, 
+            wie Künstliche Intelligenz Ihr Unternehmen transformieren kann.
+        </p>
+    </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="contact-info-section">
+    <div class="contact-method glass-container">
+        <div class="contact-details">
+                    <h3 class="contact-main-heading">
+                        <span class="gradient-icon-square" style="margin-right: 10px;">
+                            <i class="fas fa-phone"></i>
+                        </span>
+                        Telefon / WhatsApp
+                        <span class="gradient-icon-square" style="margin-left: 10px;">
+                            <i class="fab fa-whatsapp"></i>
+                        </span>
+                    </h3>
+                    
+                    <div class="contact-persons-grid">
+                        <div class="contact-person">
+                            <img src="{{ url_for('static', filename='images/antonio-eichler.png') }}" alt="Antonio Eichler" class="contact-person-image">
+                            <p class="contact-name"><strong>Antonio Eichler</strong></p>
+                            <p class="contact-title">KI-Strategieberater & Kundenbetreuung</p>
+                            <p class="contact-number">
+                                <a href="tel:+491624024929">+49 162 4024929</a>
+                                <span class="contact-method-hint">(Telefon & WhatsApp)</span>
+                            </p>
+                        </div>
+                        
+                        <div class="contact-person">
+                            <img src="{{ url_for('static', filename='images/marko-mueller.png') }}" alt="Dr. Marko Müller" class="contact-person-image">
+                            <p class="contact-name"><strong>Dr. Marko Müller</strong></p>
+                            <p class="contact-title">Partnerschaften & Geschäftsentwicklung</p>
+                            <p class="contact-number">
+                                <a href="tel:+491796842814">+49 179 6842814</a>
+                                <span class="contact-method-hint">(Telefon & WhatsApp)</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <hr class="contact-divider">
+                    <div class="contact-email-section">
+                        <h3>
+                            <span class="gradient-icon-square" style="margin-right: 12px;">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            E-Mail
+                        </h3>
+                        <p class="contact-number">
+                            <a href="mailto:ki-kurs@ai-allstars.com">ki-kurs@ai-allstars.com</a>
+                        </p>
+                    </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="contact-form-section">
+    <div class="contact-form-container glass-container">
+            <h2 class="contact-form-title">
+                <i class="fas fa-paper-plane gradient-text"></i>
+                Nachricht senden
+            </h2>
+            
+            <form action="{{ url_for('kontakt') }}" method="POST" class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">
+                        <i class="fas fa-user"></i>
+                        Name *
+                    </label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        <i class="fas fa-envelope"></i>
+                        E-Mail *
+                    </label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company" class="form-label">
+                        <i class="fas fa-building"></i>
+                        Unternehmen
+                    </label>
+                    <input type="text" id="company" name="company" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="form-label">
+                        <i class="fas fa-phone"></i>
+                        Telefon *
+                    </label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">
+                        <i class="fas fa-comment"></i>
+                        Nachricht *
+                    </label>
+                    <textarea id="message" name="message" class="form-input form-textarea" rows="6" required placeholder="Erzählen Sie uns von Ihrem Projekt oder Ihren KI-Zielen..."></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit-btn">
+                    <i class="fas fa-rocket"></i>
+                    Nachricht senden
+                </button>
+            </form>
+        </div>
+</section>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+.contact-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-form, .contact-info {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.contact-form h3, .contact-info h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-glass);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #0080FF;
+    box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 0.2rem;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.checkbox-group a {
+    color: #0080FF;
+    text-decoration: none;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+.submit-btn {
+    width: 100%;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 128, 255, 0.4);
+}
+
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    min-width: 30px;
+}
+
+.info-content h4 {
+    font-family: 'Sora', sans-serif;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.info-content p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.cta-section {
+    background: rgba(0, 128, 255, 0.1);
+    border: 1px solid rgba(0, 128, 255, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cta-section h4 {
+    font-family: 'Sora', sans-serif;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.cta-section p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-button.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+</style>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Show success message (in a real application, you would send this to a server)
+    alert('Vielen Dank für Ihre Nachricht! Wir werden uns so schnell wie möglich bei Ihnen melden.');
+    
+    // Reset form
+    this.reset();
+});
+</script>
+{% endblock %}

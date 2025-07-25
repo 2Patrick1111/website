@@ -1,0 +1,338 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero" style="margin-top: 120px;">
+    <div class="hero-content">
+        <h1>KI ROI-Rechner</h1>
+        <p class="hero-subtitle">Berechnen Sie den Return on Investment Ihrer KI-Implementierung</p>
+        <p class="hero-description">Unser intelligenter ROI-Rechner hilft Ihnen dabei, das Potenzial von KI-Lösungen für Ihr Unternehmen zu bewerten und fundierte Entscheidungen zu treffen.</p>
+    </div>
+</section>
+
+<section class="calculator-section">
+    <div class="container">
+        <div class="calculator-container">
+            <div class="calculator-form">
+                <h3>Ihre Unternehmensdaten</h3>
+                <form id="roiCalculator">
+                    <div class="form-group">
+                        <label for="employees">Anzahl Mitarbeiter</label>
+                        <input type="number" id="employees" name="employees" min="1" value="50" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="avgSalary">Durchschnittliches Jahresgehalt (€)</label>
+                        <input type="number" id="avgSalary" name="avgSalary" min="1000" value="60000" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hoursPerWeek">Arbeitsstunden pro Woche pro Mitarbeiter</label>
+                        <input type="number" id="hoursPerWeek" name="hoursPerWeek" min="1" max="60" value="40" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="automationPercent">Geschätzter Automatisierungsgrad (%)</label>
+                        <input type="range" id="automationPercent" name="automationPercent" min="5" max="50" value="20">
+                        <span id="automationValue">20%</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="implementation">Geschätzte Implementierungskosten (€)</label>
+                        <input type="number" id="implementation" name="implementation" min="10000" value="100000" required>
+                    </div>
+                    
+                    <button type="button" onclick="calculateROI()" class="calculate-btn">
+                        <i class="fas fa-calculator"></i>
+                        ROI berechnen
+                    </button>
+                </form>
+            </div>
+            
+            <div class="results-container" id="resultsContainer">
+                <h3>Ihre ROI-Analyse</h3>
+                <div class="result-cards">
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-euro-sign"></i>
+                        </div>
+                        <h4>Jährliche Einsparungen</h4>
+                        <p class="result-value" id="annualSavings">€0</p>
+                    </div>
+                    
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>ROI nach 12 Monaten</h4>
+                        <p class="result-value" id="roiPercentage">0%</p>
+                    </div>
+                    
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Amortisationszeit</h4>
+                        <p class="result-value" id="paybackPeriod">0 Monate</p>
+                    </div>
+                </div>
+                
+                <div class="recommendation" id="recommendation">
+                    <h4><i class="fas fa-lightbulb"></i> Unsere Empfehlung</h4>
+                    <p id="recommendationText">Führen Sie die Berechnung durch, um eine personalisierte Empfehlung zu erhalten.</p>
+                </div>
+                
+                <a href="{{ url_for('kontakt') }}" class="cta-button primary">
+                    <i class="fas fa-comments"></i>
+                    Kostenlose Beratung anfragen
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+.calculator-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calculator-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.calculator-form, .results-container {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.calculator-form h3, .results-container h3 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.form-group input[type="number"], .form-group input[type="range"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-glass);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.form-group input[type="number"]:focus {
+    outline: none;
+    border-color: #0080FF;
+    box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.2);
+}
+
+#automationValue {
+    display: inline-block;
+    margin-left: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.calculate-btn {
+    width: 100%;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 128, 255, 0.4);
+}
+
+.result-cards {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.result-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-glass);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.result-card h4 {
+    font-family: 'Sora', sans-serif;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.result-value {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.recommendation {
+    background: rgba(0, 128, 255, 0.1);
+    border: 1px solid rgba(0, 128, 255, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.recommendation h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.recommendation p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 128, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+    .calculator-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+</style>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Update automation percentage display
+document.getElementById('automationPercent').addEventListener('input', function() {
+    document.getElementById('automationValue').textContent = this.value + '%';
+});
+
+function calculateROI() {
+    const employees = parseInt(document.getElementById('employees').value);
+    const avgSalary = parseFloat(document.getElementById('avgSalary').value);
+    const hoursPerWeek = parseInt(document.getElementById('hoursPerWeek').value);
+    const automationPercent = parseInt(document.getElementById('automationPercent').value);
+    const implementation = parseFloat(document.getElementById('implementation').value);
+    
+    // Calculate annual work hours per employee
+    const annualHours = hoursPerWeek * 52;
+    
+    // Calculate hourly cost per employee
+    const hourlyCost = avgSalary / annualHours;
+    
+    // Calculate hours saved annually
+    const hoursSavedPerEmployee = (annualHours * automationPercent) / 100;
+    const totalHoursSaved = hoursSavedPerEmployee * employees;
+    
+    // Calculate annual savings
+    const annualSavings = totalHoursSaved * hourlyCost;
+    
+    // Calculate ROI
+    const roi = ((annualSavings - implementation) / implementation) * 100;
+    
+    // Calculate payback period in months
+    const paybackMonths = Math.ceil((implementation / annualSavings) * 12);
+    
+    // Update display
+    document.getElementById('annualSavings').textContent = '€' + annualSavings.toLocaleString('de-DE', {maximumFractionDigits: 0});
+    document.getElementById('roiPercentage').textContent = roi.toFixed(1) + '%';
+    document.getElementById('paybackPeriod').textContent = paybackMonths + ' Monate';
+    
+    // Generate recommendation
+    let recommendationText = '';
+    if (roi > 200) {
+        recommendationText = 'Exzellente Investition! Ihre KI-Implementierung zeigt außergewöhnlich hohe Rentabilität. Wir empfehlen eine sofortige Umsetzung mit unserem Premium AI Pass.';
+    } else if (roi > 100) {
+        recommendationText = 'Sehr gute Investition! Ihre KI-Lösung bietet starke Renditen. Lassen Sie uns gemeinsam die optimale Implementierungsstrategie entwickeln.';
+    } else if (roi > 50) {
+        recommendationText = 'Solide Investition mit gutem ROI. Eine schrittweise Implementierung könnte das Risiko minimieren und den Erfolg maximieren.';
+    } else if (roi > 0) {
+        recommendationText = 'Positive Rendite erkennbar. Wir sollten gemeinsam Optimierungsmöglichkeiten identifizieren, um das Potenzial voll auszuschöpfen.';
+    } else {
+        recommendationText = 'Die aktuellen Parameter zeigen noch Optimierungsbedarf. In einem persönlichen Gespräch können wir alternative Ansätze und Kosteneinsparungen besprechen.';
+    }
+    
+    document.getElementById('recommendationText').textContent = recommendationText;
+}
+
+// Initial calculation
+calculateROI();
+</script>
+{% endblock %}

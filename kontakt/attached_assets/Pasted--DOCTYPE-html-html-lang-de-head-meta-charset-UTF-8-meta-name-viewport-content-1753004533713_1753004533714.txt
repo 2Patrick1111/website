@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - AI Allstars | Kostenlose Beratung</title>
+    <meta name="description" content="Kontaktieren Sie AI Allstars für eine kostenlose Beratung zur KI-Transformation Ihres Unternehmens. Expertenberatung für nachhaltige Digitalisierung.">
+    <meta name="keywords" content="KI Beratung, AI Consulting, Kostenlose Beratung, KI Transformation, Künstliche Intelligenz Experten">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:title" content="Kontakt - AI Allstars">
+    <meta property="og:description" content="Kostenlose Beratung zur KI-Transformation Ihres Unternehmens">
+    <meta property="og:image" content="{{ url_for('static', filename='images/ai-allstars-contact-og.jpg', _external=True) }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ request.url }}">
+    <meta property="twitter:title" content="Kontakt - AI Allstars">
+    <meta property="twitter:description" content="Kostenlose Beratung zur KI-Transformation Ihres Unternehmens">
+    <meta property="twitter:image" content="{{ url_for('static', filename='images/ai-allstars-contact-og.jpg', _external=True) }}">
+</head>
+<body>
+    <div class="starry-bg"></div>
+    
+
+
+    <!-- Flash Messages -->
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <!-- Liquid Glass Header -->
+    <header class="liquid-header" id="header">
+        <a href="{{ url_for('index') }}" class="header-logo">
+            <img src="{{ url_for('static', filename='images/allstars-logo-white.png') }}" alt="AI Allstars" class="logo-image">
+        </a>
+        <nav class="header-nav" id="headerNav">
+            <a href="{{ url_for('team') }}">Team</a>
+            <a href="{{ url_for('roi_calculator') }}">ROI-Rechner</a>
+            <!-- <a href="{{ url_for('course') }}">Kurs-Einblick</a> -->
+            <a href="/kontakt" class="active">Kontakt</a>
+        </nav>
+        <a href="/kontakt" class="header-cta">AI Pass Beratung</a>
+        
+        <!-- Mobile Star Menu Button -->
+        <button class="star-menu-button" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false">
+            <img src="{{ url_for('static', filename='images/star-white.png') }}" alt="Menu Star Icon" />
+        </button>
+        
+        <!-- Mobile Navigation Dropdown -->
+        <nav class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="{{ url_for('team') }}">Team</a></li>
+                <li><a href="{{ url_for('roi_calculator') }}">ROI-Rechner</a></li>
+                <!-- <li><a href="{{ url_for('course') }}">Kurs-Einblick</a></li> -->
+                <li><a href="{{ url_for('kontakt') }}">Kontakt</a></li>
+            </ul>
+            <a href="{{ url_for('kontakt') }}" class="mobile-cta">AI Pass Beratung</a>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero hero">
+        <div class="contact-hero-content">
+            <h1 class="hero-title-animate">Sprechen Sie mit unseren <span class="hero-gradient-text">KI-Experten</span></h1>
+            <p class="hero-subtitle subtitle-animate">Lassen Sie uns gemeinsam Ihr KI-Potenzial entdecken</p>
+            <p class="hero-description description-animate">
+                Erhalten Sie eine individuelle Beratung von unseren KI-Experten und entdecken Sie, 
+                wie Künstliche Intelligenz Ihr Unternehmen transformieren kann.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info-section">
+        <div class="contact-container">
+            <h2 class="contact-info-title">
+                <i class="fas fa-comments gradient-text"></i>
+                Kontaktiere uns direkt
+            </h2>
+            
+            <div class="contact-methods-grid">
+                <div class="contact-method glass-container">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="whatsapp-icon gradient-icon-square">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 class="contact-main-heading">
+                            <span>Telefon / WhatsApp</span>
+                        </h3>
+                        
+                        <div class="contact-persons-grid">
+                            <div class="contact-person">
+                                <p class="contact-name"><strong>Antonio Eichler</strong></p>
+                                <p class="contact-title">KI-Strategieberater & Kundenbetreuung</p>
+                                <p class="contact-number">
+                                    <a href="tel:+491624024929">+49 162 4024929</a>
+                                    <span class="contact-method-hint">(Telefon & WhatsApp)</span>
+                                </p>
+                            </div>
+                            
+                            <div class="contact-person">
+                                <p class="contact-name"><strong>Dr. Marko Müller</strong></p>
+                                <p class="contact-title">Partnerschaften & Geschäftsentwicklung</p>
+                                <p class="contact-number">
+                                    <a href="tel:+491796842814">+49 179 6842814</a>
+                                    <span class="contact-method-hint">(Telefon & WhatsApp)</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <hr class="contact-divider">
+                        <div class="contact-email-section">
+                            <h3>
+                                <span class="gradient-icon-square" style="margin-right: 12px;">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                E-Mail
+                            </h3>
+                            <p class="contact-number">
+                                <a href="mailto:ki-kurs@ai-allstars.com">ki-kurs@ai-allstars.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="contact-container">
+            <div class="contact-form-container glass-container">
+                <h2 class="contact-form-title">
+                    <i class="fas fa-paper-plane gradient-text"></i>
+                    Nachricht senden
+                </h2>
+                
+                <form action="{{ url_for('contact') }}" method="POST" class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" class="form-label">
+                                <i class="fas fa-user"></i>
+                                Name *
+                            </label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i>
+                                E-Mail *
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company" class="form-label">
+                                <i class="fas fa-building"></i>
+                                Unternehmen
+                            </label>
+                            <input type="text" id="company" name="company" class="form-input">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" class="form-label">
+                                <i class="fas fa-phone"></i>
+                                Telefon *
+                            </label>
+                            <input type="tel" id="phone" name="phone" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="message" class="form-label">
+                                <i class="fas fa-comment"></i>
+                                Nachricht *
+                            </label>
+                            <textarea id="message" name="message" class="form-input form-textarea" rows="6" required placeholder="Erzählen Sie uns von Ihrem Projekt oder Ihren KI-Zielen..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <button type="submit" class="form-submit-btn">
+                            <i class="fas fa-rocket"></i>
+                            Nachricht senden
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="{{ url_for('static', filename='images/allstars-logo-white.png') }}" alt="AI Allstars" class="footer-logo-image">
+                </div>
+                <p>Ihr Partner für erfolgreiche KI-Transformation</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <a href="{{ url_for('roi_calculator') }}">KI-Potenzialanalyse</a>
+                    <a href="{{ url_for('index') }}#features">AI Pass Details</a>
+                    <a href="{{ url_for('appointment') }}">Strategiegespräch</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Unternehmen</h4>
+                    <a href="{{ url_for('team') }}#team-slider">Über uns</a>
+                    <a href="{{ url_for('team') }}">Team</a>
+                    <a href="{{ url_for('index') }}#signup">Kontakt</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <a href="{{ url_for('datenschutz') }}">Datenschutz</a>
+                    <a href="{{ url_for('impressum') }}">Impressum</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 AI Allstars. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/optimized-stars.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gradient-icons.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main-clean.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/parallax-effects.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/form-purpose-selector.js') }}"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize contact page specific animations
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Animate hero elements
+            gsap.timeline()
+                .from('.hero-title-animate', { opacity: 0, y: 40, duration: 1, ease: "power3.out" })
+                .from('.hero-subtitle', { opacity: 0, y: 30, duration: 0.8, ease: "power3.out" }, "-=0.7")
+                .from('.hero-description', { opacity: 0, y: 30, duration: 0.8, ease: "power3.out" }, "-=0.5");
+            
+            // Animate contact sections
+            gsap.from('.contact-info', {
+                opacity: 0,
+                x: -50,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: '.contact-section',
+                    start: 'top 80%'
+                }
+            });
+            
+            gsap.from('.contact-form-container', {
+                opacity: 0,
+                x: 50,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: '.contact-section',
+                    start: 'top 80%'
+                }
+            });
+            
+            // Animate CTA section
+            gsap.from('.cta-container', {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: '.cta-section',
+                    start: 'top 80%'
+                }
+            });
+        });
+    </script>
+</body>
+</html>

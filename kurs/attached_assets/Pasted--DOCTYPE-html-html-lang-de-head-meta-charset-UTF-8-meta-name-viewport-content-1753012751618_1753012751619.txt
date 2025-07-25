@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Allstars - Unsere Packages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "BELIEBT";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .pricing-card.discount::after {
+            content: "-25% RABATT";
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            transform: rotate(15deg);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .card-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .package-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .package-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .price-note {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .features li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .cta-button.secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+
+        .highlight .price {
+            color: white;
+        }
+
+        .highlight .features li::before {
+            color: #ffeaa7;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Entfessle die KI‑Superkräfte deines Teams</h1>
+            <p>Wähle das perfekte Paket für euren Erfolg</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Gefördert Package -->
+            <div class="pricing-card highlight">
+                <div class="card-header">
+                    <h3 class="package-name">AI‑PASS Gefördert</h3>
+                    <p class="package-subtitle">100% staatlich gefördert</p>
+                    <div class="price">0€</div>
+                    <p class="price-note">+ 75% Lohnkostenerstattung</p>
+                </div>
+                <ul class="features">
+                    <li>5‑Wochen AI‑Intensivprogramm</li>
+                    <li>Live‑Sessions mit KI‑Experten</li>
+                    <li>Persönliches Automations‑Set‑up</li>
+                    <li>Offizielle Zertifizierung</li>
+                    <li>Durchschnittlich 6h Zeitersparnis/Woche</li>
+                    <li>Förderung nach § 82 SGB III</li>
+                </ul>
+                <a href="#" class="cta-button">Förderung beantragen</a>
+            </div>
+
+            <!-- 995€ Package -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3 class="package-name">AI‑PASS Videokurs</h3>
+                    <p class="package-subtitle">Selbstständig lernen im eigenen Tempo</p>
+                    <div class="price">995€</div>
+                    <p class="price-note">einmalig</p>
+                </div>
+                <ul class="features">
+                    <li>Vollständige Videokurs‑Bibliothek</li>
+                    <li>5‑Wochen strukturierte Inhalte</li>
+                    <li>Downloadbare Praxis‑Templates</li>
+                    <li>KI‑Tool Tutorials & Anleitungen</li>
+                    <li>Schritt‑für‑Schritt Automations‑Guides</li>
+                    <li>Lebenslange Updates zu neuen KI‑Tools</li>
+                    <li>Regelmäßige Tool‑Empfehlungen</li>
+                </ul>
+                <a href="#" class="cta-button">Videokurs kaufen</a>
+            </div>
+
+            <!-- 2495€ Package -->
+            <div class="pricing-card featured discount">
+                <div class="card-header">
+                    <h3 class="package-name">AI‑PASS Premium</h3>
+                    <p class="package-subtitle">Das komplette Programm ohne Förderung</p>
+                    <div class="price">2.495€</div>
+                    <p class="price-note">pro Teilnehmer</p>
+                </div>
+                <ul class="features">
+                    <li>5‑Wochen AI‑Intensivprogramm</li>
+                    <li>Live‑Sessions mit KI‑Experten</li>
+                    <li>Persönliches Automations‑Set‑up</li>
+                    <li>Offizielle Zertifizierung</li>
+                    <li>Durchschnittlich 6h Zeitersparnis/Woche</li>
+                    <li>Sofort verfügbar ohne Förderantrag</li>
+                </ul>
+                <a href="#" class="cta-button">Premium buchen</a>
+            </div>
+
+            <!-- Enterprise Package -->
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3 class="package-name">AI‑PASS Enterprise</h3>
+                    <p class="package-subtitle">Individuelle Unternehmenslösung</p>
+                    <div class="price">Auf Anfrage</div>
+                    <p class="price-note">maßgeschneidert</p>
+                </div>
+                <ul class="features">
+                    <li>Individuelle Beratung für Ihr Unternehmen</li>
+                    <li>Angepasste Lösungen nach Bedarf</li>
+                    <li>Flexible Teilnehmerzahl</li>
+                    <li>Spezielle Konditionen verfügbar</li>
+                    <li>Persönliches Beratungsgespräch</li>
+                    <li>Maßgeschneiderte Roadmap</li>
+                    <li>Langfristige Partnerschaft möglich</li>
+                </ul>
+                <a href="#" class="cta-button secondary">Kostenlose Beratung</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
