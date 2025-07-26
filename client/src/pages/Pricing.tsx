@@ -306,16 +306,18 @@ export default function Pricing() {
         {/* Funding Overview Table */}
         <section className="content-section">
           <h2 className="section-title mb-8">Fördermöglichkeiten im Überblick</h2>
-          <p className="text-xl text-gray-300 mb-8 text-center">
-            <strong>Beschäftigtenqualifizierung ab 1. April 2024</strong> im Überblick:
-          </p>
+          
+          <Card className="glass-card p-8">
+            <p className="text-xl text-gray-300 mb-8 text-center">
+              <strong>Beschäftigtenqualifizierung ab 1. April 2024</strong> im Überblick:
+            </p>
 
-          <div className="space-y-8">
-            <Card className="glass-card p-6">
+            {/* Abschlussorientierte Weiterbildung */}
+            <div className="mb-10">
               <h3 className="text-lg font-semibold text-white mb-6">
                 Abschlussorientierte Weiterbildung bei fehlendem Berufsabschluss (nach § 81 (2) SGB III)
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
                 <div>
                   <div className="font-semibold text-gray-300 mb-2">Betriebsgröße</div>
                   <div className="text-2xl">👥👥👥👥👥👥👥👥</div>
@@ -330,13 +332,17 @@ export default function Pricing() {
                   <div className="text-3xl font-bold text-green-400">bis zu 100%</div>
                 </div>
               </div>
-            </Card>
+            </div>
 
-            <Card className="glass-card p-6">
+            {/* Divider */}
+            <div className="border-t border-gray-600 my-8"></div>
+
+            {/* Sonstige berufliche Weiterbildung */}
+            <div className="mb-10">
               <h3 className="text-lg font-semibold text-white mb-6">
                 Sonstige berufliche Weiterbildung nach § 82 SGB III
               </h3>
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto bg-gradient-to-r from-gray-800/20 to-gray-700/20 rounded-lg p-4">
                 <table className="w-full text-sm bg-transparent">
                   <thead>
                     <tr className="border-b border-gray-600">
@@ -403,17 +409,21 @@ export default function Pricing() {
                   </tbody>
                 </table>
               </div>
-            </Card>
+            </div>
 
-            <Card className="glass-card p-6 text-center">
+            {/* Divider */}
+            <div className="border-t border-gray-600 my-8"></div>
+
+            {/* Qualifizierungsgeld */}
+            <div className="text-center">
               <h3 className="text-xl font-semibold text-blue-400 mb-4">
                 Qualifizierungsgeld nach § 82a SGB III
               </h3>
               <p className="text-gray-300 text-lg">
                 Die neue Förderungsmöglichkeit für alle Betriebsgrößen
               </p>
-            </Card>
-          </div>
+            </div>
+          </Card>
         </section>
 
         {/* Call to Action */}
