@@ -55,9 +55,9 @@ export function CreativeTools() {
     <section id="tools" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-playfair font-bold mb-6 text-gray-800">Creative Tools</h2>
+          <h2 className="text-5xl font-playfair font-bold mb-6 text-gray-800">Kreativ-Tools</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Interactive tools to spark your creativity and enhance your artistic journey
+            Interaktive Werkzeuge, die deine Kreativität entfachen und deine künstlerische Reise bereichern
           </p>
         </div>
 
@@ -65,8 +65,8 @@ export function CreativeTools() {
           {/* Color Palette Generator */}
           <Card className="creative-card rounded-2xl p-8 hover-lift">
             <div className="text-4xl mb-4">🎨</div>
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800">Color Palette Generator</h3>
-            <p className="text-gray-600 mb-6">Generate beautiful color combinations for your next project</p>
+            <h3 className="text-2xl font-semibold mb-4 text-gray-800">Farbpaletten-Generator</h3>
+            <p className="text-gray-600 mb-6">Generiere wunderschöne Farbkombinationen für dein nächstes Projekt</p>
             
             <div className="space-y-4 mb-6">
               <div className="flex space-x-2">
@@ -89,7 +89,7 @@ export function CreativeTools() {
               onClick={generateColorPalette}
               className="w-full bg-primary-500 text-white hover:bg-primary-600"
             >
-              Generate New Palette
+              Neue Palette generieren
             </Button>
           </Card>
 

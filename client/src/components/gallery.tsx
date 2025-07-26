@@ -26,9 +26,9 @@ export function Gallery() {
     <section id="gallery" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-playfair font-bold mb-6 text-gray-800">Creative Gallery</h2>
+          <h2 className="text-5xl font-playfair font-bold mb-6 text-gray-800">Kreative Galerie</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our curated collection of inspiring photography and artistic elements
+            Entdecke unsere kuratierte Sammlung inspirierender Fotografie und künstlerischer Elemente
           </p>
         </div>
 
