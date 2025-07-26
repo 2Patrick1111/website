@@ -305,9 +305,8 @@ export default function Pricing() {
 
         {/* Funding Overview Table */}
         <section className="content-section">
-          <h2 className="section-title mb-8">Fördermöglichkeiten im Überblick</h2>
-          
           <Card className="glass-card p-8">
+            <h2 className="section-title mb-8">Fördermöglichkeiten im Überblick</h2>
             <p className="text-xl text-gray-300 mb-8 text-center">
               <strong>Beschäftigtenqualifizierung ab 1. April 2024</strong> im Überblick:
             </p>
