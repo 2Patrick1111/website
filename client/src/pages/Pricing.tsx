@@ -156,7 +156,7 @@ export default function Pricing() {
                   <p className="text-sm text-gray-400">{pkg.priceNote}</p>
                 </div>
 
-                <ul className="space-y-3 mb-8 flex-grow">
+                <ul className="space-y-3 mb-8 flex-grow text-left">
                   {pkg.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
                       <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
@@ -228,7 +228,7 @@ export default function Pricing() {
                     <p className="text-sm text-gray-400">{pkg.priceNote}</p>
                   </div>
 
-                  <ul className="space-y-3 mb-8 flex-grow">
+                  <ul className="space-y-3 mb-8 flex-grow text-left">
                     {pkg.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
                         <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
