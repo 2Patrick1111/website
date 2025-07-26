@@ -318,50 +318,160 @@ export default function Kurs() {
           </div>
         </section>
 
-        {/* Macbook Browser Container */}
+        {/* MacBook & Browser Container */}
         <section className="content-section">
           <div className="kurs-einblick-container">
-            <div className="browser-window">
-              {/* macOS Browser Header */}
-              <div className="browser-header">
-                <div className="traffic-lights">
-                  <div className="traffic-light close"></div>
-                  <div className="traffic-light minimize"></div>
-                  <div className="traffic-light maximize"></div>
+            {/* Desktop Browser Container */}
+            <div className="browser-container">
+              <div className="browser-window">
+                <div className="browser-header">
+                  <div className="traffic-lights">
+                    <div className="traffic-light close"></div>
+                    <div className="traffic-light minimize"></div>
+                    <div className="traffic-light maximize"></div>
+                  </div>
+                  <div className="address-bar">🔒 ai-allstars.com/kurs-einblick</div>
                 </div>
-                <div className="address-bar">🔒 ai-allstars.com/kurs-einblick</div>
+                <div className="browser-content">
+                  <div className="logo-placeholder">
+                    <div className="logo-box">
+                      <img 
+                        src="/assets/allstars-logo-white.png" 
+                        alt="AI Allstars" 
+                        className="max-w-[200px] h-auto brightness-0 invert"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="hero-image-placeholder">
+                    <div className="w-full max-w-[600px] h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mx-auto mb-8 flex items-center justify-center">
+                      <span className="text-white text-sm">AI Allstars Team</span>
+                    </div>
+                  </div>
+                  
+                  <div className="header">
+                    <h1 className="text-white text-3xl font-bold mb-4">🚀 AI‑PASS Kurseinblick</h1>
+                    <p className="text-gray-300 mb-8">Entdecke, wie unser Programm dich zum KI‑Champion macht</p>
+                  </div>
+                  
+                  {/* Interactive Content */}
+                  <div className="interactive-content">
+                    {currentView === 'main' && renderMainMenu()}
+                    {currentView === 'theorie' && renderTheorie()}
+                    {currentView === 'praxis' && renderPraxis()}
+                    {currentView === 'department' && renderDepartment()}
+                  </div>
+                </div>
               </div>
-              
-              {/* Browser Content */}
-              <div className="browser-content">
-                <div className="logo-placeholder">
-                  <div className="logo-box">
-                    <img 
-                      src="/assets/allstars-logo-white.png" 
-                      alt="AI Allstars" 
-                      className="max-w-[200px] h-auto brightness-0 invert"
-                    />
+            </div>
+
+            {/* MacBook Keyboard */}
+            <div className="macbook-keyboard">
+              <div className="keyboard-base">
+                <div className="keyboard-rows">
+                  {/* Function Keys Row */}
+                  <div className="keyboard-row">
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>esc</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F1</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F2</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F3</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F4</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F5</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F6</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F7</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F8</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F9</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F10</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F11</div>
+                    <div className="key" style={{width: '30px', height: '22px', fontSize: '8px'}}>F12</div>
+                  </div>
+
+                  {/* Number Row */}
+                  <div className="keyboard-row">
+                    <div className="key">~</div>
+                    <div className="key">1</div>
+                    <div className="key">2</div>
+                    <div className="key">3</div>
+                    <div className="key">4</div>
+                    <div className="key">5</div>
+                    <div className="key">6</div>
+                    <div className="key">7</div>
+                    <div className="key">8</div>
+                    <div className="key">9</div>
+                    <div className="key">0</div>
+                    <div className="key">-</div>
+                    <div className="key">=</div>
+                    <div className="key backspace">⌫</div>
+                  </div>
+
+                  {/* Top Letter Row */}
+                  <div className="keyboard-row">
+                    <div className="key tab">tab</div>
+                    <div className="key">Q</div>
+                    <div className="key">W</div>
+                    <div className="key">E</div>
+                    <div className="key">R</div>
+                    <div className="key">T</div>
+                    <div className="key">Y</div>
+                    <div className="key">U</div>
+                    <div className="key">I</div>
+                    <div className="key">O</div>
+                    <div className="key">P</div>
+                    <div className="key">[</div>
+                    <div className="key">]</div>
+                    <div className="key" style={{width: '44px'}}>\\</div>
+                  </div>
+
+                  {/* Home Row */}
+                  <div className="keyboard-row">
+                    <div className="key" style={{width: '52px'}}>caps</div>
+                    <div className="key">A</div>
+                    <div className="key">S</div>
+                    <div className="key">D</div>
+                    <div className="key">F</div>
+                    <div className="key">G</div>
+                    <div className="key">H</div>
+                    <div className="key">J</div>
+                    <div className="key">K</div>
+                    <div className="key">L</div>
+                    <div className="key">;</div>
+                    <div className="key">'</div>
+                    <div className="key enter">⏎</div>
+                  </div>
+
+                  {/* Bottom Row */}
+                  <div className="keyboard-row">
+                    <div className="key shift">shift</div>
+                    <div className="key">Z</div>
+                    <div className="key">X</div>
+                    <div className="key">C</div>
+                    <div className="key">V</div>
+                    <div className="key">B</div>
+                    <div className="key">N</div>
+                    <div className="key">M</div>
+                    <div className="key">,</div>
+                    <div className="key">.</div>
+                    <div className="key">/</div>
+                    <div className="key shift">shift</div>
+                  </div>
+
+                  {/* Space Bar Row */}
+                  <div className="keyboard-row">
+                    <div className="key" style={{width: '48px'}}>fn</div>
+                    <div className="key" style={{width: '48px'}}>ctrl</div>
+                    <div className="key" style={{width: '48px'}}>opt</div>
+                    <div className="key space">space</div>
+                    <div className="key" style={{width: '48px'}}>cmd</div>
+                    <div className="key" style={{width: '48px'}}>opt</div>
+                    <div className="key">←</div>
+                    <div className="key">↑</div>
+                    <div className="key">↓</div>
+                    <div className="key">→</div>
                   </div>
                 </div>
-                
-                <div className="hero-image-placeholder">
-                  <div className="w-full max-w-[600px] h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mx-auto mb-8 flex items-center justify-center">
-                    <span className="text-white text-sm">AI Allstars Team</span>
-                  </div>
-                </div>
-                
-                <div className="header">
-                  <h1 className="text-white text-3xl font-bold mb-4">🚀 AI‑PASS Kurseinblick</h1>
-                  <p className="text-gray-300 mb-8">Entdecke, wie unser Programm dich zum KI‑Champion macht</p>
-                </div>
-                
-                {/* Interactive Content */}
-                <div className="interactive-content">
-                  {currentView === 'main' && renderMainMenu()}
-                  {currentView === 'theorie' && renderTheorie()}
-                  {currentView === 'praxis' && renderPraxis()}
-                  {currentView === 'department' && renderDepartment()}
-                </div>
+
+                {/* Trackpad */}
+                <div className="trackpad"></div>
               </div>
             </div>
           </div>
