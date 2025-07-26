@@ -91,12 +91,12 @@ export default function Home() {
             komplett bezahlt durch den deutschen Staat und mit 75% Lohnkostenerstattung.
           </p>
           <div className="hero-actions">
-            <a href="https://www.kontakt.ai-allstars.com" className="cta-button primary">
+            <Link href="/kontakt" className="cta-button primary">
               Kostenlose Förderprüfung
-            </a>
-            <a href="https://www.kurs.ai-allstars.com" className="cta-button secondary">
+            </Link>
+            <Link href="/kurs" className="cta-button secondary">
               Kurs entdecken
-            </a>
+            </Link>
           </div>
         </div>
       </section>

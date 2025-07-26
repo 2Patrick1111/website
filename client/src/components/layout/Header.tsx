@@ -43,29 +43,29 @@ export function Header() {
         >
           Preise
         </Link>
-        <a 
-          href="https://www.team.ai-allstars.com" 
-          className="header-nav-link"
+        <Link 
+          href="/team" 
+          className={`header-nav-link ${isActiveLink('/team') ? 'active' : ''}`}
         >
           Team
-        </a>
-        <a 
-          href="https://www.kurs.ai-allstars.com" 
-          className="header-nav-link"
+        </Link>
+        <Link 
+          href="/kurs" 
+          className={`header-nav-link ${isActiveLink('/kurs') ? 'active' : ''}`}
         >
           Kurs
-        </a>
-        <a 
-          href="https://www.kontakt.ai-allstars.com" 
-          className="header-nav-link"
+        </Link>
+        <Link 
+          href="/kontakt" 
+          className={`header-nav-link ${isActiveLink('/kontakt') ? 'active' : ''}`}
         >
           Kontakt
-        </a>
+        </Link>
       </nav>
       
-      <a href="https://www.kontakt.ai-allstars.com" className="header-cta">
+      <Link href="/kontakt" className="header-cta">
         AI Pass Beratung
-      </a>
+      </Link>
       
       {/* Mobile Star Menu Button */}
       <button 
@@ -97,30 +97,30 @@ export function Header() {
         >
           Preise
         </Link>
-        <a 
-          href="https://www.team.ai-allstars.com" 
-          className="mobile-nav-item"
+        <Link 
+          href="/team" 
+          className={`mobile-nav-item ${isActiveLink('/team') ? 'active' : ''}`}
           onClick={closeMobileMenu}
         >
           Team
-        </a>
-        <a 
-          href="https://www.kurs.ai-allstars.com" 
-          className="mobile-nav-item"
+        </Link>
+        <Link 
+          href="/kurs" 
+          className={`mobile-nav-item ${isActiveLink('/kurs') ? 'active' : ''}`}
           onClick={closeMobileMenu}
         >
           Kurs
-        </a>
-        <a 
-          href="https://www.kontakt.ai-allstars.com" 
-          className="mobile-nav-item"
+        </Link>
+        <Link 
+          href="/kontakt" 
+          className={`mobile-nav-item ${isActiveLink('/kontakt') ? 'active' : ''}`}
           onClick={closeMobileMenu}
         >
           Kontakt
-        </a>
-        <a href="https://www.kontakt.ai-allstars.com" className="mobile-cta" onClick={closeMobileMenu}>
+        </Link>
+        <Link href="/kontakt" className="mobile-cta" onClick={closeMobileMenu}>
           AI Pass Beratung
-        </a>
+        </Link>
       </nav>
     </header>
   );

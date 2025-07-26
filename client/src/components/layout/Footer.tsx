@@ -20,9 +20,9 @@ export function Footer() {
         <div className="footer-links">
           <div className="footer-column">
             <h4 className="footer-column-title">Services</h4>
-            <a href="https://www.kurs.ai-allstars.com" className="footer-link">
+            <Link href="/kurs" className="footer-link">
               Kurs-Einblick
-            </a>
+            </Link>
             <Link href="/preise" className="footer-link">
               Preise
             </Link>
@@ -30,12 +30,12 @@ export function Footer() {
           
           <div className="footer-column">
             <h4 className="footer-column-title">Unternehmen</h4>
-            <a href="https://www.team.ai-allstars.com" className="footer-link">
+            <Link href="/team" className="footer-link">
               Team
-            </a>
-            <a href="https://www.kontakt.ai-allstars.com" className="footer-link">
+            </Link>
+            <Link href="/kontakt" className="footer-link">
               Kontakt
-            </a>
+            </Link>
           </div>
           
           <div className="footer-column">
