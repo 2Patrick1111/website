@@ -425,18 +425,7 @@ export default function Pricing() {
           </Card>
         </section>
 
-        {/* Call to Action */}
-        <section className="content-section text-center">
-          <h2 className="section-title mb-8">Bereit für den nächsten Schritt?</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Lass uns gemeinsam herausfinden, welches Paket am besten zu deinem Unternehmen passt.
-          </p>
-          <Link href="/kontakt">
-            <Button className="header-cta text-lg px-8 py-4">
-              Kostenlose Beratung vereinbaren
-            </Button>
-          </Link>
-        </section>
+
       </div>
     </Layout>
   );
