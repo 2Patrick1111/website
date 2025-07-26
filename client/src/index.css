@@ -242,7 +242,7 @@
 
   .glass-card {
     @apply p-8 mb-8 transition-all duration-300 rounded-3xl text-center;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--bg-glass);
     backdrop-filter: blur(30px);
     border: 1px solid var(--border-glass);
   }
