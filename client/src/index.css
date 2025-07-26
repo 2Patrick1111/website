@@ -242,9 +242,26 @@
 
   .glass-card {
     @apply p-8 mb-8 transition-all duration-300 rounded-3xl text-center;
-    background: var(--bg-glass);
+    background: var(--bg-glass) !important;
     backdrop-filter: blur(30px);
-    border: 1px solid var(--border-glass);
+    border: 1px solid var(--border-glass) !important;
+  }
+
+  /* Override any Card component backgrounds */
+  .glass-card[data-radix-ui],
+  .glass-card.bg-card,
+  [data-radix-ui].glass-card,
+  .glass-card.bg-background,
+  .glass-card:is([class*="bg-"]) {
+    background: var(--bg-glass) !important;
+    border: 1px solid var(--border-glass) !important;
+  }
+
+  /* Force glass effect on all cards in pricing */
+  [class*="glass-card"] {
+    background: var(--bg-glass) !important;
+    border: 1px solid var(--border-glass) !important;
+    backdrop-filter: blur(30px) !important;
   }
 
   .glass-card:hover {

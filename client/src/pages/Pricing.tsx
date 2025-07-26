@@ -246,7 +246,7 @@ export default function Pricing() {
                 Sonstige berufliche Weiterbildung nach § 82 SGB III
               </h3>
               <div className="overflow-x-auto">
-                <table className="w-full text-sm">
+                <table className="w-full text-sm bg-transparent">
                   <thead>
                     <tr className="border-b border-gray-600">
                       <th className="text-left p-3 text-gray-300">Kriterium</th>
