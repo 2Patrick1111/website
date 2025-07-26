@@ -212,6 +212,119 @@ export default function Pricing() {
           </Card>
         </section>
 
+        {/* Funding Overview Table */}
+        <section className="content-section">
+          <h2 className="section-title mb-8">Fördermöglichkeiten im Überblick</h2>
+          <p className="text-xl text-gray-300 mb-8 text-center">
+            <strong>Beschäftigtenqualifizierung ab 1. April 2024</strong> im Überblick:
+          </p>
+
+          <div className="space-y-8">
+            <Card className="glass-card p-6">
+              <h3 className="text-lg font-semibold text-white mb-6">
+                Abschlussorientierte Weiterbildung bei fehlendem Berufsabschluss (nach § 81 (2) SGB III)
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="font-semibold text-gray-300 mb-2">Betriebsgröße</div>
+                  <div className="text-2xl">👥👥👥👥👥👥👥👥</div>
+                  <div className="text-gray-400">Alle Betriebsgrößen</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-300 mb-2">Übernahme Lehrgangskosten</div>
+                  <div className="text-3xl font-bold text-green-400">100%</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-300 mb-2">Arbeitsentgeltzuschuss</div>
+                  <div className="text-3xl font-bold text-green-400">bis zu 100%</div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="glass-card p-6">
+              <h3 className="text-lg font-semibold text-white mb-6">
+                Sonstige berufliche Weiterbildung nach § 82 SGB III
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-gray-600">
+                      <th className="text-left p-3 text-gray-300">Kriterium</th>
+                      <th className="text-center p-3 text-gray-300">
+                        <div>👥👥👥</div>
+                        <div>unter 50 Beschäftigte</div>
+                      </th>
+                      <th className="text-center p-3 text-gray-300">
+                        <div>👥👥👥👥👥</div>
+                        <div>50–499 Beschäftigte</div>
+                      </th>
+                      <th className="text-center p-3 text-gray-300">
+                        <div>👥👥👥👥👥👥👥</div>
+                        <div>Ab 500 Beschäftigte</div>
+                      </th>
+                      <th className="text-center p-3 text-blue-400">
+                        <div className="font-bold">Neu!</div>
+                        <div>👥👥👥👥👥👥👥</div>
+                        <div>Alle Betriebsgrößen</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-gray-700">
+                      <td className="p-3 font-semibold text-gray-200">Übernahme Lehrgangskosten</td>
+                      <td className="text-center p-3 text-green-400 font-semibold">100% (soll)</td>
+                      <td className="text-center p-3 text-gray-300">
+                        <div>50%</div>
+                        <div className="text-green-400">100% (soll)*</div>
+                        <div className="text-xs">*bei Vollendung des 45. Lebensjahres oder Schwerbehinderung</div>
+                      </td>
+                      <td className="text-center p-3 text-gray-300">25%</td>
+                      <td className="text-center p-3 text-gray-300">durch den Arbeitgeber zu tragen</td>
+                    </tr>
+                    <tr className="border-b border-gray-700">
+                      <td className="p-3 font-semibold text-gray-200">Arbeitsentgeltzuschuss</td>
+                      <td className="text-center p-3 text-green-400 font-semibold">75%</td>
+                      <td className="text-center p-3 text-gray-300">50%</td>
+                      <td className="text-center p-3 text-gray-300">25%</td>
+                      <td className="text-center p-3 text-gray-300">keine Übernahme</td>
+                    </tr>
+                    <tr className="border-b border-gray-700">
+                      <td className="p-3 font-semibold text-gray-200">Entgeltersatzleistung</td>
+                      <td className="text-center p-3 text-gray-300">keine Übernahme</td>
+                      <td className="text-center p-3 text-gray-300">keine Übernahme</td>
+                      <td className="text-center p-3 text-gray-300">keine Übernahme</td>
+                      <td className="text-center p-3 text-blue-400 font-semibold">60/67%</td>
+                    </tr>
+                    <tr className="border-b border-gray-700">
+                      <td className="p-3 font-semibold text-gray-200">Zulassungserfordernis</td>
+                      <td className="text-center p-3 text-gray-300">Maßnahme und Träger</td>
+                      <td className="text-center p-3 text-gray-300">Maßnahme und Träger</td>
+                      <td className="text-center p-3 text-gray-300">Maßnahme und Träger</td>
+                      <td className="text-center p-3 text-gray-300">nur Träger</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold text-gray-200">Behinderungsbedingt erforderliche Mehraufwendungen</td>
+                      <td className="text-center p-3 text-green-400">werden übernommen</td>
+                      <td className="text-center p-3 text-green-400">werden übernommen</td>
+                      <td className="text-center p-3 text-green-400">werden übernommen</td>
+                      <td className="text-center p-3 text-green-400">werden übernommen</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+
+            <Card className="glass-card p-6 text-center">
+              <h3 className="text-xl font-semibold text-blue-400 mb-4">
+                Qualifizierungsgeld nach § 82a SGB III
+              </h3>
+              <p className="text-gray-300 text-lg">
+                Die neue Förderungsmöglichkeit für alle Betriebsgrößen
+              </p>
+            </Card>
+          </div>
+        </section>
+
         {/* Call to Action */}
         <section className="content-section text-center">
           <h2 className="section-title mb-8">Bereit für den nächsten Schritt?</h2>
