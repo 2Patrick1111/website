@@ -37,12 +37,12 @@ export function Header() {
         >
           Home
         </Link>
-        <a 
-          href="https://www.preise.ai-allstars.com" 
-          className="header-nav-link"
+        <Link 
+          href="/preise" 
+          className={`header-nav-link ${isActiveLink('/preise') ? 'active' : ''}`}
         >
           Preise
-        </a>
+        </Link>
         <a 
           href="https://www.team.ai-allstars.com" 
           className="header-nav-link"
@@ -90,13 +90,13 @@ export function Header() {
         >
           Home
         </Link>
-        <a 
-          href="https://www.preise.ai-allstars.com" 
-          className="mobile-nav-item"
+        <Link 
+          href="/preise" 
+          className={`mobile-nav-item ${isActiveLink('/preise') ? 'active' : ''}`}
           onClick={closeMobileMenu}
         >
           Preise
-        </a>
+        </Link>
         <a 
           href="https://www.team.ai-allstars.com" 
           className="mobile-nav-item"

@@ -23,9 +23,9 @@ export function Footer() {
             <a href="https://www.kurs.ai-allstars.com" className="footer-link">
               Kurs-Einblick
             </a>
-            <a href="https://www.preise.ai-allstars.com" className="footer-link">
+            <Link href="/preise" className="footer-link">
               Preise
-            </a>
+            </Link>
           </div>
           
           <div className="footer-column">

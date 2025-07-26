@@ -8,6 +8,7 @@ import Team from "@/pages/Team";
 import ROICalculator from "@/pages/ROICalculator";
 import Contact from "@/pages/Contact";
 import Appointment from "@/pages/Appointment";
+import Pricing from "@/pages/Pricing";
 import Impressum from "@/pages/Impressum";
 import Datenschutz from "@/pages/Datenschutz";
 import NotFound from "@/pages/not-found";
@@ -17,6 +18,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/team" component={Team} />
+      <Route path="/preise" component={Pricing} />
       <Route path="/roi-calculator" component={ROICalculator} />
       <Route path="/kontakt" component={Contact} />
       <Route path="/appointment" component={Appointment} />
