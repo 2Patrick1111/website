@@ -87,150 +87,118 @@ export default function Kurs() {
   ];
 
   const renderMainMenu = () => (
-    <div className="space-y-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-white mb-4">🚀 AI‑PASS Kurseinblick</h2>
-        <p className="text-xl text-gray-300">Entdecke, wie unser Programm dich zum KI‑Champion macht</p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <Card 
-          className="glass-card p-8 cursor-pointer hover:scale-105 transition-transform"
-          onClick={() => setCurrentView('theorie')}
-        >
-          <div className="text-center">
-            <span className="text-6xl mb-4 block">📚</span>
-            <h3 className="text-2xl font-bold text-white mb-4">Theorie</h3>
-            <p className="text-gray-300">Lerne die Grundlagen der KI und wie sie dein Arbeitsfeld revolutioniert</p>
-          </div>
-        </Card>
-        
-        <Card 
-          className="glass-card p-8 cursor-pointer hover:scale-105 transition-transform"
-          onClick={() => setCurrentView('praxis')}
-        >
-          <div className="text-center">
-            <span className="text-6xl mb-4 block">⚡</span>
-            <h3 className="text-2xl font-bold text-white mb-4">Praxis</h3>
-            <p className="text-gray-300">Entdecke praxisnahe Anwendungen für verschiedene Abteilungen</p>
-          </div>
-        </Card>
+    <div id="mainMenu">
+      <div className="main-buttons">
+        <div className="main-btn" onClick={() => setCurrentView('theorie')}>
+          <span className="icon">📚</span>
+          <div>Theorie</div>
+        </div>
+        <div className="main-btn" onClick={() => setCurrentView('praxis')}>
+          <span className="icon">⚡</span>
+          <div>Praxis</div>
+        </div>
       </div>
     </div>
   );
 
   const renderTheorie = () => (
-    <div className="space-y-8">
-      <Button 
-        variant="ghost" 
-        className="text-white hover:text-blue-400 mb-6"
-        onClick={() => setCurrentView('main')}
-      >
-        <ArrowLeft className="w-4 h-4 mr-2" />
-        Zurück zur Übersicht
-      </Button>
+    <div id="theorieContent" className="content-area">
+      <div className="back-btn" onClick={() => setCurrentView('main')}>← Zurück zur Übersicht</div>
+      <h2 style={{color: 'white', marginBottom: '20px', fontSize: '1.8rem', fontWeight: '600'}}>📚 Theorie-Bereich</h2>
       
-      <h2 className="text-3xl font-bold text-white mb-8">📚 Theorie-Bereich</h2>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="content-grid">
         {theorieContent.map((item, index) => (
-          <Card key={index} className="glass-card p-6">
-            <h3 className="text-xl font-semibold text-white mb-4">{item.title}</h3>
+          <div key={index} className="content-item">
+            <h3>{item.title}</h3>
             
             {item.type === 'video' && (
-              <div className="relative bg-black rounded-lg h-48 mb-4 flex items-center justify-center">
-                <Play className="w-12 h-12 text-white" />
+              <div className="video-player" style={{background: '#000', borderRadius: '8px', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px'}}>
+                <div style={{color: 'white', fontSize: '2rem'}}>▶</div>
               </div>
             )}
             
             {item.type === 'task' && (
-              <div className="mb-4">
-                <p className="text-gray-300 mb-3">
-                  <strong className="text-white">Deine Mission:</strong><br />
-                  {item.description}
-                </p>
-                <div className="bg-blue-500/20 p-3 rounded-lg border border-blue-500/30">
-                  <span className="text-blue-300">⏱️ Geschätzte Bearbeitungszeit: {item.duration}</span>
+              <div>
+                <p><strong>Deine Mission:</strong><br />
+                {item.description}</p>
+                <div className="tip-box" style={{background: 'rgba(59, 130, 246, 0.2)', padding: '10px', borderRadius: '6px', marginTop: '10px', border: '1px solid rgba(59, 130, 246, 0.3)'}}>
+                  ⏱️ Geschätzte Bearbeitungszeit: {item.duration}
                 </div>
               </div>
             )}
             
             {item.type === 'document' && (
-              <div className="mb-4">
-                <div className="bg-gray-800/50 p-4 rounded-lg mb-3">
-                  <div className="text-white font-semibold mb-3">KI-Tools Übersicht 2025</div>
-                  {item.tools?.map((tool, i) => (
-                    <div key={i} className="flex items-center gap-2 mb-2">
-                      <Check className="w-4 h-4 text-green-400" />
-                      <span className="text-gray-300 text-sm">{tool}</span>
+              <div>
+                <div className="document-preview" style={{background: 'rgba(0, 0, 0, 0.3)', padding: '15px', borderRadius: '8px', marginBottom: '15px'}}>
+                  <div className="document-header" style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px'}}>
+                    <span>📋</span>
+                    <span style={{color: 'white', fontWeight: '600'}}>AI‑PASS Handout</span>
+                  </div>
+                  <div className="document-body">
+                    <div className="document-title" style={{color: 'white', fontWeight: '600', marginBottom: '10px'}}>KI-Tools Übersicht 2025</div>
+                    {item.tools?.map((tool, i) => (
+                      <div key={i} className="document-item" style={{display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px'}}>
+                        <span className="document-checkmark" style={{color: '#10b981'}}>✓</span>
+                        <span style={{color: '#e0e0e0', fontSize: '0.9rem'}}>{tool}</span>
+                      </div>
+                    ))}
+                    <div className="document-footer" style={{color: '#9ca3af', fontSize: '0.8rem', marginTop: '10px'}}>
+                      + 15 weitere Tools mit detaillierten Anwendungsbeispielen
                     </div>
-                  ))}
-                  <div className="text-gray-400 text-sm mt-3">
-                    + 15 weitere Tools mit detaillierten Anwendungsbeispielen
                   </div>
                 </div>
               </div>
             )}
             
             {item.type === 'bonus' && (
-              <div className="mb-4">
-                <div className="space-y-2 mb-4">
+              <div>
+                <div className="bonus-videos" style={{marginBottom: '15px'}}>
                   {item.videos?.map((video, i) => (
-                    <div key={i} className="bg-purple-500/20 p-2 rounded text-purple-300 text-sm">
+                    <div key={i} className="bonus-video" style={{background: 'rgba(147, 51, 234, 0.2)', padding: '8px 12px', borderRadius: '6px', marginBottom: '5px', fontSize: '0.8rem', color: '#c084fc'}}>
                       🎥 {video}
                     </div>
                   ))}
                 </div>
-                <div className="bg-gray-800/50 p-3 rounded-lg">
-                  <div className="text-white text-sm mb-2">{item.quiz}</div>
-                  <div className="space-y-1">
-                    <div className="text-gray-400 text-xs">A) Ein Kochrezept für Maschinen</div>
-                    <div className="text-gray-400 text-xs">B) Algorithmen, die aus Daten lernen</div>
-                    <div className="text-gray-400 text-xs">C) Wartung von Computern</div>
+                <div className="quiz-container" style={{background: 'rgba(0, 0, 0, 0.3)', padding: '12px', borderRadius: '8px'}}>
+                  <div className="quiz-question" style={{color: 'white', fontSize: '0.9rem', marginBottom: '8px'}}>{item.quiz}</div>
+                  <div className="quiz-options">
+                    <div className="quiz-option" style={{color: '#9ca3af', fontSize: '0.8rem', marginBottom: '4px'}}>A) Ein Kochrezept für Maschinen</div>
+                    <div className="quiz-option" style={{color: '#9ca3af', fontSize: '0.8rem', marginBottom: '4px'}}>B) Algorithmen, die aus Daten lernen</div>
+                    <div className="quiz-option" style={{color: '#9ca3af', fontSize: '0.8rem'}}>C) Wartung von Computern</div>
                   </div>
                 </div>
               </div>
             )}
             
-            <p className="text-gray-300 text-sm">{item.description}</p>
-          </Card>
+            <p>{item.description}</p>
+          </div>
         ))}
       </div>
     </div>
   );
 
   const renderPraxis = () => (
-    <div className="space-y-8">
-      <Button 
-        variant="ghost" 
-        className="text-white hover:text-blue-400 mb-6"
-        onClick={() => setCurrentView('main')}
-      >
-        <ArrowLeft className="w-4 h-4 mr-2" />
-        Zurück zur Übersicht
-      </Button>
+    <div id="praxisContent" className="content-area">
+      <div className="back-btn" onClick={() => setCurrentView('main')}>← Zurück zur Übersicht</div>
+      <h2 style={{color: 'white', marginBottom: '20px', fontSize: '1.8rem', fontWeight: '600'}}>⚡ Praxis-Bereich</h2>
       
-      <h2 className="text-3xl font-bold text-white mb-8">⚡ Praxis-Bereich</h2>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="department-grid">
         {departments.map((dept) => (
-          <Card 
+          <div 
             key={dept.id} 
-            className="glass-card p-6 cursor-pointer hover:scale-105 transition-transform"
+            className="department-card"
             onClick={() => {
               setSelectedDepartment(dept.id);
               setCurrentView('department');
             }}
           >
-            <div className="text-center mb-4">
-              <span className="text-4xl mb-3 block">{dept.icon}</span>
-              <div className="text-gray-400 text-sm mb-2">Video-Vorschau</div>
+            <div className="thumbnail-placeholder">
+              <span>{dept.icon}</span>
+              <small>Video-Vorschau</small>
             </div>
-            <p className="text-gray-300 text-sm mb-4">{dept.description}</p>
-            <Button className="w-full bg-blue-600 hover:bg-blue-700">
-              {dept.title}
-            </Button>
-          </Card>
+            <p>{dept.description}</p>
+            <div className="department-btn">{dept.title}</div>
+          </div>
         ))}
       </div>
     </div>
@@ -241,75 +209,65 @@ export default function Kurs() {
     if (!dept) return null;
 
     return (
-      <div className="space-y-8">
-        <Button 
-          variant="ghost" 
-          className="text-white hover:text-blue-400 mb-6"
-          onClick={() => setCurrentView('praxis')}
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Zurück zu Praxis-Bereichen
-        </Button>
+      <div id={`${dept.id}Detail`} className="content-area">
+        <div className="back-btn" onClick={() => setCurrentView('praxis')}>← Zurück zu Praxis-Bereichen</div>
+        <h2 style={{color: 'white', marginBottom: '20px', fontSize: '1.8rem', fontWeight: '600'}}>{dept.icon} {dept.title} mit KI</h2>
         
-        <h2 className="text-3xl font-bold text-white mb-8">{dept.icon} {dept.title} mit KI</h2>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <Card className="glass-card p-6">
-            <div className="relative bg-black rounded-lg h-48 mb-6 flex items-center justify-center">
-              <Play className="w-12 h-12 text-white" />
+        <div className="detail-content" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '30px'}}>
+          <div className="detail-video" style={{background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255, 255, 255, 0.2)', borderRadius: '12px', padding: '25px'}}>
+            <div className="video-player" style={{background: '#000', borderRadius: '8px', height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px'}}>
+              <div style={{color: 'white', fontSize: '3rem'}}>▶</div>
             </div>
             
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-white">🛠️ Empfohlene Tools:</h3>
-              <div className="flex flex-wrap gap-2 mb-4">
+            <div className="tool-info">
+              <h3 style={{color: 'white', fontSize: '1.2rem', marginBottom: '15px'}}>🛠️ Empfohlene Tools:</h3>
+              <div className="tool-list" style={{display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px'}}>
                 {dept.tools.map((tool, i) => (
-                  <span key={i} className="bg-blue-600/60 text-white px-3 py-1 rounded-full text-sm">
+                  <span key={i} className="tool-tag" style={{background: 'rgba(0, 128, 255, 0.6)', color: 'white', padding: '6px 12px', borderRadius: '20px', fontSize: '0.8rem'}}>
                     {tool}
                   </span>
                 ))}
               </div>
-              <p className="text-gray-300 text-sm">{dept.toolDescription}</p>
+              <p style={{color: '#e0e0e0', fontSize: '0.9rem'}}>{dept.toolDescription}</p>
             </div>
-          </Card>
+          </div>
 
-          <Card className="glass-card p-6">
-            <h3 className="text-xl font-semibold text-white mb-6">🎯 Praxis-Aufgabe</h3>
-            
-            <div className="bg-gray-800/50 rounded-lg overflow-hidden">
-              <div className="bg-blue-600/60 p-4 flex items-center gap-3">
-                <span className="text-xl">🎯</span>
-                <span className="text-white font-semibold">Praxis-Challenge</span>
+          <div className="assignment-section" style={{background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255, 255, 255, 0.2)', borderRadius: '12px', padding: '0', overflow: 'hidden'}}>
+            <div className="assignment-card">
+              <div className="assignment-header" style={{background: 'rgba(0, 128, 255, 0.6)', padding: '15px 20px', display: 'flex', alignItems: 'center', gap: '10px'}}>
+                <span className="assignment-icon" style={{fontSize: '1.2rem'}}>🎯</span>
+                <strong style={{color: 'white', fontSize: '1rem'}}>Praxis-Challenge</strong>
               </div>
               
-              <div className="p-4 space-y-4">
-                <p className="text-gray-300">
+              <div className="assignment-body" style={{padding: '20px'}}>
+                <p style={{color: '#e0e0e0', fontSize: '0.9rem', marginBottom: '15px'}}>
                   Implementiere ein KI-Tool in deinem {dept.title}-Bereich und dokumentiere die Zeitersparnis.
                 </p>
                 
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">1</div>
-                    <span className="text-gray-300">Tool auswählen und einrichten</span>
+                <div className="assignment-steps" style={{display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px'}}>
+                  <div className="step" style={{display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(0, 0, 0, 0.2)', padding: '10px 12px', borderRadius: '8px'}}>
+                    <div className="step-number" style={{background: '#0080FF', color: 'white', width: '24px', height: '24px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold'}}>1</div>
+                    <span style={{color: '#e0e0e0', fontSize: '0.85rem'}}>Tool auswählen und einrichten</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">2</div>
-                    <span className="text-gray-300">Testlauf mit realen Daten durchführen</span>
+                  <div className="step" style={{display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(0, 0, 0, 0.2)', padding: '10px 12px', borderRadius: '8px'}}>
+                    <div className="step-number" style={{background: '#0080FF', color: 'white', width: '24px', height: '24px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold'}}>2</div>
+                    <span style={{color: '#e0e0e0', fontSize: '0.85rem'}}>Testlauf mit realen Daten durchführen</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">3</div>
-                    <span className="text-gray-300">Ergebnisse dokumentieren und bewerten</span>
+                  <div className="step" style={{display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(0, 0, 0, 0.2)', padding: '10px 12px', borderRadius: '8px'}}>
+                    <div className="step-number" style={{background: '#0080FF', color: 'white', width: '24px', height: '24px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold'}}>3</div>
+                    <span style={{color: '#e0e0e0', fontSize: '0.85rem'}}>Ergebnisse dokumentieren und bewerten</span>
                   </div>
                 </div>
                 
-                <div className="bg-blue-500/20 p-3 rounded border border-blue-500/30 mt-4">
-                  <div className="text-blue-300 text-sm">
+                <div className="goal-box" style={{background: 'rgba(59, 130, 246, 0.2)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(59, 130, 246, 0.3)'}}>
+                  <div style={{color: '#93c5fd', fontSize: '0.8rem'}}>
                     <div><strong>Geschätzte Zeit:</strong> 2 Stunden</div>
                     <div><strong>Ziel:</strong> Mindestens 30% Zeitersparnis</div>
                   </div>
                 </div>
               </div>
             </div>
-          </Card>
+          </div>
         </div>
       </div>
     );
@@ -360,29 +318,53 @@ export default function Kurs() {
           </div>
         </section>
 
-        {/* Browser Mockup */}
+        {/* Macbook Browser Container */}
         <section className="content-section">
-          <Card className="glass-card max-w-6xl mx-auto overflow-hidden">
-            {/* Browser Header */}
-            <div className="bg-gray-100 px-6 py-3 flex items-center gap-3">
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          <div className="kurs-einblick-container">
+            <div className="browser-window">
+              {/* macOS Browser Header */}
+              <div className="browser-header">
+                <div className="traffic-lights">
+                  <div className="traffic-light close"></div>
+                  <div className="traffic-light minimize"></div>
+                  <div className="traffic-light maximize"></div>
+                </div>
+                <div className="address-bar">🔒 ai-allstars.com/kurs-einblick</div>
               </div>
-              <div className="bg-white rounded px-4 py-1 flex-1 text-gray-600 text-sm">
-                🔒 ai-allstars.com/kurs-einblick
+              
+              {/* Browser Content */}
+              <div className="browser-content">
+                <div className="logo-placeholder">
+                  <div className="logo-box">
+                    <img 
+                      src="/assets/allstars-logo-white.png" 
+                      alt="AI Allstars" 
+                      className="max-w-[200px] h-auto brightness-0 invert"
+                    />
+                  </div>
+                </div>
+                
+                <div className="hero-image-placeholder">
+                  <div className="w-full max-w-[600px] h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mx-auto mb-8 flex items-center justify-center">
+                    <span className="text-white text-sm">AI Allstars Team</span>
+                  </div>
+                </div>
+                
+                <div className="header">
+                  <h1 className="text-white text-3xl font-bold mb-4">🚀 AI‑PASS Kurseinblick</h1>
+                  <p className="text-gray-300 mb-8">Entdecke, wie unser Programm dich zum KI‑Champion macht</p>
+                </div>
+                
+                {/* Interactive Content */}
+                <div className="interactive-content">
+                  {currentView === 'main' && renderMainMenu()}
+                  {currentView === 'theorie' && renderTheorie()}
+                  {currentView === 'praxis' && renderPraxis()}
+                  {currentView === 'department' && renderDepartment()}
+                </div>
               </div>
             </div>
-            
-            {/* Browser Content */}
-            <div className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 p-8 min-h-[600px]">
-              {currentView === 'main' && renderMainMenu()}
-              {currentView === 'theorie' && renderTheorie()}
-              {currentView === 'praxis' && renderPraxis()}
-              {currentView === 'department' && renderDepartment()}
-            </div>
-          </Card>
+          </div>
         </section>
       </div>
     </Layout>
