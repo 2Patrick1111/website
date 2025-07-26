@@ -139,11 +139,11 @@ export default function Pricing() {
                   </div>
                 )}
 
-                <div className="mb-6">
-                  <h3 className="card-title text-xl mb-2 text-center">{pkg.name}</h3>
-                  <p className="text-sm text-gray-400 mb-4 text-center">{pkg.subtitle}</p>
+                <div className="text-center mb-6">
+                  <h3 className="card-title text-xl mb-2">{pkg.name}</h3>
+                  <p className="text-sm text-gray-400 mb-4">{pkg.subtitle}</p>
                   
-                  <div className="mb-2 text-center">
+                  <div className="mb-2">
                     {pkg.oldPrice && (
                       <div className="text-lg text-gray-500 line-through mb-1">
                         {pkg.oldPrice}
@@ -153,7 +153,7 @@ export default function Pricing() {
                       {pkg.price}
                     </div>
                   </div>
-                  <p className="text-sm text-gray-400 text-center">{pkg.priceNote}</p>
+                  <p className="text-sm text-gray-400">{pkg.priceNote}</p>
                 </div>
 
                 <ul className="space-y-3 mb-8 flex-grow">
@@ -211,11 +211,11 @@ export default function Pricing() {
                     </div>
                   )}
 
-                  <div className="mb-6">
-                    <h3 className="card-title text-xl mb-2 text-center">{pkg.name}</h3>
-                    <p className="text-sm text-gray-400 mb-4 text-center">{pkg.subtitle}</p>
+                  <div className="text-center mb-6">
+                    <h3 className="card-title text-xl mb-2">{pkg.name}</h3>
+                    <p className="text-sm text-gray-400 mb-4">{pkg.subtitle}</p>
                     
-                    <div className="mb-2 text-center">
+                    <div className="mb-2">
                       {pkg.oldPrice && (
                         <div className="text-lg text-gray-500 line-through mb-1">
                           {pkg.oldPrice}
@@ -225,7 +225,7 @@ export default function Pricing() {
                         {pkg.price}
                       </div>
                     </div>
-                    <p className="text-sm text-gray-400 text-center">{pkg.priceNote}</p>
+                    <p className="text-sm text-gray-400">{pkg.priceNote}</p>
                   </div>
 
                   <ul className="space-y-3 mb-8 flex-grow">
@@ -291,7 +291,7 @@ export default function Pricing() {
                         <span>Planungssicherheit – fester Starttermin garantiert</span>
                       </li>
                     </ul>
-                    <p className="mt-4 font-semibold text-blue-400">
+                    <p className="mt-4 text-center font-semibold text-blue-400">
                       Entscheide selbst: Warten auf die Förderung oder sofort durchstarten mit AI‑PASS Premium!
                     </p>
                   </div>
@@ -316,7 +316,7 @@ export default function Pricing() {
               <h3 className="text-lg font-semibold text-white mb-6">
                 Abschlussorientierte Weiterbildung bei fehlendem Berufsabschluss (nach § 81 (2) SGB III)
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/20">
                 <div>
                   <div className="font-semibold text-gray-300 mb-2">Betriebsgröße</div>
                   <div className="text-2xl">👥👥👥👥👥👥👥👥</div>
