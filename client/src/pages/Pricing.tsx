@@ -291,7 +291,7 @@ export default function Pricing() {
                         <span>Planungssicherheit – fester Starttermin garantiert</span>
                       </li>
                     </ul>
-                    <p className="mt-4 text-center font-semibold text-blue-400">
+                    <p className="mt-4 font-semibold text-blue-400">
                       Entscheide selbst: Warten auf die Förderung oder sofort durchstarten mit AI‑PASS Premium!
                     </p>
                   </div>
