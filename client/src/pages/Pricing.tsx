@@ -5,31 +5,16 @@ import { Link } from "wouter";
 import { Layout } from "@/components/layout/Layout";
 
 export default function Pricing() {
-  const packages = [
-    {
-      name: "AI‑PASS Gefördert",
-      subtitle: "100% staatlich gefördert",
-      price: "0€",
-      priceNote: "+ 75% Lohnkostenerstattung",
-      highlight: true,
-      features: [
-        "5‑Wochen AI‑Intensivprogramm",
-        "Live‑Sessions mit KI‑Experten",
-        "Persönliches Automations‑Set‑up",
-        "Offizielle Zertifizierung",
-        "Durchschnittlich 6h Zeitersparnis/Woche",
-        "Förderung nach § 82 SGB III"
-      ],
-      buttonText: "Förderung beantragen",
-      buttonLink: "/kontakt"
-    },
+  const topRowPackages = [
     {
       name: "AI‑PASS Videokurs",
       subtitle: "Selbstständig lernen im eigenen Tempo",
       price: "996€",
       oldPrice: "1.245€",
       priceNote: "einmalig",
+      highlight: false,
       discount: true,
+      secondary: false,
       features: [
         "Vollständige Videokurs‑Bibliothek",
         "5‑Wochen strukturierte Inhalte",
@@ -46,7 +31,11 @@ export default function Pricing() {
       name: "AI‑PASS Premium",
       subtitle: "Mit 10 Stunden Live-Unterstützung durch unsere Dozenten",
       price: "3.495€",
+      oldPrice: "",
       priceNote: "pro Teilnehmer",
+      highlight: false,
+      discount: false,
+      secondary: false,
       features: [
         "5‑Wochen AI‑Intensivprogramm",
         "Live‑Sessions mit KI‑Experten",
@@ -62,7 +51,11 @@ export default function Pricing() {
       name: "AI‑PASS Enterprise",
       subtitle: "Individuelle Unternehmenslösung",
       price: "Auf Anfrage",
+      oldPrice: "",
       priceNote: "maßgeschneidert",
+      highlight: false,
+      discount: false,
+      secondary: true,
       features: [
         "Individuelle Beratung für Ihr Unternehmen",
         "Angepasste Lösungen nach Bedarf",
@@ -73,8 +66,30 @@ export default function Pricing() {
         "Langfristige Partnerschaft möglich"
       ],
       buttonText: "Kostenlose Beratung",
-      buttonLink: "/kontakt",
-      secondary: true
+      buttonLink: "/kontakt"
+    }
+  ];
+
+  const bottomRowPackages = [
+    {
+      name: "AI‑PASS Gefördert",
+      subtitle: "100% staatlich gefördert",
+      price: "0€",
+      oldPrice: "",
+      priceNote: "+ 75% Lohnkostenerstattung",
+      highlight: true,
+      discount: false,
+      secondary: false,
+      features: [
+        "5‑Wochen AI‑Intensivprogramm",
+        "Live‑Sessions mit KI‑Experten",
+        "Persönliches Automations‑Set‑up",
+        "Offizielle Zertifizierung",
+        "Durchschnittlich 6h Zeitersparnis/Woche",
+        "Förderung nach § 82 SGB III"
+      ],
+      buttonText: "Förderung beantragen",
+      buttonLink: "/kontakt"
     }
   ];
 
@@ -95,8 +110,9 @@ export default function Pricing() {
 
         {/* Pricing Grid */}
         <section className="content-section">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-            {packages.map((pkg, index) => (
+          {/* Top Row - 3 Packages */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {topRowPackages.map((pkg, index) => (
               <Card
                 key={index}
                 className={`glass-card relative p-8 ${
@@ -162,6 +178,78 @@ export default function Pricing() {
                 </Link>
               </Card>
             ))}
+          </div>
+
+          {/* Bottom Row - Featured Package (AI-PASS Gefördert) */}
+          <div className="flex justify-center">
+            <div className="max-w-sm w-full">
+              {bottomRowPackages.map((pkg, index) => (
+                <Card
+                  key={index}
+                  className={`glass-card relative p-8 ${
+                    pkg.highlight 
+                      ? 'ring-2 ring-primary border-primary' 
+                      : pkg.discount 
+                        ? 'border-orange-500 ring-1 ring-orange-500/30' 
+                        : ''
+                  }`}
+                >
+                  {pkg.highlight && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                        Beliebteste Wahl
+                      </span>
+                    </div>
+                  )}
+                  
+                  {pkg.discount && (
+                    <div className="absolute -top-4 right-4">
+                      <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Rabatt
+                      </span>
+                    </div>
+                  )}
+
+                  <div className="text-center mb-6">
+                    <h3 className="card-title text-xl mb-2">{pkg.name}</h3>
+                    <p className="text-sm text-gray-400 mb-4">{pkg.subtitle}</p>
+                    
+                    <div className="mb-2">
+                      {pkg.oldPrice && (
+                        <div className="text-lg text-gray-500 line-through mb-1">
+                          {pkg.oldPrice}
+                        </div>
+                      )}
+                      <div className="text-3xl font-bold text-white">
+                        {pkg.price}
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-400">{pkg.priceNote}</p>
+                  </div>
+
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {pkg.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <Check className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-gray-300">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link href={pkg.buttonLink}>
+                    <Button 
+                      className={`w-full ${
+                        pkg.secondary 
+                          ? 'bg-transparent border-2 border-white text-white hover:bg-white hover:text-black' 
+                          : 'header-cta hover:scale-105'
+                      }`}
+                    >
+                      {pkg.buttonText}
+                    </Button>
+                  </Link>
+                </Card>
+              ))}
+            </div>
           </div>
         </section>
 
