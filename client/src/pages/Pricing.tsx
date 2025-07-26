@@ -180,13 +180,14 @@ export default function Pricing() {
             ))}
           </div>
 
-          {/* Bottom Row - Featured Package (AI-PASS Gefördert) */}
-          <div className="flex justify-center">
-            <div className="max-w-sm w-full">
+          {/* Bottom Row - Featured Package (AI-PASS Gefördert) with Funding Info */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* AI-PASS Gefördert Package */}
+            <div className="lg:col-span-1">
               {bottomRowPackages.map((pkg, index) => (
                 <Card
                   key={index}
-                  className={`glass-card relative p-8 ${
+                  className={`glass-card relative p-8 h-full ${
                     pkg.highlight 
                       ? 'ring-2 ring-primary border-primary' 
                       : pkg.discount 
@@ -250,55 +251,57 @@ export default function Pricing() {
                 </Card>
               ))}
             </div>
+
+            {/* Funding Information - spans 2 columns */}
+            <div className="lg:col-span-2">
+              <Card className="glass-card p-8 h-full">
+                <div className="mb-6">
+                  <h3 className="card-title text-2xl mb-4">🚀 AI‑PASS zu 100% gefördert</h3>
+                  <p className="text-lg text-orange-400 font-semibold">Aber Achtung bei den Wartezeiten!</p>
+                </div>
+
+                <div className="space-y-4 text-gray-300">
+                  <p>
+                    <strong className="text-white">Die gute Nachricht:</strong> Unser AI‑PASS ist durch § 82 SGB III zu 100% förderfähig und dein Unternehmen erhält zusätzlich bis zu 75% Lohnkostenerstattung.
+                  </p>
+                  <p>
+                    <strong className="text-white">Die weniger gute Nachricht:</strong> Die Bearbeitung von Förderanträgen kann bis zu 12 Wochen dauern. Das Amt ist überlastet und die Bewilligungsprozesse ziehen sich oft in die Länge.
+                  </p>
+                  <p>
+                    <strong className="text-white">Unsere Empfehlung:</strong> Falls du sofort starten möchtest, ohne auf die Förderung zu warten, ist unser AI‑PASS Premium die perfekte Alternative. Identische Inhalte, sofortiger Start – und du sparst dir den bürokratischen Aufwand.
+                  </p>
+
+                  <div className="mt-6 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-500/20">
+                    <h4 className="text-xl font-semibold text-white mb-4">Warum AI‑PASS Premium die smarte Alternative ist</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-center">
+                        <span className="text-green-400 mr-3">⏰</span>
+                        <span>Sofortiger Start – keine 12 Wochen Wartezeit</span>
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-green-400 mr-3">📋</span>
+                        <span>Kein Papierkram – direkte Buchung ohne Anträge</span>
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-green-400 mr-3">🎯</span>
+                        <span>Identische Inhalte – das gleiche hochwertige Programm</span>
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-green-400 mr-3">💡</span>
+                        <span>Planungssicherheit – fester Starttermin garantiert</span>
+                      </li>
+                    </ul>
+                    <p className="mt-4 text-center font-semibold text-blue-400">
+                      Entscheide selbst: Warten auf die Förderung oder sofort durchstarten mit AI‑PASS Premium!
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </div>
           </div>
         </section>
 
-        {/* Funding Information */}
-        <section className="content-section">
-          <Card className="glass-card p-8">
-            <div className="text-center mb-6">
-              <h3 className="card-title text-2xl mb-4">🚀 AI‑PASS zu 100% gefördert</h3>
-              <p className="text-lg text-orange-400 font-semibold">Aber Achtung bei den Wartezeiten!</p>
-            </div>
 
-            <div className="max-w-4xl mx-auto space-y-4 text-gray-300">
-              <p>
-                <strong className="text-white">Die gute Nachricht:</strong> Unser AI‑PASS ist durch § 82 SGB III zu 100% förderfähig und dein Unternehmen erhält zusätzlich bis zu 75% Lohnkostenerstattung.
-              </p>
-              <p>
-                <strong className="text-white">Die weniger gute Nachricht:</strong> Die Bearbeitung von Förderanträgen kann bis zu 12 Wochen dauern. Das Amt ist überlastet und die Bewilligungsprozesse ziehen sich oft in die Länge.
-              </p>
-              <p>
-                <strong className="text-white">Unsere Empfehlung:</strong> Falls du sofort starten möchtest, ohne auf die Förderung zu warten, ist unser AI‑PASS Premium die perfekte Alternative. Identische Inhalte, sofortiger Start – und du sparst dir den bürokratischen Aufwand.
-              </p>
-
-              <div className="mt-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-500/20">
-                <h4 className="text-xl font-semibold text-white mb-4">Warum AI‑PASS Premium die smarte Alternative ist</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <span className="text-green-400 mr-3">⏰</span>
-                    <span>Sofortiger Start – keine 12 Wochen Wartezeit</span>
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-green-400 mr-3">📋</span>
-                    <span>Kein Papierkram – direkte Buchung ohne Anträge</span>
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-green-400 mr-3">🎯</span>
-                    <span>Identische Inhalte – das gleiche hochwertige Programm</span>
-                  </li>
-                  <li className="flex items-center">
-                    <span className="text-green-400 mr-3">💡</span>
-                    <span>Planungssicherheit – fester Starttermin garantiert</span>
-                  </li>
-                </ul>
-                <p className="mt-4 text-center font-semibold text-blue-400">
-                  Entscheide selbst: Warten auf die Förderung oder sofort durchstarten mit AI‑PASS Premium!
-                </p>
-              </div>
-            </div>
-          </Card>
-        </section>
 
         {/* Funding Overview Table */}
         <section className="content-section">
