@@ -1372,8 +1372,9 @@
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  padding: 3rem;
+  padding: 3rem 3rem 0 3rem;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .contact-main-heading {
@@ -1407,7 +1408,7 @@
   display: flex;
   align-items: stretch;
   gap: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   justify-content: center;
   flex-wrap: nowrap;
   height: 100%;
@@ -1442,6 +1443,8 @@
   height: auto;
   border-radius: 16px 16px 0 0;
   transition: all 0.3s ease;
+  display: block;
+  margin-bottom: 0;
 }
 
 @media (max-width: 900px) {
