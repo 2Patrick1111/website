@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Layout } from "@/components/layout/Layout";
 import TeamMemberCard from "@/components/TeamMemberCard";
 // Team member images - using available assets
-const patrickImage = "/attached_assets/profilbild_1753643702033.png";
+import patrickImage from "@assets/profilbild_1753643702033.png";
 const antonioImage = "/attached_assets/Antonio_1753006608860.png";
 const markoImage = "/attached_assets/Marko_1753006653736.png";
 const broschuerePDF = "/attached_assets/AI_Pass_Broschuere_1753051794218.pdf";
