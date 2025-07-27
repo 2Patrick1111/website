@@ -41,7 +41,7 @@ const teamMembers = [
   {
     name: "Anton Müller",
     role: "Senior KI-Entwickler",
-    description: "Anton ist unser technischer Spezialist für die Implementierung von KI-Lösungen. Mit seiner Expertise in Machine Learning und Deep Learning entwickelt er maßgeschneiderte Automatisierungslösungen.",
+    description: "Anton bringt seine Stärken in der KI- und Systementwicklung sowie der Automatisierung ein, um Unternehmen bei der Effizienzsteigerung wirkungsvoll zu unterstützen.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
     social: {
       linkedin: "https://www.linkedin.com/in/anton-mueller-tech/",
