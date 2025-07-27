@@ -1403,27 +1403,69 @@
   font-size: 1.2rem;
 }
 
-.contact-single-person {
+.contact-layout-with-image {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 3rem;
   margin-bottom: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.contact-person-centered {
+.contact-person-left {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 2rem;
-  text-align: center;
+  text-align: left;
   transition: all 0.3s ease;
-  max-width: 400px;
-  width: 100%;
+  flex: 1;
+  max-width: 350px;
+  min-width: 300px;
 }
 
-.contact-person-centered:hover {
+.contact-person-left:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-4px);
+}
+
+.contact-image-right {
+  flex: 1;
+  max-width: 300px;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.antonio-portrait {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 128, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.antonio-portrait:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 128, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .contact-layout-with-image {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contact-person-left {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .contact-image-right {
+    max-width: 100%;
+  }
 }
 
 .contact-person {

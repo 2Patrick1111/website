@@ -53,8 +53,8 @@ export default function Contact() {
               </span>
             </h3>
             
-            <div className="contact-single-person">
-              <div className="contact-person-centered">
+            <div className="contact-layout-with-image">
+              <div className="contact-person-left">
                 <p className="contact-name">
                   <strong>Antonio Eichler</strong>
                   <span className="contact-email-inline">
@@ -66,6 +66,13 @@ export default function Contact() {
                   <a href="tel:+491624024929">+49 162 4024929</a>
                   <span className="contact-method-hint">(Telefon & WhatsApp)</span>
                 </p>
+              </div>
+              <div className="contact-image-right">
+                <img 
+                  src="/antonio-portrait.png" 
+                  alt="Antonio Eichler" 
+                  className="antonio-portrait"
+                />
               </div>
             </div>
           </div>
