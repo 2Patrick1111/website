@@ -3,6 +3,7 @@ import { Layout } from '@/components/layout/Layout';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Play, ArrowLeft, Check } from 'lucide-react';
+const teamGroupImage = "/attached_assets/Broschüre-ai-allstars_MM-removebg-preview_1753644358369.png";
 
 export default function Kurs() {
   const [currentView, setCurrentView] = useState('main');
@@ -315,8 +316,12 @@ export default function Kurs() {
                 </div>
                 
                 <div className="hero-image-placeholder">
-                  <div className="w-full max-w-[600px] h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mx-auto mb-8 flex items-center justify-center">
-                    <span className="text-white text-sm">AI Allstars Team</span>
+                  <div className="w-full max-w-[600px] h-32 rounded-lg mx-auto mb-8 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src={teamGroupImage} 
+                      alt="AI Allstars Team" 
+                      className="w-full h-full object-cover object-center"
+                    />
                   </div>
                 </div>
                 
