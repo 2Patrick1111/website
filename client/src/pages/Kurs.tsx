@@ -198,9 +198,22 @@ export default function Kurs() {
               setCurrentView('department');
             }}
           >
-            <div className="thumbnail-placeholder">
-              <span>{dept.icon}</span>
-              <small>Video-Vorschau</small>
+            <div className="thumbnail-placeholder" style={{position: 'relative', overflow: 'hidden', borderRadius: '8px', marginBottom: '15px'}}>
+              {dept.id === 'marketing' ? (
+                <div style={{position: 'relative'}}>
+                  <img 
+                    src="/praxis-marketing-thumbnail.png" 
+                    alt="Marketing mit KI Thumbnail" 
+                    style={{width: '100%', height: 'auto', borderRadius: '8px', display: 'block'}}
+                  />
+                  <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontSize: '1.5rem', backgroundColor: 'rgba(0,0,0,0.6)', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>▶</div>
+                </div>
+              ) : (
+                <div style={{background: '#000', borderRadius: '8px', height: '120px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+                  <span style={{fontSize: '2rem', marginBottom: '5px'}}>{dept.icon}</span>
+                  <small style={{color: '#ccc'}}>Video-Vorschau</small>
+                </div>
+              )}
             </div>
             <p>{dept.description}</p>
             <div className="department-btn">{dept.title}</div>
@@ -221,8 +234,21 @@ export default function Kurs() {
         
         <div className="detail-content" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '30px'}}>
           <div className="detail-video" style={{background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255, 255, 255, 0.2)', borderRadius: '12px', padding: '25px'}}>
-            <div className="video-player" style={{background: '#000', borderRadius: '8px', height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px'}}>
-              <div style={{color: 'white', fontSize: '3rem'}}>▶</div>
+            <div className="video-player" style={{borderRadius: '8px', marginBottom: '20px', position: 'relative', overflow: 'hidden'}}>
+              {dept.id === 'marketing' ? (
+                <div style={{position: 'relative'}}>
+                  <img 
+                    src="/praxis-marketing-thumbnail.png" 
+                    alt="Marketing mit KI Video" 
+                    style={{width: '100%', height: 'auto', borderRadius: '8px', display: 'block'}}
+                  />
+                  <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontSize: '3rem', backgroundColor: 'rgba(0,0,0,0.6)', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>▶</div>
+                </div>
+              ) : (
+                <div style={{background: '#000', borderRadius: '8px', height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                  <div style={{color: 'white', fontSize: '3rem'}}>▶</div>
+                </div>
+              )}
             </div>
             
             <div className="tool-info">
