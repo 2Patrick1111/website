@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Layout } from "@/components/layout/Layout";
 import TeamMemberCard from "@/components/TeamMemberCard";
 // Team member images - using available assets
+const patrickImage = "/attached_assets/profilbild_1753643702033.png";
 const antonioImage = "/attached_assets/Antonio_1753006608860.png";
 const markoImage = "/attached_assets/Marko_1753006653736.png";
 const broschuerePDF = "/attached_assets/AI_Pass_Broschuere_1753051794218.pdf";
@@ -12,7 +13,7 @@ const teamMembers = [
     name: "Patrick Thomas",
     role: "CEO & KI-Experte",
     description: "Mit umfassender KI-Expertise und langjähriger Erfahrung in Automatisierung entwickelt Patrick innovative KI-Lösungen, um Unternehmen nachhaltig zu transformieren und interne Prozesse zu optimieren.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    image: patrickImage,
     social: {
       linkedin: "https://www.linkedin.com/in/patrick-thomas-38ab512ba/",
       email: "patrick.thomas@ai-allstars.com"
