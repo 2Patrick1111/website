@@ -315,7 +315,7 @@ export default function Kurs() {
                   </div>
                 </div>
                 
-                <div className="hero-image-placeholder">
+                <div className="hero-image-placeholder relative">
                   <div className="w-full max-w-[350px] h-auto mx-auto mb-8">
                     <img 
                       src={teamGroupImage} 
@@ -323,11 +323,13 @@ export default function Kurs() {
                       className="w-full h-auto object-contain"
                     />
                   </div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-4">
+                    <h1 className="text-white text-3xl font-bold mb-4 text-center">🚀 AI‑PASS Kurseinblick</h1>
+                  </div>
                 </div>
                 
-                <div className="header">
-                  <h1 className="text-white text-3xl font-bold mb-4">🚀 AI‑PASS Kurseinblick</h1>
-                  <p className="text-gray-300 mb-8">Entdecke, wie unser Programm dich zum KI‑Champion macht</p>
+                <div className="header mt-8">
+                  <p className="text-gray-300 mb-8 text-center">Entdecke, wie unser Programm dich zum KI‑Champion macht</p>
                 </div>
                 
                 {/* Interactive Content */}
