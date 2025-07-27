@@ -7,7 +7,7 @@ import patrickImage from "@assets/profilbild_1753643702033.png";
 import antonioImage from "@assets/Antonio_1753643947463.png";
 import jennyImage from "@assets/Jenny_1753643966006.png";
 import antonImage from "@assets/anton_1753644074965.png";
-const markoImage = "/attached_assets/Marko_1753006653736.png";
+import markoImage from "@assets/Marko_1753644104524.png";
 const broschuerePDF = "/attached_assets/AI_Pass_Broschuere_1753051794218.pdf";
 
 const teamMembers = [
@@ -57,8 +57,8 @@ const teamMembers = [
     description: "Als Kommunikationsspezialist stärkt Marko sowohl interne Prozesse als auch die externe Kommunikation und ist damit ein zentraler Bestandteil unseres Teams.",
     image: markoImage,
     social: {
-      linkedin: "https://www.linkedin.com/in/marko-schmidt-ai/",
-      email: "marko.schmidt@ai-allstars.com"
+      linkedin: "https://www.linkedin.com/in/marko-mueller-ai/",
+      email: "marko.mueller@ai-allstars.com"
     }
   }
 ];
