@@ -1543,6 +1543,7 @@
   text-decoration: none;
   transition: color 0.3s ease;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .contact-email-inline a:hover {
