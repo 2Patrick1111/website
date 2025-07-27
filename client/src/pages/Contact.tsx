@@ -59,13 +59,13 @@ export default function Contact() {
                   <strong>Antonio Eichler</strong>
                 </p>
                 <p className="contact-info-item">
-                  <i className="fas fa-envelope contact-icon"></i>
+                  <span className="contact-icon">✉</span>
                   <span className="contact-email-inline">
                     <a href="mailto:ki-kurs@ai-allstars.com">ki-kurs@ai-allstars.com</a>
                   </span>
                 </p>
                 <p className="contact-info-item">
-                  <i className="fas fa-phone contact-icon"></i>
+                  <span className="contact-icon">📞</span>
                   <span className="contact-number">
                     <a href="tel:+491624024929">+49 162 4024929</a>
                     <span className="contact-method-hint">(Telefon & WhatsApp)</span>
