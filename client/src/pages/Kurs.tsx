@@ -316,7 +316,7 @@ export default function Kurs() {
                 </div>
                 
                 <div className="hero-image-placeholder relative mb-8">
-                  <div className="w-full max-w-[350px] h-auto mx-auto">
+                  <div className="w-full max-w-[500px] h-auto mx-auto">
                     <img 
                       src={teamGroupImage} 
                       alt="AI Allstars Team" 
@@ -324,7 +324,7 @@ export default function Kurs() {
                     />
                   </div>
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-                    <h1 className="text-white text-3xl font-bold text-center bg-black bg-opacity-20 px-4 py-2 rounded-lg backdrop-blur-sm">🚀 AI‑PASS Kurseinblick</h1>
+                    <h1 className="text-white text-4xl font-bold text-center bg-black bg-opacity-20 px-6 py-3 rounded-lg backdrop-blur-sm">🚀 AI‑PASS Kurseinblick</h1>
                   </div>
                 </div>
                 
