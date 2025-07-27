@@ -1535,13 +1535,14 @@
 
 .contact-email-inline {
   font-size: 1.3rem;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 .contact-email-inline a {
   color: #0080FF;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: 600;
 }
 
 .contact-email-inline a:hover {
