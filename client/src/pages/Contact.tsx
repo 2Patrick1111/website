@@ -69,7 +69,7 @@ export default function Contact() {
               </div>
               <div className="contact-image-right">
                 <img 
-                  src="/antonio-portrait.png" 
+                  src="/antonio-portrait-new.png" 
                   alt="Antonio Eichler" 
                   className="antonio-portrait"
                 />
