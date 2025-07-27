@@ -1663,9 +1663,9 @@
 }
 
 .team-card-image {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 1.5rem;
+  width: 150px;
+  height: 150px;
+  margin: 2.5rem auto 1.5rem;
   overflow: hidden;
   border-radius: 50%;
   border: 3px solid rgba(0, 128, 255, 0.3);
