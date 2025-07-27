@@ -316,11 +316,11 @@ export default function Kurs() {
                 </div>
                 
                 <div className="hero-image-placeholder">
-                  <div className="w-full max-w-[400px] h-24 rounded-lg mx-auto mb-8 flex items-center justify-center overflow-hidden">
+                  <div className="w-full max-w-[200px] h-auto mx-auto mb-8">
                     <img 
                       src={teamGroupImage} 
                       alt="AI Allstars Team" 
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-auto object-contain"
                     />
                   </div>
                 </div>
