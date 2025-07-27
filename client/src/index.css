@@ -1234,12 +1234,19 @@
 .thumbnail-placeholder {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  height: 80px;
+  min-height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
   flex-direction: column;
+}
+
+.thumbnail-placeholder img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
 }
 
 .thumbnail-placeholder span {
