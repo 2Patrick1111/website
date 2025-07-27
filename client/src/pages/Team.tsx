@@ -5,6 +5,7 @@ import TeamMemberCard from "@/components/TeamMemberCard";
 // Team member images - using available assets
 import patrickImage from "@assets/profilbild_1753643702033.png";
 import antonioImage from "@assets/Antonio_1753643947463.png";
+import jennyImage from "@assets/Jenny_1753643966006.png";
 const markoImage = "/attached_assets/Marko_1753006653736.png";
 const broschuerePDF = "/attached_assets/AI_Pass_Broschuere_1753051794218.pdf";
 
@@ -33,7 +34,7 @@ const teamMembers = [
     name: "Jenny Thomas",
     role: "Controlling und Antragswesen",
     description: "Jenny leitet das Controlling und ist Expertin für das komplexe Antragswesen. Sie sorgt dafür, dass alle finanziellen Aspekte und Fördermöglichkeiten optimal genutzt werden.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+    image: jennyImage,
     social: {
       linkedin: "https://www.linkedin.com/in/jenny-thomas-98765432/",
       email: "jenny.thomas@ai-allstars.com"
