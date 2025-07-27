@@ -53,48 +53,20 @@ export default function Contact() {
               </span>
             </h3>
             
-            <div className="contact-persons-grid">
-              <div className="contact-person">
-                <img 
-                  src="/attached_assets/Antonio_1753006608860.png" 
-                  alt="Antonio Eichler" 
-                  className="contact-person-image"
-                />
-                <p className="contact-name"><strong>Antonio Eichler</strong></p>
+            <div className="contact-single-person">
+              <div className="contact-person-centered">
+                <p className="contact-name">
+                  <strong>Antonio Eichler</strong>
+                  <span className="contact-email-inline">
+                    <a href="mailto:ki-kurs@ai-allstars.com">ki-kurs@ai-allstars.com</a>
+                  </span>
+                </p>
                 <p className="contact-title">KI-Strategieberater & Kundenbetreuung</p>
                 <p className="contact-number">
                   <a href="tel:+491624024929">+49 162 4024929</a>
                   <span className="contact-method-hint">(Telefon & WhatsApp)</span>
                 </p>
               </div>
-              
-              <div className="contact-person">
-                <img 
-                  src="/attached_assets/Marko_1753006653736.png" 
-                  alt="Dr. Marko Müller" 
-                  className="contact-person-image"
-                />
-                <p className="contact-name"><strong>Dr. Marko Müller</strong></p>
-                <p className="contact-title">Partnerschaften & Geschäftsentwicklung</p>
-                <p className="contact-number">
-                  <a href="tel:+491796842814">+49 179 6842814</a>
-                  <span className="contact-method-hint">(Telefon & WhatsApp)</span>
-                </p>
-              </div>
-            </div>
-            
-            <hr className="contact-divider" />
-            
-            <div className="contact-email-section">
-              <h3>
-                <span className="gradient-icon-square" style={{ marginRight: '12px' }}>
-                  <i className="fas fa-envelope"></i>
-                </span>
-                E-Mail
-              </h3>
-              <p className="contact-number">
-                <a href="mailto:ki-kurs@ai-allstars.com">ki-kurs@ai-allstars.com</a>
-              </p>
             </div>
           </div>
         </div>

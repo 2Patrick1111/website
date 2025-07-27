@@ -1403,11 +1403,27 @@
   font-size: 1.2rem;
 }
 
-.contact-persons-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.contact-single-person {
+  display: flex;
+  justify-content: center;
   margin-bottom: 2rem;
+}
+
+.contact-person-centered {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  max-width: 400px;
+  width: 100%;
+}
+
+.contact-person-centered:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
 }
 
 .contact-person {
@@ -1439,6 +1455,24 @@
   font-weight: bold;
   color: white;
   margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-email-inline {
+  font-size: 0.95rem;
+  font-weight: normal;
+}
+
+.contact-email-inline a {
+  color: #0080FF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-email-inline a:hover {
+  color: #4da6ff;
 }
 
 .contact-title {
