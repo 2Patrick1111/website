@@ -1515,10 +1515,20 @@
   font-size: 1.8rem;
   font-weight: bold;
   color: white;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.contact-info-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.contact-icon {
+  color: #0080FF;
+  font-size: 1.2rem;
+  min-width: 1.2rem;
 }
 
 .contact-email-inline {
@@ -1536,11 +1546,9 @@
   color: #4da6ff;
 }
 
-.contact-title {
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  font-size: 1.1rem;
+.contact-number {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-number a {

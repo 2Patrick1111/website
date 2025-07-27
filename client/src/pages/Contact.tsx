@@ -45,11 +45,11 @@ export default function Contact() {
           <div className="contact-details">
             <h3 className="contact-main-heading">
               <span className="gradient-icon-square" style={{ marginRight: '10px' }}>
-                <i className="fas fa-phone"></i>
+                <i className="fas fa-envelope"></i>
               </span>
-              Telefon / WhatsApp
+              Kontakt
               <span className="gradient-icon-square" style={{ marginLeft: '10px' }}>
-                <i className="fab fa-whatsapp"></i>
+                <i className="fas fa-phone"></i>
               </span>
             </h3>
             
@@ -57,14 +57,19 @@ export default function Contact() {
               <div className="contact-person-left">
                 <p className="contact-name">
                   <strong>Antonio Eichler</strong>
+                </p>
+                <p className="contact-info-item">
+                  <i className="fas fa-envelope contact-icon"></i>
                   <span className="contact-email-inline">
                     <a href="mailto:ki-kurs@ai-allstars.com">ki-kurs@ai-allstars.com</a>
                   </span>
                 </p>
-                <p className="contact-title">KI-Strategieberater & Kundenbetreuung</p>
-                <p className="contact-number">
-                  <a href="tel:+491624024929">+49 162 4024929</a>
-                  <span className="contact-method-hint">(Telefon & WhatsApp)</span>
+                <p className="contact-info-item">
+                  <i className="fas fa-phone contact-icon"></i>
+                  <span className="contact-number">
+                    <a href="tel:+491624024929">+49 162 4024929</a>
+                    <span className="contact-method-hint">(Telefon & WhatsApp)</span>
+                  </span>
                 </p>
               </div>
               <div className="contact-image-right">
