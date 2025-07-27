@@ -113,11 +113,11 @@ export default function Kurs() {
             <h3>{item.title}</h3>
             
             {item.type === 'video' && (
-              <div className="video-player" style={{background: '#000', borderRadius: '8px', height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px', position: 'relative', overflow: 'hidden'}}>
+              <div className="video-player" style={{borderRadius: '8px', marginBottom: '15px', position: 'relative', overflow: 'hidden'}}>
                 <img 
                   src="/grundlagen-der-ki-thumbnail.png" 
                   alt="Grundlagen der KI Video Thumbnail" 
-                  style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px'}}
+                  style={{width: '100%', height: 'auto', borderRadius: '8px', display: 'block'}}
                 />
                 <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontSize: '2rem', backgroundColor: 'rgba(0,0,0,0.6)', borderRadius: '50%', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>▶</div>
               </div>
