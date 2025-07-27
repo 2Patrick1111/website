@@ -1429,8 +1429,8 @@
 
 .contact-image-right {
   flex: 1;
-  max-width: 400px;
-  min-width: 350px;
+  max-width: 340px;
+  min-width: 320px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -1439,7 +1439,7 @@
 
 .antonio-portrait {
   width: 100%;
-  max-width: 380px;
+  max-width: 320px;
   height: auto;
   border-radius: 16px 16px 0 0;
   transition: all 0.3s ease;
