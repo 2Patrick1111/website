@@ -3,7 +3,7 @@ import { Layout } from '@/components/layout/Layout';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Play, ArrowLeft, Check } from 'lucide-react';
-const teamGroupImage = "/attached_assets/Broschüre-ai-allstars_MM-removebg-preview_1753644358369.png";
+const teamGroupImage = "/team-group.png";
 
 export default function Kurs() {
   const [currentView, setCurrentView] = useState('main');
