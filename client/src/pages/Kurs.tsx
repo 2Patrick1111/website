@@ -284,37 +284,7 @@ export default function Kurs() {
               <span className="title-gradient text-8xl">6 in 1</span>
               <span className="title-white"> KI Weiterbildung</span>
             </h1>
-            <p className="hero-subtitle mb-4">Interaktiver Kurseinblick: So funktioniert unser 5‑Wochen AI‑PASS</p>
-            
-            {/* Animated Arrow */}
-            <div className="flex justify-center -mb-20">
-              <svg 
-                className="w-96 h-96 opacity-90" 
-                viewBox="0 0 400 450" 
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <marker 
-                    id="arrowhead" 
-                    markerWidth="10" 
-                    markerHeight="7" 
-                    refX="9" 
-                    refY="3.5" 
-                    orient="auto"
-                  >
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#ff0000" />
-                  </marker>
-                </defs>
-                <path 
-                  d="M 200 10 Q 250 100 300 420" 
-                  stroke="#ff0000" 
-                  strokeWidth="4" 
-                  fill="none" 
-                  markerEnd="url(#arrowhead)"
-                  className="animate-pulse"
-                />
-              </svg>
-            </div>
+            <p className="hero-subtitle mb-8">Interaktiver Kurseinblick: So funktioniert unser 5‑Wochen AI‑PASS</p>
           </div>
         </section>
 
