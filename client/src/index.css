@@ -1521,7 +1521,7 @@
 .contact-info-item {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0;
   margin-bottom: 1rem;
   margin-left: 0;
 }
@@ -1530,7 +1530,8 @@
   color: #0080FF;
   font-size: 1.2rem;
   min-width: 1.2rem;
-  margin-left: -2rem;
+  margin-right: 0.8rem;
+  display: inline-block;
 }
 
 .contact-email-inline {
