@@ -1527,11 +1527,10 @@
 }
 
 .contact-icon {
-  color: #0080FF;
-  font-size: 1.2rem;
-  min-width: 1.2rem;
+  width: 20px;
+  height: 20px;
   margin-right: 0.8rem;
-  display: inline-block;
+  flex-shrink: 0;
 }
 
 .contact-email-inline {
