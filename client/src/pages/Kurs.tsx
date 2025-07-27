@@ -316,18 +316,12 @@ export default function Kurs() {
                 </div>
                 
                 <div className="hero-image-placeholder">
-                  <div className="w-full max-w-[600px] h-32 rounded-lg mx-auto mb-8 flex items-center justify-center overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600">
+                  <div className="w-full max-w-[400px] h-24 rounded-lg mx-auto mb-8 flex items-center justify-center overflow-hidden">
                     <img 
                       src={teamGroupImage} 
                       alt="AI Allstars Team" 
                       className="w-full h-full object-cover object-center"
-                      onError={(e) => {
-                        console.log('Image failed to load:', teamGroupImage);
-                        e.currentTarget.style.display = 'none';
-                      }}
-                      onLoad={() => console.log('Image loaded successfully')}
                     />
-                    <span className="text-white text-sm absolute">AI Allstars Team</span>
                   </div>
                 </div>
                 
