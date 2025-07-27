@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import TeamMemberCard from "@/components/TeamMemberCard";
 // Team member images - using available assets
 import patrickImage from "@assets/profilbild_1753643702033.png";
-const antonioImage = "/attached_assets/Antonio_1753006608860.png";
+import antonioImage from "@assets/Antonio_1753643947463.png";
 const markoImage = "/attached_assets/Marko_1753006653736.png";
 const broschuerePDF = "/attached_assets/AI_Pass_Broschuere_1753051794218.pdf";
 
@@ -21,7 +21,7 @@ const teamMembers = [
   },
   {
     name: "Antonio Eichler",
-    role: "CEO & KI-Strategieexperte",
+    role: "CEO & KI-Strategieexperte", 
     description: "Antonio verbindet fundierte KI-Kenntnisse mit exzellenter Kommunikationsstärke und unterstützt Unternehmen dabei, strategisch und strukturell das volle Potenzial künstlicher Intelligenz auszuschöpfen.",
     image: antonioImage,
     social: {
