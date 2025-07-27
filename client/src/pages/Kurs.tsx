@@ -287,7 +287,7 @@ export default function Kurs() {
             <p className="hero-subtitle mb-4">Interaktiver Kurseinblick: So funktioniert unser 5‑Wochen AI‑PASS</p>
             
             {/* Animated Arrow */}
-            <div className="flex justify-center mb-12">
+            <div className="flex justify-center mb-6">
               <svg 
                 className="w-96 h-96 opacity-90" 
                 viewBox="0 0 400 450" 
