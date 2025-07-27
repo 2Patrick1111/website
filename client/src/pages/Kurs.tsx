@@ -284,7 +284,7 @@ export default function Kurs() {
               <span className="title-gradient text-8xl">6 in 1</span>
               <span className="title-white"> KI Weiterbildung</span>
             </h1>
-            <p className="hero-subtitle mb-8">Interaktiver Kurseinblick: So funktioniert unser 5‑Wochen AI‑PASS</p>
+            <p className="hero-subtitle mb-4">Interaktiver Kurseinblick: So funktioniert unser 5‑Wochen AI‑PASS</p>
             
             {/* Animated Arrow */}
             <div className="flex justify-center mb-12">

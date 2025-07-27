@@ -49,9 +49,9 @@ const teamMembers = [
     }
   },
   {
-    name: "Marko Schmidt",
+    name: "Dr. Marko Müller",
     role: "KI-Trainer & Consultant",
-    description: "Marko ist verantwortlich für die Schulung und Beratung unserer Kunden. Er vermittelt komplexe KI-Konzepte verständlich und hilft Teams dabei, KI erfolgreich in ihren Arbeitsalltag zu integrieren.",
+    description: "Als Kommunikationsspezialist stärkt Marko sowohl interne Prozesse als auch die externe Kommunikation und ist damit ein zentraler Bestandteil unseres Teams.",
     image: markoImage,
     social: {
       linkedin: "https://www.linkedin.com/in/marko-schmidt-ai/",
