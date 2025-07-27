@@ -1523,12 +1523,14 @@
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 1rem;
+  margin-left: 0;
 }
 
 .contact-icon {
   color: #0080FF;
   font-size: 1.2rem;
   min-width: 1.2rem;
+  margin-left: -2rem;
 }
 
 .contact-email-inline {
