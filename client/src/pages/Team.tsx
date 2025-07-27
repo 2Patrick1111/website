@@ -6,6 +6,7 @@ import TeamMemberCard from "@/components/TeamMemberCard";
 import patrickImage from "@assets/profilbild_1753643702033.png";
 import antonioImage from "@assets/Antonio_1753643947463.png";
 import jennyImage from "@assets/Jenny_1753643966006.png";
+import antonImage from "@assets/anton_1753644074965.png";
 const markoImage = "/attached_assets/Marko_1753006653736.png";
 const broschuerePDF = "/attached_assets/AI_Pass_Broschuere_1753051794218.pdf";
 
@@ -41,13 +42,13 @@ const teamMembers = [
     }
   },
   {
-    name: "Anton Müller",
+    name: "Anton Trommer",
     role: "Senior KI-Entwickler",
     description: "Anton bringt seine Stärken in der KI- und Systementwicklung sowie der Automatisierung ein, um Unternehmen bei der Effizienzsteigerung wirkungsvoll zu unterstützen.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    image: antonImage,
     social: {
-      linkedin: "https://www.linkedin.com/in/anton-mueller-tech/",
-      email: "anton.mueller@ai-allstars.com"
+      linkedin: "https://www.linkedin.com/in/anton-trommer-tech/",
+      email: "anton.trommer@ai-allstars.com"
     }
   },
   {
