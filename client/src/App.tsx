@@ -16,6 +16,7 @@ import Kurs from "@/pages/Kurs";
 import Impressum from "@/pages/Impressum";
 import Datenschutz from "@/pages/Datenschutz";
 import NotFound from "@/pages/not-found";
+import CookieBanner from "@/components/CookieBanner";
 
 function Router() {
   // Track page views when routes change
@@ -54,6 +55,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
+        <CookieBanner />
       </TooltipProvider>
     </QueryClientProvider>
   );
