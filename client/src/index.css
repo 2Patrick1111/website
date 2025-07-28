@@ -769,12 +769,12 @@
       padding-top: 1rem !important;
     }
 
-    /* Team Grid - 2 nebeneinander mobile kompakt */
+    /* Team Grid - einzeln untereinander mobile */
     .team-grid {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      gap: 0.3rem !important;
-      padding: 0.4rem 0.1rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.5rem !important;
+      padding: 0.4rem 0.8rem !important;
       margin: 0 !important;
     }
 
