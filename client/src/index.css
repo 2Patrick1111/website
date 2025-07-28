@@ -674,33 +674,36 @@
     /* Contact Layout Mobile - Ultra Kompakt Links-Rechts */
     .contact-layout-with-image {
       flex-direction: row !important;
-      gap: 0.5rem;
-      align-items: stretch;
-      justify-content: space-between;
-      height: auto;
-      max-width: 100%;
+      gap: 0.3rem !important;
+      align-items: stretch !important;
+      justify-content: space-between !important;
+      height: auto !important;
+      max-width: 100% !important;
+      flex-wrap: nowrap !important;
     }
 
     .contact-person-left {
-      text-align: left;
-      flex: 0 0 65%;
-      order: 1;
-      padding: 0.3rem;
-      max-width: 65%;
-      min-width: 65%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+      text-align: left !important;
+      flex: 0 0 65% !important;
+      order: 1 !important;
+      padding: 0.3rem !important;
+      max-width: 65% !important;
+      min-width: 65% !important;
+      width: 65% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
     }
 
     .contact-image-right {
-      flex: 0 0 35%;
-      order: 2;
-      max-width: 35%;
-      min-width: 35%;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      flex: 0 0 35% !important;
+      order: 2 !important;
+      max-width: 35% !important;
+      min-width: 35% !important;
+      width: 35% !important;
+      display: flex !important;
+      align-items: flex-end !important;
+      justify-content: center !important;
     }
 
     .antonio-portrait {
@@ -1901,31 +1904,7 @@
   margin-bottom: 0;
 }
 
-@media (max-width: 900px) and (min-width: 769px) {
-  .contact-layout-with-image {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .contact-person-left {
-    text-align: center;
-    max-width: 100%;
-    order: 1;
-  }
-  
-  .contact-image-right {
-    max-width: 100%;
-    align-items: center;
-    order: 2;
-  }
-  
-  .antonio-portrait {
-    border-radius: 16px;
-    max-width: 300px;
-  }
-}
+/* Diese Media Query wird von der mobilen Version überschrieben */
 
 @media (min-width: 901px) {
   .contact-layout-with-image {
