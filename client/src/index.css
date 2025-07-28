@@ -819,7 +819,7 @@
       padding: 0.1rem 0.3rem !important;
     }
 
-    /* Preise Page Mobile - KI-Superkräfte Text Fix */
+    /* Preise Page Mobile - Einheitliche Textgröße */
     .hero-title-special {
       font-size: 1.4rem !important;
       line-height: 1.2 !important;
@@ -827,7 +827,9 @@
       overflow-wrap: break-word !important;
     }
 
-    .title-gradient {
+    .hero-title-special .title-white,
+    .hero-title-special .title-gradient {
+      font-size: 1.4rem !important;
       display: inline !important;
       white-space: normal !important;
       word-break: break-word !important;
