@@ -706,6 +706,60 @@
       margin-bottom: 0.5rem !important;
     }
 
+    /* Department Detail Views Mobile */
+    .browser-window .detail-content {
+      display: block !important;
+      gap: 0.5rem !important;
+    }
+
+    .browser-window .detail-video,
+    .browser-window .assignment-section {
+      margin-bottom: 0.8rem !important;
+      padding: 0.8rem !important;
+    }
+
+    .browser-window .detail-video h3,
+    .browser-window .assignment-section h3 {
+      font-size: 0.9rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .browser-window .tool-info h3 {
+      font-size: 0.8rem !important;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .browser-window .tool-tag {
+      font-size: 0.6rem !important;
+      padding: 0.3rem 0.6rem !important;
+    }
+
+    .browser-window .assignment-header {
+      padding: 0.6rem 0.8rem !important;
+      font-size: 0.8rem !important;
+    }
+
+    .browser-window .assignment-body {
+      padding: 0.8rem !important;
+      font-size: 0.7rem !important;
+    }
+
+    .browser-window .step {
+      padding: 0.4rem 0.6rem !important;
+      font-size: 0.7rem !important;
+    }
+
+    .browser-window .step-number {
+      width: 18px !important;
+      height: 18px !important;
+      font-size: 0.6rem !important;
+    }
+
+    .browser-window .goal-box {
+      padding: 0.6rem !important;
+      font-size: 0.65rem !important;
+    }
+
     .browser-content {
       padding: 0.8rem !important;
       font-size: 0.85rem !important;
