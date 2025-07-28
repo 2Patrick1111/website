@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { Layout } from "@/components/layout/Layout";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import { trackEvent } from "@/lib/analytics";
 // Team member images - using available assets
 import patrickImage from "@assets/profilbild_1753643702033.png";
 import antonioImage from "@assets/Antonio_1753643947463.png";
@@ -101,7 +102,12 @@ export default function Team() {
             <div className="cta-icon">📄</div>
             <h3 className="cta-title">Kostenlose Broschüre</h3>
             <p className="cta-description">Erhalten Sie alle Details zum 5-Wochen AI-PASS Programm als PDF</p>
-            <a href={broschuerePDF} download="AI_Pass_Broschuere.pdf" className="cta-button-card">
+            <a 
+              href={broschuerePDF} 
+              download="AI_Pass_Broschuere.pdf" 
+              className="cta-button-card"
+              onClick={() => trackEvent('download', 'document', 'brochure_pdf_team')}
+            >
               Broschüre herunterladen
             </a>
           </div>
@@ -111,7 +117,13 @@ export default function Team() {
             <div className="cta-icon">🎓</div>
             <h3 className="cta-title">Kurseinblick</h3>
             <p className="cta-description">Erfahre mehr über unseren Kurs</p>
-            <button onClick={() => window.location.href = '/kurs'} className="cta-button-card">
+            <button 
+              onClick={() => {
+                trackEvent('click', 'navigation', 'course_internal_team');
+                window.location.href = '/kurs';
+              }} 
+              className="cta-button-card"
+            >
               Kurs entdecken
             </button>
           </div>
@@ -121,7 +133,13 @@ export default function Team() {
             <div className="cta-icon">💰</div>
             <h3 className="cta-title">Preise</h3>
             <p className="cta-description">Entdecke unsere AI-PASS Pakete und finde das passende für dein Team</p>
-            <button onClick={() => window.location.href = '/preise'} className="cta-button-card">
+            <button 
+              onClick={() => {
+                trackEvent('click', 'navigation', 'pricing_internal_team');
+                window.location.href = '/preise';
+              }} 
+              className="cta-button-card"
+            >
               Preise entdecken
             </button>
           </div>
@@ -131,7 +149,13 @@ export default function Team() {
             <div className="cta-icon">💬</div>
             <h3 className="cta-title">Kontaktieren</h3>
             <p className="cta-description">Kontaktiere uns direkt</p>
-            <button onClick={() => window.location.href = '/kontakt'} className="cta-button-card">
+            <button 
+              onClick={() => {
+                trackEvent('click', 'navigation', 'contact_internal_team');
+                window.location.href = '/kontakt';
+              }} 
+              className="cta-button-card"
+            >
               Kontakt
             </button>
           </div>

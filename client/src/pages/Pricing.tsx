@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Check } from "lucide-react";
 import { Link } from "wouter";
 import { Layout } from "@/components/layout/Layout";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Pricing() {
   const topRowPackages = [
@@ -172,6 +173,7 @@ export default function Pricing() {
                         ? 'bg-transparent border-2 border-white text-white hover:bg-white hover:text-black' 
                         : 'header-cta hover:scale-105'
                     }`}
+                    onClick={() => trackEvent('click', 'pricing', `cta_${pkg.name.toLowerCase().replace(/[^a-z0-9]/g, '_')}`)}
                   >
                     {pkg.buttonText}
                   </Button>
@@ -244,6 +246,7 @@ export default function Pricing() {
                           ? 'bg-transparent border-2 border-white text-white hover:bg-white hover:text-black' 
                           : 'header-cta hover:scale-105'
                       }`}
+                      onClick={() => trackEvent('click', 'pricing', `cta_${pkg.name.toLowerCase().replace(/[^a-z0-9]/g, '_')}`)}
                     >
                       {pkg.buttonText}
                     </Button>

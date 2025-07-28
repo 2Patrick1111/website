@@ -1,4 +1,5 @@
 import { Layout } from '@/components/layout/Layout';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Impressum() {
   return (

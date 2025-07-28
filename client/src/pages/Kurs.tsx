@@ -3,6 +3,7 @@ import { Layout } from '@/components/layout/Layout';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Play, ArrowLeft, Check } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 const teamGroupImage = "/team-group.png";
 
 export default function Kurs() {

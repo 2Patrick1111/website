@@ -1,5 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
 import { Link } from 'wouter';
+import { trackEvent } from '@/lib/analytics';
 
 export default function ROICalculator() {
   return (
@@ -12,7 +13,11 @@ export default function ROICalculator() {
             Ermitteln Sie mit unserer intelligenten Potenzialanalyse das Einsparpotenzial und die Effizienzsteigerung durch KI-Implementation in Ihrem Unternehmen.
           </p>
           <div className="hero-actions">
-            <Link href="/assessment" className="cta-button primary">
+            <Link 
+              href="/assessment" 
+              className="cta-button primary"
+              onClick={() => trackEvent('click', 'roi_calculator', 'start_analysis')}
+            >
               Potenzialanalyse starten
             </Link>
           </div>
@@ -42,7 +47,11 @@ export default function ROICalculator() {
         <p className="hero-description" style={{ marginBottom: '2rem' }}>
           Lassen Sie sich eine individuelle KI-Potenzialanalyse erstellen.
         </p>
-        <Link href="/kontakt" className="cta-button">
+        <Link 
+          href="/kontakt" 
+          className="cta-button"
+          onClick={() => trackEvent('click', 'roi_calculator', 'request_analysis')}
+        >
           Kostenlose Analyse anfordern
         </Link>
       </section>
