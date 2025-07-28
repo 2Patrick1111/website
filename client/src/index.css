@@ -774,8 +774,8 @@
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;
       gap: 0.3rem !important;
-      padding: 0.4rem !important;
-      margin: 0 0.5rem !important;
+      padding: 0.4rem 0.1rem !important;
+      margin: 0 !important;
     }
 
     /* Team Member Cards sehr klein */
