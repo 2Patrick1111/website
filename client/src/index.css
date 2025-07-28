@@ -853,8 +853,8 @@
 
     /* Kursseite Mobile - Abstand zwischen Header und MacBook vergrößern */
     .browser-section {
-      margin-top: 4rem !important;
-      padding-top: 2rem !important;
+      margin-top: 8rem !important;
+      padding-top: 3rem !important;
     }
   }
 
