@@ -850,6 +850,12 @@
       margin-top: -12rem !important;
       padding-top: 1rem !important;
     }
+
+    /* Kursseite Mobile - Abstand zwischen Header und MacBook vergrößern */
+    .browser-section {
+      margin-top: 4rem !important;
+      padding-top: 2rem !important;
+    }
   }
 
   @media (max-width: 768px) {
