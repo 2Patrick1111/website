@@ -77,7 +77,7 @@ export default function Pricing() {
       price: "0€",
       oldPrice: "",
       priceNote: "+ 75% Lohnkostenerstattung",
-      highlight: true,
+      highlight: false,
       discount: false,
       secondary: false,
       features: [
