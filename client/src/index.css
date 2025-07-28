@@ -672,15 +672,16 @@
       gap: 0.5rem !important;
     }
 
-    /* AI-PASS Kurseinblick Titel wie normaler Text */
+    /* AI-PASS Kurseinblick Titel winzig klein */
     .hero-section h2 {
-      font-size: 0.7rem !important;
-      line-height: 1 !important;
+      font-size: 0.4rem !important;
+      line-height: 0.8 !important;
       margin: 0 !important;
       padding: 0 !important;
-      font-weight: normal !important;
+      font-weight: 300 !important;
       display: inline !important;
       text-transform: none !important;
+      letter-spacing: 0 !important;
     }
 
     .browser-content {
