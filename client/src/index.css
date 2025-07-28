@@ -609,50 +609,6 @@
       max-width: 95% !important;
     }
 
-    /* Browser-Window Inhalt Mobile Optimierung */
-    .browser-window .bg-gray-800 {
-      padding: 0.5rem !important;
-    }
-
-    .browser-window h3 {
-      font-size: 0.9rem !important;
-      margin-bottom: 0.5rem !important;
-    }
-
-    .browser-window p {
-      font-size: 0.75rem !important;
-      line-height: 1.3 !important;
-      margin-bottom: 0.5rem !important;
-    }
-
-    .browser-window .grid {
-      gap: 0.5rem !important;
-    }
-
-    .browser-window .bg-white {
-      padding: 0.75rem !important;
-      border-radius: 6px !important;
-    }
-
-    .browser-window .bg-white h4 {
-      font-size: 0.8rem !important;
-      margin-bottom: 0.3rem !important;
-    }
-
-    .browser-window .bg-white p {
-      font-size: 0.7rem !important;
-      margin-bottom: 0.4rem !important;
-    }
-
-    .browser-window .text-blue-600 {
-      font-size: 0.7rem !important;
-    }
-
-    .browser-window img {
-      width: 60px !important;
-      height: 60px !important;
-    }
-
     .browser-content {
       padding: 0.8rem !important;
       font-size: 0.85rem !important;
