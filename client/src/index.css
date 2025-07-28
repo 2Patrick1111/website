@@ -582,23 +582,9 @@
 
   /* Kurs Page Mobile Responsive */
   @media (max-width: 768px) {
-    /* Kurs Hero Mobile - Kompakt */
+    /* Kurs Hero Mobile - Nur Browser-Window kompakter */
     .kurs-einblick-container {
       padding: 0.8rem 0.8rem;
-    }
-
-    .kurs-hero {
-      padding: 1.5rem 0.8rem !important;
-    }
-
-    .kurs-hero h1 {
-      font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
-      margin-bottom: 0.8rem !important;
-    }
-
-    .kurs-hero p {
-      font-size: 0.9rem !important;
-      margin-bottom: 1.2rem !important;
     }
 
     .browser-window {
