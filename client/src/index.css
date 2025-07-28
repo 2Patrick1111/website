@@ -674,9 +674,9 @@
 
     /* AI-PASS Kurseinblick Titel kleiner machen */
     .hero-section h2 {
-      font-size: 1rem !important;
-      line-height: 1.1 !important;
-      margin-bottom: 0.3rem !important;
+      font-size: 0.75rem !important;
+      line-height: 1 !important;
+      margin-bottom: 0.2rem !important;
     }
 
     .browser-content {
