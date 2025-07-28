@@ -818,6 +818,20 @@
       font-size: 0.6rem !important;
       padding: 0.1rem 0.3rem !important;
     }
+
+    /* Preise Page Mobile - KI-Superkräfte Text Fix */
+    .hero-title-special {
+      font-size: 1.8rem !important;
+      line-height: 1.2 !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+    }
+
+    .title-gradient {
+      display: inline !important;
+      white-space: normal !important;
+      word-break: break-word !important;
+    }
   }
 
   @media (max-width: 768px) {
