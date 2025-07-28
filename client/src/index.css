@@ -765,8 +765,8 @@
   @media (max-width: 768px) {
     /* Team Hero zu Team Content Abstand reduzieren */
     .team-section {
-      margin-top: -4rem !important;
-      padding-top: 2rem !important;
+      margin-top: -8rem !important;
+      padding-top: 1rem !important;
     }
 
     /* Team Grid kompakter */
