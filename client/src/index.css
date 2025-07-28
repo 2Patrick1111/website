@@ -696,6 +696,16 @@
       white-space: nowrap !important;
     }
 
+    /* Logo Mobile - viel kleiner */
+    .browser-window .logo-box img {
+      max-width: 80px !important;
+      height: auto !important;
+    }
+
+    .browser-window .logo-placeholder {
+      margin-bottom: 0.5rem !important;
+    }
+
     .browser-content {
       padding: 0.8rem !important;
       font-size: 0.85rem !important;
