@@ -759,7 +759,44 @@
       padding: 0.6rem !important;
       font-size: 0.65rem !important;
     }
+  }
 
+  /* Team Page Mobile Responsive */
+  @media (max-width: 768px) {
+    /* Team Hero zu Team Content Abstand reduzieren */
+    .team-section {
+      margin-top: -4rem !important;
+      padding-top: 2rem !important;
+    }
+
+    /* Team Grid kompakter */
+    .team-grid {
+      gap: 1rem !important;
+      padding: 1rem !important;
+    }
+
+    /* Team Member Cards kleiner */
+    .team-member-card {
+      padding: 1rem !important;
+    }
+
+    .team-member-card img {
+      width: 80px !important;
+      height: 80px !important;
+    }
+
+    .team-member-card h3 {
+      font-size: 1rem !important;
+      margin-bottom: 0.3rem !important;
+    }
+
+    .team-member-card p {
+      font-size: 0.8rem !important;
+      line-height: 1.2 !important;
+    }
+  }
+
+  @media (max-width: 768px) {
     .browser-content {
       padding: 0.8rem !important;
       font-size: 0.85rem !important;
