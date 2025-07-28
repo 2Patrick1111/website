@@ -851,15 +851,10 @@
       padding-top: 1rem !important;
     }
 
-    /* Kursseite Mobile - MacBook Browser Container weiter nach unten */
+    /* Kursseite Mobile - MacBook Browser Container normaler Abstand */
     .content-section:has(.kurs-einblick-container) {
-      margin-top: 25rem !important;
-      padding-top: 10rem !important;
-    }
-    
-    .kurs-einblick-container,
-    .browser-window {
-      margin-top: 5rem !important;
+      margin-top: -6rem !important;
+      padding-top: 2rem !important;
     }
   }
 
