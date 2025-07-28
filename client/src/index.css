@@ -696,9 +696,9 @@
       white-space: nowrap !important;
     }
 
-    /* Logo Mobile - viel kleiner */
+    /* Logo Mobile - etwas größer */
     .browser-window .logo-box img {
-      max-width: 80px !important;
+      max-width: 100px !important;
       height: auto !important;
     }
 
