@@ -857,51 +857,49 @@
       padding-top: 3rem !important;
     }
 
-    /* Preise-Seite Mobile - Fördermöglichkeiten Tabelle weiter nach unten */
-    .content-section:has(table) {
+    /* Preise-Seite Mobile - NUR Fördermöglichkeiten Tabelle anpassen */
+    .content-section:has(h2:contains("Fördermöglichkeiten im Überblick")) {
       margin-top: 8rem !important;
       padding-top: 3rem !important;
     }
 
-    /* Kompakte Tabellendarstellung für Mobile */
-    table {
+    /* Spezifische Regeln nur für Fördermöglichkeiten-Tabelle */
+    .content-section:last-child table {
       font-size: 0.5rem !important;
       line-height: 1 !important;
     }
 
-    table th,
-    table td {
+    .content-section:last-child table th,
+    .content-section:last-child table td {
       padding: 0.15rem 0.1rem !important;
       font-size: 0.5rem !important;
       line-height: 1 !important;
     }
 
-    /* Überschriften in Tabellen-Sektion kleiner */
-    .content-section h2 {
+    .content-section:last-child h2 {
       font-size: 1.4rem !important;
       margin-bottom: 0.8rem !important;
     }
 
-    .content-section h3 {
+    .content-section:last-child h3 {
       font-size: 1rem !important;
       margin-bottom: 0.5rem !important;
     }
 
-    .content-section p {
+    .content-section:last-child p {
       font-size: 0.6rem !important;
       margin-bottom: 0.4rem !important;
     }
 
-    /* Grid Bereiche kleiner */
-    .grid div {
+    .content-section:last-child .grid div {
       font-size: 0.6rem !important;
     }
 
-    .text-2xl {
+    .content-section:last-child .text-2xl {
       font-size: 1rem !important;
     }
 
-    .text-3xl {
+    .content-section:last-child .text-3xl {
       font-size: 1.2rem !important;
     }
   }
