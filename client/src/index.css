@@ -838,6 +838,12 @@
       white-space: normal !important;
       word-break: break-word !important;
     }
+
+    /* Kontaktseite Mobile - Abstand zwischen Hero und Kontaktfeld reduzieren */
+    .content-section {
+      margin-top: -6rem !important;
+      padding-top: 1rem !important;
+    }
   }
 
   @media (max-width: 768px) {
