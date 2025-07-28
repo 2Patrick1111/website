@@ -603,46 +603,10 @@
     }
 
     .browser-window {
+      transform: none !important;
       margin: 0.2rem auto !important;
       border-radius: 8px !important;
       max-width: 95% !important;
-      width: 100% !important;
-    }
-
-    /* NUR Inhalte des Browser-Windows verkleinern */
-    .browser-window .mockup-content {
-      transform: scale(0.65) !important;
-      transform-origin: top center !important;
-      margin: -2rem 0 !important;
-    }
-
-    .browser-window .course-grid {
-      gap: 0.5rem !important;
-      padding: 0.5rem !important;
-    }
-
-    .browser-window .course-thumbnail {
-      width: 60px !important;
-      height: 45px !important;
-    }
-
-    .browser-window .course-title {
-      font-size: 0.6rem !important;
-      line-height: 1.1 !important;
-    }
-
-    .browser-window .course-description {
-      font-size: 0.5rem !important;
-      line-height: 1.2 !important;
-    }
-
-    .browser-window .browser-header {
-      height: 20px !important;
-    }
-
-    .browser-window .browser-controls {
-      width: 8px !important;
-      height: 8px !important;
     }
 
     .browser-content {
