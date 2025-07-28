@@ -668,7 +668,7 @@
     }
 
     .contact-info-section {
-      padding: 1rem 0.3rem;
+      padding: 0.8rem 0.2rem;
     }
 
     /* Contact Layout Mobile - Ultra Kompakt Links-Rechts */
@@ -683,89 +683,90 @@
 
     .contact-person-left {
       text-align: left;
-      flex: 0 0 60%;
+      flex: 0 0 65%;
       order: 1;
-      padding: 0.5rem;
-      max-width: 60%;
-      min-width: 60%;
+      padding: 0.3rem;
+      max-width: 65%;
+      min-width: 65%;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
     }
 
     .contact-image-right {
-      flex: 0 0 40%;
+      flex: 0 0 35%;
       order: 2;
-      max-width: 40%;
-      min-width: 40%;
+      max-width: 35%;
+      min-width: 35%;
       display: flex;
       align-items: flex-end;
       justify-content: center;
     }
 
     .antonio-portrait {
-      border-radius: 8px 8px 0 0;
+      border-radius: 6px 6px 0 0;
       width: 100%;
-      max-width: 140px;
+      max-width: 100px;
       height: auto;
     }
 
     .contact-name {
-      font-size: 0.95rem;
-      margin-bottom: 0.6rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.4rem;
       line-height: 1.1;
       font-weight: 700;
     }
 
     .contact-info-item {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
       justify-content: flex-start;
     }
 
     .contact-email-inline,
     .contact-number {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
     }
 
     .contact-number a {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       font-weight: 600;
     }
 
     .contact-method-hint {
-      font-size: 0.65rem;
+      font-size: 0.55rem;
       margin-top: 0.1rem;
     }
 
     .contact-icon {
-      width: 14px;
-      height: 14px;
-      margin-right: 0.4rem;
+      width: 12px;
+      height: 12px;
+      margin-right: 0.3rem;
       flex-shrink: 0;
     }
 
-    /* Contact Method Container Mobile - Extra Kompakt */
+    /* Contact Method Container Mobile - Ultra Klein */
     .contact-method {
-      padding: 0.8rem 0.5rem 0 0.5rem;
-      margin: 0 0.3rem;
-      max-width: calc(100vw - 1rem);
+      padding: 0.4rem 0.3rem 0 0.3rem;
+      margin: 0 0.2rem;
+      max-width: calc(100vw - 0.8rem);
       box-sizing: border-box;
+      border-radius: 12px;
     }
 
     .contact-main-heading {
-      font-size: 1.1rem;
-      margin-bottom: 0.8rem;
-      gap: 0.4rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      gap: 0.3rem;
       flex-direction: row;
     }
 
     .gradient-icon-square {
-      padding: 0.25rem;
-      border-radius: 4px;
+      padding: 0.2rem;
+      border-radius: 3px;
     }
 
     .gradient-icon-square i {
-      font-size: 0.9rem;
+      font-size: 0.7rem;
     }
 
     /* Contact Form Mobile */
