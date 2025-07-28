@@ -675,8 +675,8 @@
     /* Kurs Titel Mobile - als normaler Text */
     .kurs-title-mobile {
       color: white !important;
-      font-size: 1.2rem !important;
-      font-weight: normal !important;
+      font-size: 1.4rem !important;
+      font-weight: bold !important;
       text-align: center !important;
       padding: 0.3rem 0.5rem !important;
       margin: 0 !important;
