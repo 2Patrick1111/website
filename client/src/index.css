@@ -856,6 +856,54 @@
       margin-top: -4rem !important;
       padding-top: 3rem !important;
     }
+
+    /* Preise-Seite Mobile - Fördermöglichkeiten Tabelle weiter nach unten */
+    .content-section:has(table) {
+      margin-top: 8rem !important;
+      padding-top: 3rem !important;
+    }
+
+    /* Kompakte Tabellendarstellung für Mobile */
+    table {
+      font-size: 0.5rem !important;
+      line-height: 1 !important;
+    }
+
+    table th,
+    table td {
+      padding: 0.15rem 0.1rem !important;
+      font-size: 0.5rem !important;
+      line-height: 1 !important;
+    }
+
+    /* Überschriften in Tabellen-Sektion kleiner */
+    .content-section h2 {
+      font-size: 1.4rem !important;
+      margin-bottom: 0.8rem !important;
+    }
+
+    .content-section h3 {
+      font-size: 1rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .content-section p {
+      font-size: 0.6rem !important;
+      margin-bottom: 0.4rem !important;
+    }
+
+    /* Grid Bereiche kleiner */
+    .grid div {
+      font-size: 0.6rem !important;
+    }
+
+    .text-2xl {
+      font-size: 1rem !important;
+    }
+
+    .text-3xl {
+      font-size: 1.2rem !important;
+    }
   }
 
   @media (max-width: 768px) {
