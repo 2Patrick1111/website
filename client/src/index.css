@@ -580,6 +580,18 @@
     }
   }
 
+  /* Kurs Titel Desktop - dreimal so groß */
+  .kurs-title-mobile {
+    color: white !important;
+    font-size: 4.2rem !important; /* 1.4rem * 3 */
+    font-weight: bold !important;
+    text-align: center !important;
+    padding: 0.9rem 1.5rem !important; /* 3x größer */
+    margin: 0 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+    white-space: nowrap !important;
+  }
+
   /* Kurs Page Mobile Responsive */
   @media (max-width: 768px) {
     /* Kurs Hero Mobile - Browser-Window DIREKT unter Text */
