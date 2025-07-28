@@ -25,14 +25,15 @@ export default function Contact() {
 
   return (
     <Layout>
-      {/* Contact Hero Section */}
-      <section className="contact-hero hero" style={{ marginTop: '120px' }}>
-        <div className="contact-hero-content">
-          <h1 className="hero-title-animate">
-            Sprechen Sie mit unseren <span className="hero-gradient-text">KI-Experten</span>
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="text-center">
+          <h1 className="hero-title-special">
+            <span className="title-white">Sprechen Sie mit unseren </span>
+            <span className="title-gradient">KI-Experten</span>
           </h1>
-          <p className="hero-subtitle subtitle-animate">Lassen Sie uns gemeinsam Ihr KI-Potenzial entdecken</p>
-          <p className="hero-description description-animate">
+          <p className="hero-subtitle">Lassen Sie uns gemeinsam Ihr KI-Potenzial entdecken</p>
+          <p className="hero-description">
             Erhalten Sie eine individuelle Beratung von unseren KI-Experten und entdecken Sie, 
             wie Künstliche Intelligenz Ihr Unternehmen transformieren kann.
           </p>
@@ -40,7 +41,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Information Section */}
-      <section className="contact-info-section">
+      <section className="content-section">
         <div className="contact-method glass-container">
           <div className="contact-details">
             <h3 className="contact-main-heading">
