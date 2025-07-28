@@ -585,7 +585,7 @@
     /* Kurs Hero Mobile - Browser-Window DIREKT unter Text */
     .kurs-einblick-container {
       padding: 0rem 0.8rem !important;
-      margin-top: -10rem !important;
+      margin-top: -20rem !important;
       position: relative !important;
       z-index: 10 !important;
     }
