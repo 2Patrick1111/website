@@ -857,50 +857,10 @@
       padding-top: 3rem !important;
     }
 
-    /* Preise-Seite Mobile - NUR Fördermöglichkeiten Tabelle anpassen */
-    .content-section:has(h2:contains("Fördermöglichkeiten im Überblick")) {
-      margin-top: 8rem !important;
-      padding-top: 3rem !important;
-    }
-
-    /* Spezifische Regeln nur für Fördermöglichkeiten-Tabelle */
-    .content-section:last-child table {
-      font-size: 0.5rem !important;
-      line-height: 1 !important;
-    }
-
-    .content-section:last-child table th,
-    .content-section:last-child table td {
-      padding: 0.15rem 0.1rem !important;
-      font-size: 0.5rem !important;
-      line-height: 1 !important;
-    }
-
-    .content-section:last-child h2 {
-      font-size: 1.4rem !important;
-      margin-bottom: 0.8rem !important;
-    }
-
-    .content-section:last-child h3 {
-      font-size: 1rem !important;
-      margin-bottom: 0.5rem !important;
-    }
-
-    .content-section:last-child p {
-      font-size: 0.6rem !important;
-      margin-bottom: 0.4rem !important;
-    }
-
-    .content-section:last-child .grid div {
-      font-size: 0.6rem !important;
-    }
-
-    .content-section:last-child .text-2xl {
-      font-size: 1rem !important;
-    }
-
-    .content-section:last-child .text-3xl {
-      font-size: 1.2rem !important;
+    /* Preise-Seite Mobile - Abstand zwischen Fördermöglichkeiten und vorherigem Bereich */
+    .content-section:last-child {
+      margin-top: 6rem !important;
+      padding-top: 2rem !important;
     }
   }
 
