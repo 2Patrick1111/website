@@ -769,50 +769,54 @@
       padding-top: 1rem !important;
     }
 
-    /* Team Grid - 2 nebeneinander mobile */
+    /* Team Grid - 2 nebeneinander mobile kompakt */
     .team-grid {
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;
-      gap: 0.5rem !important;
-      padding: 0.8rem !important;
+      gap: 0.3rem !important;
+      padding: 0.4rem !important;
+      margin: 0 0.5rem !important;
     }
 
-    /* Team Member Cards viel kleiner */
+    /* Team Member Cards sehr klein */
     .team-member-card {
-      padding: 0.6rem !important;
+      padding: 0.4rem !important;
       text-align: center !important;
+      border-radius: 8px !important;
     }
 
     .team-member-card img {
-      width: 60px !important;
-      height: 60px !important;
-      margin: 0 auto 0.4rem auto !important;
+      width: 45px !important;
+      height: 45px !important;
+      margin: 0 auto 0.3rem auto !important;
     }
 
     .team-member-card h3 {
-      font-size: 0.8rem !important;
-      margin-bottom: 0.2rem !important;
-      line-height: 1.1 !important;
+      font-size: 0.7rem !important;
+      margin-bottom: 0.1rem !important;
+      line-height: 1 !important;
     }
 
     .team-member-card .role {
-      font-size: 0.6rem !important;
-      margin-bottom: 0.3rem !important;
+      font-size: 0.55rem !important;
+      margin-bottom: 0.2rem !important;
+      color: #ccc !important;
     }
 
     .team-member-card p {
-      font-size: 0.65rem !important;
-      line-height: 1.1 !important;
-      margin-bottom: 0.4rem !important;
+      font-size: 0.6rem !important;
+      line-height: 1 !important;
+      margin-bottom: 0.3rem !important;
     }
 
     .team-member-card .social-links {
-      gap: 0.3rem !important;
+      gap: 0.2rem !important;
+      justify-content: center !important;
     }
 
     .team-member-card .social-links a {
-      font-size: 0.7rem !important;
-      padding: 0.2rem 0.4rem !important;
+      font-size: 0.6rem !important;
+      padding: 0.1rem 0.3rem !important;
     }
   }
 
