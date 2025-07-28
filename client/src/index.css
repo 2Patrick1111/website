@@ -851,10 +851,10 @@
       padding-top: 1rem !important;
     }
 
-    /* Kursseite Mobile - Abstand zwischen Header und MacBook vergrößern */
+    /* Kursseite Mobile - Kurs Einblick Feld weiter nach unten */
     .browser-section {
-      margin-top: 8rem !important;
-      padding-top: 3rem !important;
+      margin-top: 12rem !important;
+      padding-top: 4rem !important;
     }
   }
 
