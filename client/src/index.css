@@ -671,10 +671,10 @@
       padding: 0.8rem 0.2rem;
     }
 
-    /* Contact Layout Mobile - Ultra Kompakt Links-Rechts */
+    /* Contact Layout Mobile - Optimiert Links-Rechts */
     .contact-layout-with-image {
       flex-direction: row !important;
-      gap: 0.3rem !important;
+      gap: 0.5rem !important;
       align-items: stretch !important;
       justify-content: space-between !important;
       height: auto !important;
@@ -686,13 +686,13 @@
       text-align: left !important;
       flex: 0 0 65% !important;
       order: 1 !important;
-      padding: 0.3rem !important;
+      padding: 0.6rem !important;
       max-width: 65% !important;
       min-width: 65% !important;
       width: 65% !important;
       display: flex !important;
       flex-direction: column !important;
-      justify-content: flex-start !important;
+      justify-content: center !important;
     }
 
     .contact-image-right {
@@ -714,36 +714,36 @@
     }
 
     .contact-name {
-      font-size: 0.65rem !important;
-      margin-bottom: 0.3rem !important;
-      line-height: 1.1 !important;
+      font-size: 0.85rem !important;
+      margin-bottom: 0.5rem !important;
+      line-height: 1.2 !important;
       font-weight: 700 !important;
     }
 
     .contact-info-item {
-      margin-bottom: 0.35rem !important;
+      margin-bottom: 0.6rem !important;
       justify-content: flex-start !important;
     }
 
     .contact-email-inline,
     .contact-number {
-      font-size: 0.55rem !important;
+      font-size: 0.7rem !important;
     }
 
     .contact-number a {
-      font-size: 0.55rem !important;
+      font-size: 0.7rem !important;
       font-weight: 600 !important;
     }
 
     .contact-method-hint {
-      font-size: 0.45rem !important;
-      margin-top: 0.05rem !important;
+      font-size: 0.6rem !important;
+      margin-top: 0.1rem !important;
     }
 
     .contact-icon {
-      width: 10px !important;
-      height: 10px !important;
-      margin-right: 0.25rem !important;
+      width: 14px !important;
+      height: 14px !important;
+      margin-right: 0.4rem !important;
       flex-shrink: 0 !important;
     }
 
@@ -757,19 +757,19 @@
     }
 
     .contact-main-heading {
-      font-size: 0.75rem !important;
-      margin-bottom: 0.3rem !important;
-      gap: 0.2rem !important;
+      font-size: 1rem !important;
+      margin-bottom: 0.6rem !important;
+      gap: 0.4rem !important;
       flex-direction: row !important;
     }
 
     .gradient-icon-square {
-      padding: 0.15rem !important;
-      border-radius: 3px !important;
+      padding: 0.3rem !important;
+      border-radius: 4px !important;
     }
 
     .gradient-icon-square i {
-      font-size: 0.6rem !important;
+      font-size: 0.8rem !important;
     }
 
     /* Contact Form Mobile */
