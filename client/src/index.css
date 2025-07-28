@@ -672,6 +672,13 @@
       gap: 0.5rem !important;
     }
 
+    /* AI-PASS Kurseinblick Titel kleiner machen */
+    .hero-section h2 {
+      font-size: 1.5rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: 0.5rem !important;
+    }
+
     .browser-content {
       padding: 0.8rem !important;
       font-size: 0.85rem !important;
