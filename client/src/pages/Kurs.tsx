@@ -445,7 +445,7 @@ export default function Kurs() {
                     />
                   </div>
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
-                    <h1 className="text-white text-5xl font-bold text-center px-6 py-3 whitespace-nowrap" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>🚀 AI‑PASS Kurseinblick</h1>
+                    <div className="kurs-title-mobile">🚀 AI‑PASS Kurseinblick</div>
                   </div>
                 </div>
                 

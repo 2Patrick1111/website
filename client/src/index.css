@@ -672,16 +672,16 @@
       gap: 0.5rem !important;
     }
 
-    /* AI-PASS Kurseinblick Titel winzig klein */
-    .hero-section h2 {
-      font-size: 0.4rem !important;
-      line-height: 0.8 !important;
+    /* Kurs Titel Mobile - als normaler Text */
+    .kurs-title-mobile {
+      color: white !important;
+      font-size: 0.8rem !important;
+      font-weight: normal !important;
+      text-align: center !important;
+      padding: 0.3rem 0.5rem !important;
       margin: 0 !important;
-      padding: 0 !important;
-      font-weight: 300 !important;
-      display: inline !important;
-      text-transform: none !important;
-      letter-spacing: 0 !important;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+      white-space: nowrap !important;
     }
 
     .browser-content {
