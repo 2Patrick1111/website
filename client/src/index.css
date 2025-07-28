@@ -819,9 +819,13 @@
       padding: 0.1rem 0.3rem !important;
     }
 
-    /* Preise Page Mobile - Einheitliche Textgröße */
-    .hero-title-special {
-      font-size: 1.4rem !important;
+    /* Mobile H1 Überschriften - Einheitliche größere Schriftgröße */
+    .hero-title-special,
+    .contact-hero h1,
+    .team-hero h1,
+    .kurs-hero h1,
+    h1 {
+      font-size: 1.8rem !important;
       line-height: 1.2 !important;
       word-break: break-word !important;
       overflow-wrap: break-word !important;
@@ -829,7 +833,7 @@
 
     .hero-title-special .title-white,
     .hero-title-special .title-gradient {
-      font-size: 1.4rem !important;
+      font-size: 1.8rem !important;
       display: inline !important;
       white-space: normal !important;
       word-break: break-word !important;
