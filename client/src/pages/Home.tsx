@@ -1,6 +1,7 @@
 import { Link } from 'wouter';
 import { Layout } from '@/components/layout/Layout';
 import { useEffect } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Home() {
   const features = [
@@ -266,7 +267,12 @@ export default function Home() {
             <div className="cta-icon">📄</div>
             <h3 className="cta-title">Kostenlose Broschüre</h3>
             <p className="cta-description">Erhalten Sie alle Details zum 5-Wochen AI-PASS Programm als PDF</p>
-            <a href="/AI_Pass_Broschuere.pdf" download="AI_Pass_Broschuere.pdf" className="cta-button-card">
+            <a 
+              href="/AI_Pass_Broschuere.pdf" 
+              download="AI_Pass_Broschuere.pdf" 
+              className="cta-button-card"
+              onClick={() => trackEvent('download', 'document', 'brochure_pdf')}
+            >
               Broschüre herunterladen
             </a>
           </div>
@@ -276,7 +282,11 @@ export default function Home() {
             <div className="cta-icon">🎓</div>
             <h3 className="cta-title">Kurseinblick</h3>
             <p className="cta-description">Erfahre mehr über unseren Kurs</p>
-            <a href="https://www.kurs.ai-allstars.com" className="cta-button-card">
+            <a 
+              href="https://www.kurs.ai-allstars.com" 
+              className="cta-button-card"
+              onClick={() => trackEvent('click', 'navigation', 'course_external')}
+            >
               Kurs entdecken
             </a>
           </div>
@@ -286,7 +296,11 @@ export default function Home() {
             <div className="cta-icon">👥</div>
             <h3 className="cta-title">Teameinblick</h3>
             <p className="cta-description">Lerne die Allstars kennen</p>
-            <a href="https://www.team.ai-allstars.com" className="cta-button-card">
+            <a 
+              href="https://www.team.ai-allstars.com" 
+              className="cta-button-card"
+              onClick={() => trackEvent('click', 'navigation', 'team_external')}
+            >
               Team entdecken
             </a>
           </div>
@@ -296,7 +310,11 @@ export default function Home() {
             <div className="cta-icon">💬</div>
             <h3 className="cta-title">Kontaktieren</h3>
             <p className="cta-description">Kontaktiere uns direkt</p>
-            <a href="https://www.kontakt.ai-allstars.com" className="cta-button-card">
+            <a 
+              href="https://www.kontakt.ai-allstars.com" 
+              className="cta-button-card"
+              onClick={() => trackEvent('click', 'navigation', 'contact_external')}
+            >
               Kontakt
             </a>
           </div>
