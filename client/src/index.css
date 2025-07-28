@@ -844,6 +844,12 @@
       margin-top: -6rem !important;
       padding-top: 1rem !important;
     }
+
+    /* Preise-Seite Mobile - Abstand zwischen Hero und Pricing-Cards reduzieren */
+    .content-section:has(.grid) {
+      margin-top: -8rem !important;
+      padding-top: 2rem !important;
+    }
   }
 
   @media (max-width: 768px) {
