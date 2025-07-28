@@ -585,7 +585,15 @@
     /* Kurs Hero Mobile - Browser-Window direkt unter Text */
     .kurs-einblick-container {
       padding: 0rem 0.8rem !important;
-      margin-top: -3rem !important;
+      margin-top: -6rem !important;
+      position: relative !important;
+      z-index: 10 !important;
+    }
+
+    /* Hero Section unteren Abstand reduzieren */
+    .hero-section {
+      margin-bottom: 0 !important;
+      padding-bottom: 1rem !important;
     }
 
     .browser-window {
